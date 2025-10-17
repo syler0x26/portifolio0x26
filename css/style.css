@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap");
 #home {
-  background-color: #fff;
   height: 84vh;
   width: 100vw;
 }
@@ -113,7 +112,7 @@ footer .movi:hover {
 
 #social-network {
   color: #fefefe;
-  background: #5403b1;
+  background: #0A0A0A;
   padding: 15%;
 }
 #social-network span.instagram {
