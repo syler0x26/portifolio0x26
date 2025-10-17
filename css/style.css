@@ -15,7 +15,8 @@ header .navbar {
   background-color: #F8F3EC;
   box-shadow: 0 0.1rem 0.1rem rgba(128, 128, 128, 0.568);
 }
-header .btn-style {
+
+.btn-style {
   border: none;
   background-color: #5403b1;
   border-radius: 0.6rem;
@@ -25,10 +26,11 @@ header .btn-style {
   font-size: 1.3rem;
   box-shadow: 0 0.5rem rgb(44, 2, 92);
 }
-header .btn-style:hover {
+.btn-style:hover {
   box-shadow: 0 0.3rem rgb(44, 2, 92);
 }
-header .btn-style-2 {
+
+.btn-style-2 {
   border: none;
   border-radius: 0.6rem;
   color: #F8F3EC;
@@ -37,10 +39,11 @@ header .btn-style-2 {
   font-size: 1.3rem;
   box-shadow: 0 0.5rem rgb(44, 2, 92);
 }
-header .btn-style-2:hover {
+.btn-style-2:hover {
   box-shadow: 0 0.3rem rgb(44, 2, 92);
 }
-header .txt-destaque {
+
+.txt-destaque {
   color: #5403b1;
 }
 
