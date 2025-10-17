@@ -1,15 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap");
 #home {
-  background-color: #F8F3EC;
-  height: 100vh;
+  background-color: #fff;
+  height: 84vh;
   width: 100vw;
 }
 
-.h2-about {
+header {
+  height: 100%;
+  top: 0;
+  position: sticky;
+  z-index: 999;
+}
+header .navbar {
+  background-color: #F8F3EC;
+  box-shadow: 0 0.1rem 0.1rem rgba(128, 128, 128, 0.568);
+}
+header .btn-style {
+  border: none;
+  background-color: #5403b1;
+  border-radius: 0.6rem;
+  color: #F8F3EC;
+  font-weight: 500;
+  padding: 1rem;
+  font-size: 1.3rem;
+  box-shadow: 0 0.5rem rgb(44, 2, 92);
+}
+header .btn-style:hover {
+  box-shadow: 0 0.3rem rgb(44, 2, 92);
+}
+header .btn-style-2 {
+  border: none;
+  border-radius: 0.6rem;
+  color: #F8F3EC;
+  font-weight: 500;
+  padding: 1rem;
+  font-size: 1.3rem;
+  box-shadow: 0 0.5rem rgb(44, 2, 92);
+}
+header .btn-style-2:hover {
+  box-shadow: 0 0.3rem rgb(44, 2, 92);
+}
+header .txt-destaque {
   color: #5403b1;
 }
 
-.container-portrait {
+#about {
+  background-color: #fcfcfc;
+}
+#about .h2-about {
+  color: #5403b1;
+}
+#about .container-portrait {
   background-color: #F8F3EC;
   width: 300px;
   height: 300px;
@@ -18,11 +59,14 @@
   justify-content: center;
   box-shadow: 0.1rem 0.1rem 0.8rem rgb(105, 104, 104);
 }
-.container-portrait .box-portrait {
+#about .container-portrait .box-portrait {
   width: 270px;
   height: 270px;
 }
 
+#portifolio {
+  background: #fcfcfc;
+}
 #portifolio .card {
   overflow: hidden;
   box-shadow: 0 0.1rem 0.3rem rgba(84, 1, 167, 0.6588235294);
@@ -44,6 +88,10 @@
   }
 }
 
+.pre-footer {
+  background: #fff;
+}
+
 footer {
   width: 100vw;
   background-color: #5403b1;
@@ -62,7 +110,7 @@ footer .movi:hover {
 
 #social-network {
   color: #fefefe;
-  background-color: #5403b1;
+  background: #5403b1;
   padding: 15%;
 }
 #social-network span.instagram {
@@ -81,8 +129,18 @@ footer .movi:hover {
   display: inline-block;
 }
 
+.specificationOne {
+  background: linear-gradient(#5403b1, rgb(66, 3, 138));
+  color: #f8f8f8;
+}
+
 .specificationTwo {
-  background-color: #5403b1;
+  background: linear-gradient(rgb(66, 3, 138), rgb(52, 3, 109));
+  color: #f8f8f8;
+}
+
+.specificationTree {
+  background: linear-gradient(rgb(52, 3, 109), rgb(26, 1, 54));
   color: #f8f8f8;
 }
 
@@ -91,47 +149,11 @@ footer .movi:hover {
 }
 
 body {
-  background-color: #F8F3EC;
+  padding-top: 80px;
 }
 
 h2 {
   font-family: "Poppins", sans-serif;
-}
-
-.navbar {
-  background-color: #F8F3EC;
-  box-shadow: 0 0.1rem 0.1rem rgba(128, 128, 128, 0.568);
-}
-
-.btn-style {
-  border: none;
-  background-color: #5403b1;
-  border-radius: 0.6rem;
-  color: #F8F3EC;
-  font-weight: 500;
-  padding: 1rem;
-  font-size: 1.3rem;
-  box-shadow: 0 0.5rem rgb(44, 2, 92);
-}
-.btn-style:hover {
-  box-shadow: 0 0.3rem rgb(44, 2, 92);
-}
-
-.btn-style-2 {
-  border: none;
-  border-radius: 0.6rem;
-  color: #F8F3EC;
-  font-weight: 500;
-  padding: 1rem;
-  font-size: 1.3rem;
-  box-shadow: 0 0.5rem rgb(44, 2, 92);
-}
-.btn-style-2:hover {
-  box-shadow: 0 0.3rem rgb(44, 2, 92);
-}
-
-.txt-destaque {
-  color: #5403b1;
 }
 
 /*# sourceMappingURL=style.css.map */

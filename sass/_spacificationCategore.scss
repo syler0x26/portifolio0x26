@@ -1,6 +1,14 @@
-.specificationOne{}
-.specificationTwo{
-    background-color: #5403b1ff;
+.specificationOne {
+    background: linear-gradient(#5403b1ff, rgb(66, 3, 138));
     color: #f8f8f8;
 }
-.specificationTree{}
+
+.specificationTwo {
+    background: linear-gradient(rgb(66, 3, 138), rgb(52, 3, 109));
+    color: #f8f8f8;
+}
+
+.specificationTree {
+    background: linear-gradient(rgb(52, 3, 109), rgb(26, 1, 54));
+    color: #f8f8f8;
+}
