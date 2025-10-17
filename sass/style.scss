@@ -1,0 +1,55 @@
+@use "home";
+@use "about";
+@use "portifolio";
+@use "footer";
+@use "social-network";
+@use "spacificationCategore";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap');
+* {
+    transition: all .4s ease-in-out;
+}
+
+body {
+    background-color: #F8F3EC;
+}
+
+h2{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background-color: #F8F3EC;
+    box-shadow: 0 0.1rem .1rem rgba(128, 128, 128, 0.568);
+}
+
+.btn-style {
+    border: none;
+    background-color: #5403b1ff;
+    border-radius: 0.6rem;
+    color: #F8F3EC;
+    font-weight: 500;
+    padding: 1rem;
+    font-size: 1.3rem;
+    box-shadow: 0 0.5rem rgb(44, 2, 92);
+
+    &:hover {
+        box-shadow: 0 0.3rem rgb(44, 2, 92);
+    }
+}
+
+.btn-style-2 {
+    border: none;
+    border-radius: 0.6rem;
+    color: #F8F3EC;
+    font-weight: 500;
+    padding: 1rem;
+    font-size: 1.3rem;
+    box-shadow: 0 0.5rem rgb(44, 2, 92);
+
+    &:hover {
+        box-shadow: 0 0.3rem rgb(44, 2, 92);
+    }
+}
+.txt-destaque{
+    color: #5403b1ff;
+}

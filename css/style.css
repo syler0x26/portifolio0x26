@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap");
+#home {
+  background-color: #F8F3EC;
+  height: 100vh;
+  width: 100vw;
+}
+
+.h2-about {
+  color: #5403b1;
+}
+
+.container-portrait {
+  background-color: #F8F3EC;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0.1rem 0.1rem 0.8rem rgb(105, 104, 104);
+}
+.container-portrait .box-portrait {
+  width: 270px;
+  height: 270px;
+}
+
+#portifolio .card {
+  overflow: hidden;
+  box-shadow: 0 0.1rem 0.3rem rgba(84, 1, 167, 0.6588235294);
+  background-color: #fcfcfc;
+}
+#portifolio .card .img-zoom {
+  transition: all 0.3s ease-in-out, background-color 0.4s ease;
+  filter: grayscale(90%);
+  z-index: 1;
+}
+#portifolio .card .img-zoom:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+@media (max-width: 400px) {
+  #portifolio .card .custom-cols-xs > * {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+footer {
+  width: 100vw;
+  background-color: #5403b1;
+}
+footer .logo {
+  height: 34px;
+  width: 100vw;
+  background: url("../src/footer-logo.png") no-repeat;
+}
+footer .movi {
+  transition: all 0.4s ease-in-out;
+}
+footer .movi:hover {
+  transform: rotate(360deg);
+}
+
+#social-network {
+  color: #fefefe;
+  background-color: #5403b1;
+  padding: 15%;
+}
+#social-network span.instagram {
+  font-weight: bold;
+  font-size: 2rem; /* ajuste o tamanho que quiser */
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+#social-network .bi-instagram {
+  font-size: 3rem;
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.specificationTwo {
+  background-color: #5403b1;
+  color: #f8f8f8;
+}
+
+* {
+  transition: all 0.4s ease-in-out;
+}
+
+body {
+  background-color: #F8F3EC;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: #F8F3EC;
+  box-shadow: 0 0.1rem 0.1rem rgba(128, 128, 128, 0.568);
+}
+
+.btn-style {
+  border: none;
+  background-color: #5403b1;
+  border-radius: 0.6rem;
+  color: #F8F3EC;
+  font-weight: 500;
+  padding: 1rem;
+  font-size: 1.3rem;
+  box-shadow: 0 0.5rem rgb(44, 2, 92);
+}
+.btn-style:hover {
+  box-shadow: 0 0.3rem rgb(44, 2, 92);
+}
+
+.btn-style-2 {
+  border: none;
+  border-radius: 0.6rem;
+  color: #F8F3EC;
+  font-weight: 500;
+  padding: 1rem;
+  font-size: 1.3rem;
+  box-shadow: 0 0.5rem rgb(44, 2, 92);
+}
+.btn-style-2:hover {
+  box-shadow: 0 0.3rem rgb(44, 2, 92);
+}
+
+.txt-destaque {
+  color: #5403b1;
+}
+
+/*# sourceMappingURL=style.css.map */

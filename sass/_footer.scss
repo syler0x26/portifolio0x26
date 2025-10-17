@@ -1,0 +1,15 @@
+footer{
+    width: 100vw;
+    background-color: #5403b1ff;
+    .logo{
+        height: 34px;
+        width: 100vw;
+        background: url('../src/footer-logo.png') no-repeat; 
+    }
+    .movi{
+        transition: all .4s ease-in-out;
+        &:hover{
+            transform: rotate(360deg);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+#social-network{
+    color: #fefefe;
+    background-color: #5403b1ff;
+    padding: 15%;
+    span.instagram{
+  font-weight: bold;
+  font-size: 2rem; /* ajuste o tamanho que quiser */
+  background: linear-gradient(
+    45deg,
+    #feda75,  
+    #fa7e1e,  
+    #d62976,  
+    #962fbf,  
+    #4f5bd5   
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+
+}
+.bi-instagram{
+      font-size: 3rem; 
+  background: linear-gradient(
+    45deg,
+    #feda75,  
+    #fa7e1e,  
+    #d62976,  
+    #962fbf,  
+    #4f5bd5   
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+}
