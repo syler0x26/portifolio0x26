@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 #home {
-  height: 84vh;
+  height: 76vh;
   width: 100vw;
 }
 
@@ -93,19 +93,12 @@ header .navbar .nav-link {
 }
 
 footer {
-  width: 100vw;
-  background-color: #0A0A0A;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: black;
 }
-footer .logo {
-  height: 34px;
-  width: 100vw;
-  background: url("../src/footer-logo.png") no-repeat;
-}
-footer .movi {
-  transition: all 0.4s ease-in-out;
-}
-footer .movi:hover {
-  transform: rotate(360deg);
+footer h2 {
+  font-size: 1rem;
 }
 
 #social-network {
@@ -129,6 +122,53 @@ footer .movi:hover {
   display: inline-block;
 }
 
+.btn-insta {
+  background-color: #fff;
+  border: 1px solid #bc2a8d;
+  padding: 5px;
+  position: relative;
+  width: 7.2em;
+  height: 2em;
+  transition: 0.5s;
+  font-size: 17px;
+  border-radius: 0.4em;
+}
+
+.btn-insta p {
+  position: absolute;
+  top: 0.4em;
+  left: 1.2em;
+  margin: 0;
+  padding: 0;
+  transition: 0.5s;
+  color: #bc2a8d;
+}
+
+.btn-insta svg {
+  position: absolute;
+  top: 0.45em;
+  right: 0.5em;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;
+  height: 1em;
+  fill: #fff;
+}
+
+.btn-insta:hover p {
+  left: 0.6em;
+  color: #fff;
+}
+
+.btn-insta:hover svg {
+  opacity: 1;
+}
+
+.btn-insta:hover {
+  background-color: #bc2a8d;
+}
+
 .specificationOne {
   background: #fff;
 }
@@ -148,6 +188,9 @@ footer .movi:hover {
 
 body {
   padding-top: 80px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 h2 {
@@ -163,6 +206,59 @@ h2 {
 .is-light {
   color: #050505;
   background-color: #eaeaea;
+}
+
+.btn-home {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-home span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-home svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-home:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.btn-home:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.btn-home:hover span {
+  transform: translateX(8em);
+}
+
+.btn-home:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

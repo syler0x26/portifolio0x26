@@ -1,15 +1,8 @@
 footer{
-    width: 100vw;
-    background-color: #0A0A0A;
-    .logo{
-        height: 34px;
-        width: 100vw;
-        background: url('../src/footer-logo.png') no-repeat; 
-    }
-    .movi{
-        transition: all .4s ease-in-out;
-        &:hover{
-            transform: rotate(360deg);
-        }
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+    h2{
+        font-size: 1rem;
     }
 }

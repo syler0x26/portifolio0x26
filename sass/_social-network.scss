@@ -32,4 +32,51 @@
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
+
+}
+.btn-insta {
+  background-color: #fff;
+  border: 1px solid #bc2a8d;
+  padding: 5px;
+  position: relative;
+  width: 7.2em;
+  height: 2em;
+  transition: 0.5s;
+  font-size: 17px;
+  border-radius: 0.4em;
+}
+
+.btn-insta p {
+  position: absolute;
+  top: 0.4em;
+  left: 1.2em;
+  margin: 0;
+  padding: 0;
+  transition: .5s;
+  color: #bc2a8d;
+}
+
+.btn-insta svg {
+  position: absolute;
+  top: 0.45em;
+  right: 0.5em;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;
+  height: 1em;
+  fill: #fff
+}
+
+.btn-insta:hover p {
+  left: 0.6em;
+  color: #fff
+}
+
+.btn-insta:hover svg {
+  opacity: 1;
+}
+
+.btn-insta:hover {
+  background-color: #bc2a8d;
 }
