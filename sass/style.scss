@@ -7,29 +7,33 @@
 @use "social-network";
 @use "spacificationCategore";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-* {
-    transition: all .4s ease-in-out;
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Rabisco';
+  src: url("../fonts/Rabisco.ttf") format("truetype");
 }
-
+h2{
+  font-family: 'Rabisco';
+  color: hsl(240, 100%, 90%);
+}
 body {
-  background-color: #0F041F;
-  font-family: "Ubuntu", sans-serif;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
-h2{
-    font-family: 'Poppins', sans-serif;
-}
 .is-dark {
   background: linear-gradient(135deg, #050505 0%, #121212 100%);
   color: #eaeaea;
   box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.05);
 }
-.is-light{
+
+.is-light {
   color: #050505;
   background-color: #eaeaea;
 }
+
 .btn-home {
   font-family: inherit;
   font-size: 20px;
@@ -83,6 +87,28 @@ h2{
     transform: translateY(-0.1em);
   }
 }
-figure{
-    background-color: #0F041F;
+#section1{
+  height: 100%;
+  width: 100vw;
+  background-color: #F4F4F4;
+}
+.btn-01{
+  background-color: #050505;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  transition: all .4s ease;
+  &:hover{
+    background-color: #050505e1;
+    border-radius: 1.3rem;
+  }
+}
+#section02{
+  h1{
+    font-weight: 500;
+    font-size: 2.5rem;
+  }
+}
+#contact{
+  background-color: hsl(240, 100%, 94%);
 }

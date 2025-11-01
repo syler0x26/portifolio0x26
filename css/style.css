@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap");
 #home {
-  color: white;
-  background: url("../src/bgk-home.png") center center no-repeat;
   height: 76vh;
   width: 100vw;
+}
+#home h1 {
+  font-weight: bold;
 }
 
 header {
@@ -14,7 +16,6 @@ header {
 }
 header .navbar {
   backdrop-filter: blur(8px);
-  box-shadow: 0 0.1rem 0.1rem rgba(128, 128, 128, 0.568);
 }
 header .navbar .nav-link {
   color: #5403b1;
@@ -52,20 +53,17 @@ header .navbar .nav-link {
   color: #5403b1;
 }
 
-#about {
-  background-color: #0F041F;
-}
 #about .h2-about {
   color: #5403b1;
 }
 #about .container-portrait {
-  background-color: #F8F3EC;
+  /*     background-color: #F8F3EC; */
   width: 300px;
   height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0.1rem 0.1rem 0.8rem rgb(105, 104, 104);
+  /*     box-shadow: 0.1rem 0.1rem 0.8rem rgb(105, 104, 104); */
 }
 #about .container-portrait .box-portrait {
   width: 270px;
@@ -187,19 +185,20 @@ footer h2 {
   background: #fff;
 }
 
-* {
-  transition: all 0.4s ease-in-out;
+@font-face {
+  font-family: "Rabisco";
+  src: url("../fonts/Rabisco.ttf") format("truetype");
+}
+h2 {
+  font-family: "Rabisco";
+  color: hsl(240, 100%, 90%);
 }
 
 body {
-  background-color: #0F041F;
-  font-family: "Ubuntu", sans-serif;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
-}
-
-h2 {
-  font-family: "Poppins", sans-serif;
 }
 
 .is-dark {
@@ -265,8 +264,31 @@ h2 {
     transform: translateY(-0.1em);
   }
 }
-figure {
-  background-color: #0F041F;
+#section1 {
+  height: 100%;
+  width: 100vw;
+  background-color: #F4F4F4;
+}
+
+.btn-01 {
+  background-color: #050505;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  transition: all 0.4s ease;
+}
+.btn-01:hover {
+  background-color: rgba(5, 5, 5, 0.8823529412);
+  border-radius: 1.3rem;
+}
+
+#section02 h1 {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+#contact {
+  background-color: hsl(240, 100%, 94%);
 }
 
 /*# sourceMappingURL=style.css.map */
