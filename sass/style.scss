@@ -12,7 +12,7 @@
 }
 
 body {
-  padding-top: 80px;
+  background-color: #0F041F;
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -82,4 +82,7 @@ h2{
   to {
     transform: translateY(-0.1em);
   }
+}
+figure{
+    background-color: #0F041F;
 }
