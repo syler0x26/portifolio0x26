@@ -1,6 +1,7 @@
+@use "colors" as c;
 #about{
     .h2-about{
-    color: #5403b1ff;
+    color: c.$cor-principal;
 }
 .container-portrait {
 /*     background-color: #F8F3EC; */

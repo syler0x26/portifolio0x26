@@ -1,5 +1,7 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap");
+/*box shadow*/
 #home {
   height: 76vh;
   width: 100vw;
@@ -18,8 +20,12 @@ header .navbar {
   backdrop-filter: blur(8px);
 }
 header .navbar .nav-link {
-  color: #5403b1;
-  font-weight: bold;
+  color: #008080;
+  font-weight: 500;
+  transition: all 0.4s;
+}
+header .navbar .nav-link:hover {
+  color: #ffad32;
 }
 
 .btn-style {
@@ -54,7 +60,7 @@ header .navbar .nav-link {
 }
 
 #about .h2-about {
-  color: #5403b1;
+  color: #008080;
 }
 #about .container-portrait {
   /*     background-color: #F8F3EC; */
@@ -289,6 +295,192 @@ body {
 
 #contact {
   background-color: hsl(240, 100%, 94%);
+}
+
+.button {
+  height: 50px;
+  width: 170px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0.5px 0.5px 150px #252525;
+}
+
+.button:hover {
+  box-shadow: 0.5px 0.5px 150px #252525;
+}
+
+.type1::after {
+  content: "Vamos lá";
+  height: 50px;
+  width: 170px;
+  background-color: #008080;
+  color: #fff;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(50px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1::before {
+  content: "Fale comigo!";
+  height: 50px;
+  width: 170px;
+  background-color: #fff;
+  color: #008080;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+.type1:hover::before {
+  transform: translateY(-50px) scale(0) rotate(120deg);
+}
+
+/* btn istagram */
+.btn-instagram {
+  height: 50px;
+  width: 170px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0.5px 0.5px 150px #252525;
+}
+
+.btn-instagram:hover {
+  box-shadow: 0.5px 0.5px 150px #252525;
+}
+
+.type-2::after {
+  content: url("../src/instagram.svg");
+  height: 50px;
+  width: 170px;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  color: #fff;
+  position: absolute;
+  top: -50px; /* começa acima do botão */
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+}
+
+.type-2::before {
+  content: "Seguir";
+  height: 50px;
+  width: 170px;
+  background-color: #fff;
+  color: #dd2a7b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(0) scale(1.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+}
+
+/*text pra cima */
+.type-2:hover::after {
+  top: 0; /* desce para posição do botão */
+  transform: scale(1.2);
+}
+
+.type-2:hover::before {
+  top: -50px; /* sobe para fora do botão */
+  transform: scale(0) rotate(120deg);
+}
+
+/* btn Whatsapp */
+.btn-whatsapp {
+  height: 50px;
+  width: 170px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0.5px 0.5px 150px #252525;
+}
+
+.btn-whatsapp:hover {
+  box-shadow: 0.5px 0.5px 150px #252525;
+}
+
+.type-3::after {
+  content: url("../src/whatsapp.svg");
+  height: 50px;
+  width: 170px;
+  background-color: #25D366;
+  color: #fff;
+  position: absolute;
+  top: -50px; /* começa acima do botão */
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+}
+
+.type-3::before {
+  content: "mensagem";
+  height: 50px;
+  width: 170px;
+  background-color: #fff;
+  color: #25D366;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(0) scale(1.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.5s ease-in-out;
+}
+
+/*text pra cima */
+.type-3:hover::after {
+  top: 0; /* desce para posição do botão */
+  transform: scale(1.2);
+}
+
+.type-3:hover::before {
+  top: -50px; /* sobe para fora do botão */
+  transform: scale(0) rotate(120deg);
 }
 
 /*# sourceMappingURL=style.css.map */
