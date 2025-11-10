@@ -7,9 +7,10 @@ header{
 .navbar {
     backdrop-filter: blur(8px);
 .nav-link{
+    font-size: 1.5rem;
 
-        color: c.$cor-principal;
-        font-weight: 500;
+        color: black;
+        font-weight: 300;
         transition: all .4s;
         &:hover{
             color: c.$cor-destaque;

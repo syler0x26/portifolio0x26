@@ -10,22 +10,27 @@
 @use "colors";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap');
+
 @font-face {
   font-family: 'Rabisco';
   src: url("../fonts/Rabisco.ttf") format("truetype");
 }
-@font-face{
+
+@font-face {
   font-family: 'glamora';
   src: url("../fonts/GLAMORA.otf") format("OpenType");
 }
-h2{
+
+h2 {
   font-family: 'Rabisco';
   color: hsl(240, 100%, 90%);
 }
-.fontOne{
+
+.fontOne {
   font-family: 'glamora', Arial, Helvetica, sans-serif;
   font-size: 3rem;
 }
+
 body {
   overflow-x: hidden;
   background-color: white;
@@ -98,31 +103,37 @@ body {
     transform: translateY(-0.1em);
   }
 }
-#section1{
+
+#section1 {
   height: 100%;
   width: 100vw;
   background-color: #F4F4F4;
 }
-.btn-01{
+
+.btn-01 {
   background-color: #050505;
   color: white;
   padding: 1rem;
   border-radius: 0.8rem;
   transition: all .4s ease;
-  &:hover{
+
+  &:hover {
     background-color: #050505e1;
     border-radius: 1.3rem;
   }
 }
-#section02{
-  h1{
+
+#section02 {
+  h1 {
+    font-family: "glamora", Arial, Helvetica, sans-serif;
     font-weight: 500;
-    font-size: 2.5rem;
   }
 }
-#contact{
+
+#contact {
   background-color: hsl(240, 100%, 94%);
 }
+
 .button {
   height: 50px;
   width: 170px;
@@ -132,7 +143,7 @@ body {
   position: relative;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
-   box-shadow: .5px .5px 150px #252525;
+  box-shadow: .5px .5px 150px #252525;
 }
 
 .button:hover {
@@ -208,7 +219,8 @@ body {
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
   color: #fff;
   position: absolute;
-  top: -50px; /* começa acima do botão */
+  top: -50px;
+  /* começa acima do botão */
   left: 0;
   display: flex;
   align-items: center;
@@ -239,12 +251,14 @@ body {
 
 /*text pra cima */
 .type-2:hover::after {
-  top: 0; /* desce para posição do botão */
+  top: 0;
+  /* desce para posição do botão */
   transform: scale(1.2);
 }
 
 .type-2:hover::before {
-  top: -50px; /* sobe para fora do botão */
+  top: -50px;
+  /* sobe para fora do botão */
   transform: scale(0) rotate(120deg);
 }
 
@@ -273,7 +287,8 @@ body {
   background-color: #25D366;
   color: #fff;
   position: absolute;
-  top: -50px; /* começa acima do botão */
+  top: -50px;
+  /* começa acima do botão */
   left: 0;
   display: flex;
   align-items: center;
@@ -289,8 +304,7 @@ body {
   height: 50px;
   width: 170px;
   background-color: #fff;
-  color: #25D366
-;
+  color: #25D366;
   position: absolute;
   top: 0;
   left: 0;
@@ -305,11 +319,25 @@ body {
 
 /*text pra cima */
 .type-3:hover::after {
-  top: 0; /* desce para posição do botão */
+  top: 0;
+  /* desce para posição do botão */
   transform: scale(1.2);
 }
 
 .type-3:hover::before {
-  top: -50px; /* sobe para fora do botão */
+  top: -50px;
+  /* sobe para fora do botão */
   transform: scale(0) rotate(120deg);
+}
+
+.presentation {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+
+  .h1-presentation {
+    color: white;
+    font-size: 5rem;
+    font-family: "glamora", Arial, Helvetica, sans-serif;
+  }
 }
