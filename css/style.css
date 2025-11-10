@@ -62,7 +62,6 @@ header .navbar .nav-link:hover {
 
 #about .h2-about {
   font-family: "glamora", Arial, Helvetica, sans-serif;
-  color: #008080;
 }
 #about .container-portrait {
   /*     background-color: #F8F3EC; */
@@ -526,6 +525,12 @@ body {
   color: white;
   font-size: 5rem;
   font-family: "glamora", Arial, Helvetica, sans-serif;
+}
+
+.blocoPreto {
+  background-color: #050505;
+  width: 300px;
+  height: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */
