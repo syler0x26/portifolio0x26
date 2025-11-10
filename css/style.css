@@ -195,12 +195,22 @@ footer h2 {
   font-family: "Rabisco";
   src: url("../fonts/Rabisco.ttf") format("truetype");
 }
+@font-face {
+  font-family: "glamora";
+  src: url("../fonts/GLAMORA.otf") format("OpenType");
+}
 h2 {
   font-family: "Rabisco";
   color: hsl(240, 100%, 90%);
 }
 
+.fontOne {
+  font-family: "glamora", Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+}
+
 body {
+  overflow-x: hidden;
   background-color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
