@@ -2,31 +2,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap");
 /*box shadow*/
+/* #171717 */
+/* 
+inspiration :
+essentialdesigns.net/?utm_source=clutch.co&utm_medium=referral&utm_campaign=web-developers#process-03 
+
+*/
 #home {
   height: 76vh;
   width: 100vw;
 }
 #home h1 {
-  font-weight: bold;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
 }
-
-header {
-  height: 100%;
-  top: 0;
-  position: sticky;
-  z-index: 999;
-}
-header .navbar {
-  backdrop-filter: blur(8px);
-}
-header .navbar .nav-link {
-  font-size: 1.5rem;
-  color: black;
-  font-weight: 300;
+#home .btn-home-style-1 {
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-weight: 500;
+  backdrop-filter: blur(12px);
   transition: all 0.4s;
 }
-header .navbar .nav-link:hover {
-  color: #ffad32;
+#home .btn-home-style-1:hover {
+  background-color: rgba(128, 128, 128, 0.788);
+}
+#home .btn-home-style-2 {
+  border: none;
+  border-radius: 2rem;
+  background-color: #6B46FF;
+  color: white;
+  padding: 1rem;
+  font-weight: 500;
+  backdrop-filter: blur(12px);
+  transition: all 0.4s;
+}
+#home .btn-home-style-2:hover {
+  background-color: rgba(107, 70, 255, 0.7176470588);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 10px 0;
+}
+
+.glass-nav {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar .nav-link {
+  color: black;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: white;
+}
+
+.navbar {
+  background: transparent !important;
+  box-shadow: none;
 }
 
 .btn-style {
@@ -56,10 +97,16 @@ header .navbar .nav-link:hover {
   box-shadow: 0 0.3rem rgb(44, 2, 92);
 }
 
-.txt-destaque {
-  color: #5403b1;
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
+#about .h1-big {
+  font-size: 10rem;
+}
 #about .h2-about {
   font-family: "glamora", Arial, Helvetica, sans-serif;
 }
@@ -216,9 +263,12 @@ footer h2 {
   font-family: "glamora";
   src: url("../fonts/GLAMORA.otf") format("OpenType");
 }
+span {
+  color: #6B46FF;
+}
+
 h2 {
-  font-family: "Rabisco";
-  color: hsl(240, 100%, 90%);
+  color: #6B46FF;
 }
 
 .fontOne {
@@ -316,7 +366,7 @@ body {
 }
 
 #section02 h1 {
-  font-family: "glamora", Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
 }
 
@@ -514,23 +564,6 @@ body {
   top: -50px;
   /* sobe para fora do botão */
   transform: scale(0) rotate(120deg);
-}
-
-.presentation {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-}
-.presentation .h1-presentation {
-  color: white;
-  font-size: 5rem;
-  font-family: "glamora", Arial, Helvetica, sans-serif;
-}
-
-.blocoPreto {
-  background-color: #050505;
-  width: 300px;
-  height: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */

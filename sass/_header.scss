@@ -1,23 +1,37 @@
 @use "colors" as c;
-header{
-    height: 100%;
-    top: 0;
-    position: sticky;
-    z-index: 999;
+.glass-nav {
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px; 
+  padding: 10px 0;
+}
+
+.glass-nav {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+.navbar .nav-link {
+  color: black;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover {
+  color: white;
+}
+
 .navbar {
-    backdrop-filter: blur(8px);
-.nav-link{
-    font-size: 1.5rem;
-
-        color: black;
-        font-weight: 300;
-        transition: all .4s;
-        &:hover{
-            color: c.$cor-destaque;
-        }
-}
-}
-
+  background: transparent !important;
+  box-shadow: none;
 }
 .btn-style {
     border: none;
@@ -47,6 +61,10 @@ header{
         box-shadow: 0 0.3rem rgb(44, 2, 92);
     }
 }
-.txt-destaque{
-    color: #5403b1ff;
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }

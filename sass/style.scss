@@ -20,10 +20,11 @@
   font-family: 'glamora';
   src: url("../fonts/GLAMORA.otf") format("OpenType");
 }
-
+span{
+  color: #6B46FF;
+}
 h2 {
-  font-family: 'Rabisco';
-  color: hsl(240, 100%, 90%);
+  color: #6B46FF;
 }
 
 .fontOne {
@@ -125,7 +126,7 @@ body {
 
 #section02 {
   h1 {
-    font-family: "glamora", Arial, Helvetica, sans-serif;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
     font-weight: 500;
   }
 }
@@ -328,21 +329,4 @@ body {
   top: -50px;
   /* sobe para fora do botão */
   transform: scale(0) rotate(120deg);
-}
-
-.presentation {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-
-  .h1-presentation {
-    color: white;
-    font-size: 5rem;
-    font-family: "glamora", Arial, Helvetica, sans-serif;
-  }
-}
-.blocoPreto{
-  background-color: #050505;
-  width: 300px;
-  height: 300px;
 }
