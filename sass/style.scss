@@ -33,8 +33,11 @@ h2 {
 }
 
 body {
+   transition: transform 0.1s ease-out;
+  will-change: transform;
+  scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: white;
+background-color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -330,3 +333,63 @@ body {
   /* sobe para fora do botão */
   transform: scale(0) rotate(120deg);
 }
+.painel-vs-code{
+  height: 100%;
+  width: 100%;
+  background-color: #0D111F;
+  box-shadow: 0 0 0.2rem #6B46FF;
+  border-radius: 1.5rem;
+  padding: 2rem ;
+ transform-style: preserve-3d;
+  transform: rotateX(8deg);
+  transition: transform 1s ease;
+}
+.painel-vs-code.is-visible {
+  transform: rotateX(0deg);
+}
+
+figure{
+  height: 100%;
+  width: 100%;
+  .bola{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #6B46FF;
+  }
+  .colorRed{
+    background-color: #EF4444;
+  }
+  .colorYelow{
+    background-color: #EAB308;
+  }
+  .colorGreen{
+    background-color: #22C55E;
+  }
+  .orange{
+    color: orange;
+  }
+  .blue{
+    color: #2563EB;
+  }
+  .purple{
+    color: #732BBA;
+  }
+  .gray{
+    color: gray;
+  }
+  .green{
+    color: green;
+  }
+  
+} #smooth-wrapper {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #smooth-content {
+      perspective: 1000px; /* adiciona profundidade real */
+    }
+    section{
+      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }

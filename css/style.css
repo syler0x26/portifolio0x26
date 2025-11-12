@@ -9,6 +9,7 @@ essentialdesigns.net/?utm_source=clutch.co&utm_medium=referral&utm_campaign=web-
 
 */
 #home {
+  padding-top: 3rem;
   height: 76vh;
   width: 100vw;
 }
@@ -62,7 +63,7 @@ essentialdesigns.net/?utm_source=clutch.co&utm_medium=referral&utm_campaign=web-
 }
 
 .navbar .nav-link:hover {
-  color: white;
+  color: #6B46FF;
 }
 
 .navbar {
@@ -98,7 +99,7 @@ essentialdesigns.net/?utm_source=clutch.co&utm_medium=referral&utm_campaign=web-
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -277,6 +278,9 @@ h2 {
 }
 
 body {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+  scroll-behavior: smooth;
   overflow-x: hidden;
   background-color: white;
   font-family: "Poppins", sans-serif;
@@ -564,6 +568,70 @@ body {
   top: -50px;
   /* sobe para fora do botão */
   transform: scale(0) rotate(120deg);
+}
+
+.painel-vs-code {
+  height: 100%;
+  width: 100%;
+  background-color: #0D111F;
+  box-shadow: 0 0 0.2rem #6B46FF;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transform-style: preserve-3d;
+  transform: rotateX(8deg);
+  transition: transform 1s ease;
+}
+
+.painel-vs-code.is-visible {
+  transform: rotateX(0deg);
+}
+
+figure {
+  height: 100%;
+  width: 100%;
+}
+figure .bola {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #6B46FF;
+}
+figure .colorRed {
+  background-color: #EF4444;
+}
+figure .colorYelow {
+  background-color: #EAB308;
+}
+figure .colorGreen {
+  background-color: #22C55E;
+}
+figure .orange {
+  color: orange;
+}
+figure .blue {
+  color: #2563EB;
+}
+figure .purple {
+  color: #732BBA;
+}
+figure .gray {
+  color: gray;
+}
+figure .green {
+  color: green;
+}
+
+#smooth-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+#smooth-content {
+  perspective: 1000px; /* adiciona profundidade real */
+}
+
+section {
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /*# sourceMappingURL=style.css.map */
