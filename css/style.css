@@ -143,8 +143,8 @@ header {
 
 #portifolio .card {
   overflow: hidden;
-  box-shadow: 0 0.1rem 0.3rem rgba(84, 1, 167, 0.6588235294);
-  background-color: #fcfcfc;
+  background: transparent;
+  box-shadow: 0 0 0.1rem white;
 }
 #portifolio .card .img-zoom {
   transition: all 0.3s ease-in-out, background-color 0.4s ease;
@@ -627,11 +627,70 @@ figure .green {
 }
 
 #smooth-content {
-  perspective: 1000px; /* adiciona profundidade real */
+  perspective: 1000px;
+  /* adiciona profundidade real */
 }
 
 section {
   transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#service {
+  padding-bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+#service i {
+  color: #6B46FF;
+}
+#service .card {
+  position: relative;
+  color: white;
+  background: transparent;
+  height: 100%;
+  max-width: 600px;
+  margin-top: 0.5rem;
+  box-shadow: 0 0 0.1rem white;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+#service .card-shine::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-25deg);
+  opacity: 0;
+}
+#service .card-shine:hover {
+  transform: translateY(-5px);
+}
+#service .card-shine:hover::before {
+  opacity: 1;
+  animation: shine 1s ease forwards;
+}
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+.wave {
+  background: url("../src/wave-haikei.svg");
+  height: 220px;
+  width: 100%;
+}
+
+main {
+  background-color: #020816;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

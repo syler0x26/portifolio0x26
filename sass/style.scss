@@ -20,9 +20,11 @@
   font-family: 'glamora';
   src: url("../fonts/GLAMORA.otf") format("OpenType");
 }
-span{
+
+span {
   color: #6B46FF;
 }
+
 h2 {
   color: #6B46FF;
 }
@@ -33,11 +35,11 @@ h2 {
 }
 
 body {
-   transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
   will-change: transform;
   scroll-behavior: smooth;
   overflow-x: hidden;
-background-color: white;
+  background-color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -333,63 +335,145 @@ background-color: white;
   /* sobe para fora do botão */
   transform: scale(0) rotate(120deg);
 }
-.painel-vs-code{
+
+.painel-vs-code {
   height: 100%;
   width: 100%;
   background-color: #0D111F;
   box-shadow: 0 0 0.2rem #6B46FF;
   border-radius: 1.5rem;
-  padding: 2rem ;
- transform-style: preserve-3d;
+  padding: 2rem;
+  transform-style: preserve-3d;
   transform: rotateX(8deg);
   transition: transform 1s ease;
 }
+
 .painel-vs-code.is-visible {
   transform: rotateX(0deg);
 }
 
-figure{
+figure {
   height: 100%;
   width: 100%;
-  .bola{
+
+  .bola {
     width: 18px;
     height: 18px;
     border-radius: 50%;
     background-color: #6B46FF;
   }
-  .colorRed{
+
+  .colorRed {
     background-color: #EF4444;
   }
-  .colorYelow{
+
+  .colorYelow {
     background-color: #EAB308;
   }
-  .colorGreen{
+
+  .colorGreen {
     background-color: #22C55E;
   }
-  .orange{
+
+  .orange {
     color: orange;
   }
-  .blue{
+
+  .blue {
     color: #2563EB;
   }
-  .purple{
+
+  .purple {
     color: #732BBA;
   }
-  .gray{
+
+  .gray {
     color: gray;
   }
-  .green{
+
+  .green {
     color: green;
   }
-  
-} #smooth-wrapper {
-      height: 100%;
-      overflow: hidden;
-    }
 
-    #smooth-content {
-      perspective: 1000px; /* adiciona profundidade real */
-    }
-    section{
-      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    }
+}
+
+#smooth-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+#smooth-content {
+  perspective: 1000px;
+  /* adiciona profundidade real */
+}
+
+section {
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+#service{
+  
+  padding-bottom: 0;
+height: 100%;
+width: 100%;
+i{
+  color: #6B46FF;
+}
+
+.card {
+  position: relative;
+  color: white;
+  background: transparent;
+  height: 100%;
+  max-width: 600px;
+  margin-top: 0.5rem;
+  box-shadow: 0 0 .1rem white;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.card-shine::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+  opacity: 0;
+}
+
+.card-shine:hover {
+  transform: translateY(-5px);
+}
+
+.card-shine:hover::before {
+  opacity: 1;
+  animation: shine 1s ease forwards;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+}
+.wave{
+  background: url("../src/wave-haikei.svg");
+  height: 220px;
+  width: 100%;
+}
+main{
+  background-color: #020816;
+  color: white;
+}
