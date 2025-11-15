@@ -133,18 +133,27 @@ header {
   width: 100vw;
 }
 
-.coverPortifolio {
-  background: url("../src/portifolio.png") center center no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  height: 500px;
-  width: 100vw;
+#portifolio .box-code {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
 }
-
+#portifolio .box-code code {
+  background-color: transparent;
+  box-shadow: 0 0 0.1rem white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 1.8rem;
+  transition: all 0.4s;
+}
+#portifolio .box-code code:hover {
+  transform: scaleX(85%);
+}
 #portifolio .card {
   overflow: hidden;
   background: transparent;
   box-shadow: 0 0 0.1rem white;
+  color: white;
 }
 #portifolio .card .img-zoom {
   transition: all 0.3s ease-in-out, background-color 0.4s ease;
@@ -375,7 +384,8 @@ body {
 }
 
 #contact {
-  background-color: hsl(240, 100%, 94%);
+  background-color: #020816; /* hsl(240, 100%, 94%) */
+  color: white;
 }
 
 .button {
