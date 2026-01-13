@@ -9,7 +9,7 @@ essentialdesigns.net/?utm_source=clutch.co&utm_medium=referral&utm_campaign=web-
 
 */
 #home {
-  padding-top: 3rem;
+  padding-top: 4rem;
   height: 76vh;
   width: 100vw;
 }
@@ -42,67 +42,63 @@ essentialdesigns.net/?utm_source=clutch.co&utm_medium=referral&utm_campaign=web-
   background-color: rgba(107, 70, 255, 0.7176470588);
 }
 
-.glass-nav {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
-  padding: 10px 0;
+.navbar-toggler {
+  border: none;
+  box-shadow: none;
+  padding: 0.5rem;
 }
 
-.glass-nav {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(255, 255, 255, 0.05) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.navbar .nav-link {
-  color: black;
-  transition: color 0.3s;
-}
-
-.navbar .nav-link:hover {
-  color: #6B46FF;
-}
-
-.navbar {
-  background: transparent !important;
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
   box-shadow: none;
 }
 
-.btn-style {
-  border: none;
-  background-color: #5403b1;
-  border-radius: 0.6rem;
-  color: #F8F3EC;
-  font-weight: 500;
-  padding: 1rem;
-  font-size: 1.3rem;
-  box-shadow: 0 0.5rem rgb(44, 2, 92);
-}
-.btn-style:hover {
-  box-shadow: 0 0.3rem rgb(44, 2, 92);
+.navbar-toggler-icon {
+  background-image: none;
+  position: relative;
+  width: 26px;
+  height: 2px;
+  background-color: black;
+  transition: background 0.2s ease;
 }
 
-.btn-style-2 {
-  border: none;
-  border-radius: 0.6rem;
-  color: #F8F3EC;
-  font-weight: 500;
-  padding: 1rem;
-  font-size: 1.3rem;
-  box-shadow: 0 0.5rem rgb(44, 2, 92);
-}
-.btn-style-2:hover {
-  box-shadow: 0 0.3rem rgb(44, 2, 92);
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 2px;
+  background-color: black;
+  left: 0;
+  transition: transform 0.3s ease, top 0.3s ease;
 }
 
-header {
-  position: fixed;
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+}
+
+.navbar-toggler.aberto .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler.aberto .navbar-toggler-icon::before {
+  transform: rotate(45deg);
   top: 0;
-  width: 100%;
-  z-index: 1000;
+}
+
+.navbar-toggler.aberto .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* feedback tátil */
+.navbar-toggler:active {
+  transform: scale(0.92);
 }
 
 #about .h1-big {

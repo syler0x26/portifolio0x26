@@ -9,3 +9,13 @@ function Theme() {
   document.body.classList.toggle('is-dark')
 }
 document.querySelector('#trocarDeTema').addEventListener('click', Theme)
+
+
+//menu
+menu.addEventListener('shown.bs.collapse', () => {
+  btnMenu.classList.add('aberto');
+});
+
+menu.addEventListener('hidden.bs.collapse', () => {
+  btnMenu.classList.remove('aberto');
+});

@@ -86,7 +86,7 @@
                     </div>
                 </div>
             </figure>
-            <section id="about" class="py-5">
+            <section id="about" class="">
                 <h1 class="h1-big ">QUEM SOU EU?</h1>
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
@@ -125,7 +125,7 @@
                         <div class="col-lg-6 col-md-8 col-10 d-flex justify-content-center order-2 order-lg-2">
                             <div class="container-portrait">
                                 <div class="box-portrait">
-                                    <img src="src/eu-em-desenho.jpg" alt="img ilustrativa do criador do site"
+                                    <img src="src/my-photo.jpeg" alt="img ilustrativa do criador do site"
                                         class="img-fluid">
                                 </div>
                             </div>
@@ -406,6 +406,18 @@
         });
 
     </script>
+<script>
+  const btnMenu = document.querySelector('.navbar-toggler');
+  const menu = document.querySelector('#navbarNav');
+
+  menu.addEventListener('shown.bs.collapse', () => {
+    btnMenu.classList.add('aberto');
+  });
+
+  menu.addEventListener('hidden.bs.collapse', () => {
+    btnMenu.classList.remove('aberto');
+  });
+</script>
 
 </body>
 
