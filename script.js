@@ -19,3 +19,4 @@ menu.addEventListener('shown.bs.collapse', () => {
 menu.addEventListener('hidden.bs.collapse', () => {
   btnMenu.classList.remove('aberto');
 });
+
