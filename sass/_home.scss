@@ -1,15 +1,5 @@
 @use "colors" as c;
-#home {
-    padding-top: 4rem;
-    height: 76vh;
-    width: 100vw;
-
-    h1 {
-        font-weight: 600;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .btn-home-style-1 {
+.btn-home-style-1 {
         border: none;
         border-radius: 2rem;
         padding: 1rem;
@@ -37,4 +27,63 @@
         }
 
     }
+    /* meu painel */
+    figure {
+  height: 100%;
+  width: 100%;
+
+  .bola {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #6B46FF;
+  }
+
+  .colorRed {
+    background-color: #EF4444;
+  }
+
+  .colorYelow {
+    background-color: #EAB308;
+  }
+
+  .colorGreen {
+    background-color: #22C55E;
+  }
+
+  .orange {
+    color: orange;
+  }
+
+  .blue {
+    color: #2563EB;
+  }
+
+  .purple {
+    color: #732BBA;
+  }
+
+  .gray {
+    color: gray;
+  }
+
+  .green {
+    color: green;
+  }
+
+}
+.painel-vs-code {
+  height: 100%;
+  width: 100%;
+  background-color: #0D111F;
+  box-shadow: 0 0 0.2rem #6B46FF;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transform-style: preserve-3d;
+  transform: rotateX(8deg);
+  transition: transform 1s ease;
+}
+
+.painel-vs-code.is-visible {
+  transform: rotateX(0deg);
 }

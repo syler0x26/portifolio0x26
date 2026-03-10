@@ -1,63 +1,28 @@
 @use "colors" as c;
 
+header {
+  transition: padding 500ms ease, background-color 500ms ease;
+  padding: 32px 0; // estado grande
 
-.navbar-toggler {
-  border: none;
-  box-shadow: none;
-  padding: 0.5rem;
-}
+  nav {
+    background-color: #fff;
+    transition: padding 500ms ease, box-shadow 500ms ease, background-color 500ms ease, color 500ms ease;
+    padding: 12px 0; // estado grande do nav
+    .nav-link{
+        color: c.$cor-principal;
+    }
+  }
 
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: none;
-  box-shadow: none;
-}
+  &.is-shrunk {
+    padding: 5px 0; // estado pequeno
 
-.navbar-toggler-icon {
-  background-image: none;
-  position: relative;
-  width: 26px;
-  height: 2px;
-  background-color: black;
-  transition: background 0.2s ease;
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-  content: "";
-  position: absolute;
-  width: 26px;
-  height: 2px;
-  background-color: black;
-  left: 0;
-  transition: transform 0.3s ease, top 0.3s ease;
-}
-
-.navbar-toggler-icon::before {
-  top: -8px;
-}
-
-.navbar-toggler-icon::after {
-  top: 8px;
-}
-
-
-
-.navbar-toggler.aberto .navbar-toggler-icon {
-  background-color: transparent;
-}
-
-.navbar-toggler.aberto .navbar-toggler-icon::before {
-  transform: rotate(45deg);
-  top: 0;
-}
-
-.navbar-toggler.aberto .navbar-toggler-icon::after {
-  transform: rotate(-45deg);
-  top: 0;
-}
-
-/* feedback tátil */
-.navbar-toggler:active {
-  transform: scale(0.92);
+    nav {
+      padding: 4px 0; // estado pequeno do nav
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      background-color: c.$cor-principal;
+      .nav-link {
+        color: #fff;
+      }
+    }
+  }
 }

@@ -1,77 +1,125 @@
 <!DOCTYPE html>
-<html lang="pr-BR">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="src/favicon.png" type="image/x-icon">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="src/favicom.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <title>SylerComunity</title>
+    <title>TheSyler</title>
 </head>
 
 <body>
-    <!-- WRAPPER DO SCROLL -->
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
+    <header>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col">
+                    <nav id="nav-example" class="nav justify-content-center fixed-top">
+                        <a class="nav-link" href="#about">Sobre mim</a>
+                        <a class="nav-link" href="#projects">Projetos</a>
+                        <a class="nav-link" href="#contact">Trajetoria</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
 
-            <header>
-                <nav class="navbar navbar-expand-lg glass-nav">
-                    <div class="container">
-                        <a class="navbar-brand" href="#">
-                            <img id="logo-img" src="src/lo.png" alt="Logo">
-                        </a>
+    <main data-bs-spy="scroll" data-bs-target="#nav-example" data-bs-smooth-scroll="true" tabindex="0">
 
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
 
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item"><a class="nav-link" href="#service">Serviços</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#portifolio">Projetos</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
-                            </ul>
+        <section id="home" class="home-hero" style="height: 70vh">
+            <canvas class="hero-particles" aria-hidden="true"></canvas>
+            <div class="container">
+                <div class="row text-center align-items-center justify-content-center ">
+                    <div class="col-md-6 order-md-2 order1">
+                        <div class="ai-brain" role="img" aria-label="Atomo de IA girando">
+                            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <defs>
+                                    <radialGradient id="brainGlow" cx="50%" cy="35%" r="60%">
+                                        <stop offset="0%" stop-color="#A78BFA" />
+                                        <stop offset="55%" stop-color="#6B46FF" />
+                                        <stop offset="100%" stop-color="#1E1B4B" />
+                                    </radialGradient>
+                                    <linearGradient id="circuitLine" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#93C5FD" />
+                                        <stop offset="100%" stop-color="#C4B5FD" />
+                                    </linearGradient>
+                                    <linearGradient id="neonRing" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#22D3EE" />
+                                        <stop offset="50%" stop-color="#A78BFA" />
+                                        <stop offset="100%" stop-color="#38BDF8" />
+                                    </linearGradient>
+                                    <radialGradient id="corePulse" cx="50%" cy="50%" r="50%">
+                                        <stop offset="0%" stop-color="#E0E7FF" />
+                                        <stop offset="60%" stop-color="#A78BFA" />
+                                        <stop offset="100%" stop-color="#6B46FF" />
+                                    </radialGradient>
+                                    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                                        <feMerge>
+                                            <feMergeNode in="blur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <g class="atom-core">
+                                    <circle cx="200" cy="200" r="80" fill="url(#brainGlow)" opacity="0.18"
+                                        filter="url(#softGlow)" />
+                                    <circle class="atom-pulse" cx="200" cy="200" r="42" fill="url(#corePulse)"
+                                        filter="url(#softGlow)" />
+                                    <circle cx="200" cy="200" r="60" fill="url(#brainGlow)" opacity="0.25" />
+                                    <circle cx="200" cy="200" r="92" fill="none" stroke="url(#neonRing)"
+                                        stroke-width="2" stroke-dasharray="6 10" opacity="0.7" />
+                                </g>
+                                <g class="atom-orbit atom-orbit--a" filter="url(#softGlow)">
+                                    <ellipse cx="200" cy="200" rx="150" ry="68" fill="none"
+                                        stroke="url(#circuitLine)" stroke-width="3" />
+                                    <circle class="orbit-node" cx="350" cy="200" r="9" fill="#22D3EE" />
+                                    <circle class="orbit-node" cx="50" cy="200" r="7" fill="#A78BFA" />
+                                </g>
+                                <g class="atom-orbit atom-orbit--b" filter="url(#softGlow)">
+                                    <ellipse cx="200" cy="200" rx="120" ry="150" fill="none"
+                                        stroke="url(#circuitLine)" stroke-width="3" />
+                                    <circle class="orbit-node" cx="200" cy="50" r="9" fill="#C4B5FD" />
+                                    <circle class="orbit-node" cx="200" cy="350" r="7" fill="#38BDF8" />
+                                </g>
+                            </svg>
                         </div>
                     </div>
-                </nav>
-            </header>
 
-            <section id="home">
-                <div class="container">
-                    <div class="row text-center align-items-center justify-content-center ">
-                        <div class="col-md-6 order-md-2 order1">
-                            <img src="src/home-removebg-preview.png" alt="team-syler" class="img-fluid">
-                        </div>
+                    <div class="col-md-6 order-md-1 order2 ">
+                        <h1>Portfólio Acadêmico em <span>Inteligência Artificial</span>
+                        </h1>
+                        <button class="btn-home-style-1">ver nosso trabalho</button>
+                        <a class="btn-home-style-2" href="https://www.instagram.com/syler0x26?igsh=bTU5azNkY3dnZ2J1" target="_blank" rel="noopener noreferrer">Nosso contato</a>
 
-                        <div class="col-md-6 order-md-1 order2 ">
-                            <h1>Desenvolvo <span>site</span> essencial para o crecimento da sua marca.
-                            </h1>
-                            <button class="btn-home-style-1">ver nosso trabalho</button>
-                            <button class="btn-home-style-2">Nosso contato</button>
-
-                        </div>
                     </div>
                 </div>
-            </section>
-            <figure>
-                <div class="container align-items-center justify-content-center">
-                    <div class="painel-vs-code text-center ">
-                        <div class="row">
-                            <div class="col d-flex">
-                                <div class="bola colorRed"></div>
-                                <div class="bola colorYelow"></div>
-                                <div class="bola colorGreen"></div>
-                            </div>
-                            <div class="col">
-                                <p style="color: rgba(255, 255, 255, 0.685);">IndexOfSyler.js</p>
-                            </div>
+            </div>
+        </section>
+
+        
+        <!-- Meu painel -->
+        <figure>
+            <div class="container align-items-center justify-content-center">
+                <div class="painel-vs-code text-center ">
+                    <div class="row">
+                        <div class="col d-flex">
+                            <div class="bola colorRed"></div>
+                            <div class="bola colorYelow"></div>
+                            <div class="bola colorGreen"></div>
                         </div>
-                        <div class="row">
-                            <div class="col text-start">
-                                <code>
+                        <div class="col">
+                            <p style="color: rgba(255, 255, 255, 0.685);">IndexOfSyler.js</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-start">
+                            <code>
                             <p class="gray">//Full-Stack</p>
                             <p><span>const</span> <span class="blue">developer</span> = {</p>
                             <p><span class="purple">name</span>: <span class="green">'Wesley Santos'</span>,</p>
@@ -79,361 +127,816 @@
                             <p><span class="purple">focuses</span>: <span class="orange">[</span> <span class="green">'Full-Stack',</span> <span class="green">'UI/UX'</span> <span class="orange">]</span></p>
                             <p>};</p>
                         </code>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </figure>
-            <section id="about" class="">
-                <h1 class="h1-big ">QUEM SOU EU?</h1>
-                <div class="container">
-                    <div class="row align-items-center justify-content-center">
-                        <div class="col-lg-6 col-md-12 text-center text-lg-start mb-4 mb-lg-0 order-1 order-lg-1">
-                            <h2 class="fw-bold mb-3 h2-about text-muted">Wesley Santos (Syler)</h2>
-                            <p class="text-muted fs-5">
-                                Olá! sou desenvolvedor de <span><strong>web-site</strong></span>
-                                <span><strong>Full-Stack</strong></span> ,baseado no
-                                <span><strong>Brasil</strong></span>.
-                                Tenho mais de <span><strong>1 ano de experiência</strong></span> no mercado, trabalhando
-                                com
-                                foco em
-                                desenvolvimento web moderno e soluções eficientes.
-                                Sou movido pela curiosidade e pela busca constante por aprimoramento. Sempre estudando
-                                novas
-                                tecnologias e formas de escrever
-                                um código mais limpo, escalável e criativo.
-                            </p>
-                            <hr>
-                            <div class="row">
-                                <div class="col">
-                                    <h2 class="fs-1">+1</h2>
-                                    <p class="text-muted">Ano de experiência</p>
-                                </div>
-                                <div class="col">
-                                    <h2 class="fs-1">+5</h2>
-                                    <p class="text-muted">Clientes satisfeitos</p>
-                                </div>
-                                <div class="col">
-                                    <h2 class="fs-1">+2</h2>
-                                    <p class="text-muted">Projetos de sucesso</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-8 col-10 d-flex justify-content-center order-2 order-lg-2">
-                            <div class="container-portrait">
-                                <div class="box-portrait">
-                                    <img src="src/my-photo.jpeg" alt="img ilustrativa do criador do site"
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <main>
-                <section id="service" class="py-5">
-                    <div class="container">
-                        <h1>Serviços</h1>
-                        <hr>
-                        <div class="row align-items-center justify-content-center">
-                            <!-- card1 -->
-                            <div class="col-md-6">
-                                <div class="card text-start card-shine">
-                                    <div class="card-body">
-                                        <h4 class="card-title"><i class="bi bi-file-earmark-fill"></i> UI/UX Design</h4>
-                                        <p class="card-text">Design inteligente e experiências que encantam do primeiro
-                                            clique
-                                            ao último scroll.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- card 2 -->
-                            <div class="col-md-6">
-                                <div class="card text-start card-shine">
-                                    <div class="card-body">
-                                        <h4 class="card-title"><i class="bi bi-code-slash"></i> Desenvolvedor de site
-                                        </h4>
-                                        <p class="card-text">Criação de sites modernos, leves e totalmente
-                                            personalizados para destacar sua presença online.</p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-
-                <section id="portifolio" class="py-5">
-                    <div class="container mt-4">
-                        <!-- section 2 // Potifólio -->
-                        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 g-4 custom-cols-xs">
-
-                            <!-- Card 1 -->
-                            <div class="col">
-                                <div class="card h-100 ">
-                                    <img src="src/Proect.ia.png" class="card-img-top img-zoom" alt="Imagem do projeto">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-bold">Syler.ia</h5>
-                                        <p class="card-text ">Automatiza processos, gera insights e acelera resultados
-                                            com soluções personalizadas e escaláveis.</p>
-
-                                        <div class="box-code">
-                                            <code class="d-block mb-3">OpenAI</code>
-                                            <code class="d-block mb-3">SQL</code>
-                                            <code class="d-block mb-3">python</code>
-                                            <code class="d-block mb-3">Webhooks</code>
-                                        </div>
-
-                                        <div class="d-flex gap-2">
-                                            <a onclick="alert('Olá, Aqui é o Syler. Desativei os botões. Vou liberá-los no dia do lançamento.'); return false;"
-                                                class=" Bloqued  btn btn-outline-primary btn-sm">
-                                                <i class="bi bi-link"></i> Ver site
-                                            </a>
-                                            <a href=""
-                                                onclick="alert('Olá, Aqui é o Syler. Desativei os botões. Vou liberá-los no dia do lançamento.'); return false;"
-                                                class=" Bloqued  btn btn-outline-dark btn-sm">
-                                                <i class="bi bi-github"></i> Ver código
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="col">
-                                <div class="card h-100 ">
-                                    <img src="src/proect-triply.png" class="card-img-top img-zoom"
-                                        alt="Imagem do projeto">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-bold">Triply | Site de viagens</h5>
-                                        <p class="card-text ">[...]</p>
-
-                                        <div class="box-code">
-                                            <code class="d-block mb-3">SQL</code>
-                                            <code class="d-block mb-3">python</code>
-                                        </div>
-
-                                        <div class="d-flex gap-2">
-                                            <a href=""
-                                                onclick="alert('Olá, Aqui é o Syler. Desativei os botões. Vou liberá-los no dia do lançamento.'); return false;"
-                                                class=" Bloqued  btn btn-outline-primary btn-sm">
-                                                <i class="bi bi-link"></i> Ver site
-                                            </a>
-                                            <a href=""
-                                                onclick="alert('Olá, Aqui é o Syler. Desativei os botões. Vou liberá-los no dia do lançamento.'); return false;"
-                                                class=" Bloqued  btn btn-outline-dark btn-sm">
-                                                <i class="bi bi-github"></i> Ver código
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="col">
-                                <div class="card h-100 ">
-                                    <img src="src/inception.png" class="card-img-top img-zoom" alt="Imagem do projeto">
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-bold">Sem nome no momento</h5>
-                                        <p class="card-text ">Descrição breve.</p>
-
-                                        <code class="d-block mb-3">Tecnologias</code>
-
-                                        <div class="d-flex gap-2">
-                                            <a href=""
-                                                onclick="alert('Olá, Aqui é o Syler. Desativei os botões. Vou liberá-los no dia do lançamento.'); return false;"
-                                                class=" Bloqued  btn btn-outline-primary btn-sm">
-                                                <i class="bi bi-link"></i> Ver site
-                                            </a>
-                                            <a href=""
-                                                onclick="alert('Olá, Aqui é o Syler. Desativei os botões. Vou liberá-los no dia do lançamento.'); return false;"
-                                                class=" Bloqued  btn btn-outline-dark btn-sm">
-                                                <i class=" bi bi-github"></i> Ver código
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <div class="wave">
-
             </div>
-            <section id="section02">
-                <div class="container py-5">
-                    <div class="row text-center justify-content-center align-items-center">
-                        <div class="col">
-                            <div class="blocoPreto"></div>
+        </figure>
+        <section>
+            <div class="carrosel">
+                <div class="marquee marquee--left" aria-label="Topicos de bacharelado em IA">
+                    <div class="marquee__track">
+                        <div class="marquee__group">
+                            <span class="lang-chip">Fundamentos de IA</span>
+                            <span class="lang-chip">Algebra Linear</span>
+                            <span class="lang-chip">Calculo</span>
+                            <span class="lang-chip">Probabilidade</span>
+                            <span class="lang-chip">Estatistica</span>
+                            <span class="lang-chip">Programacao em Python</span>
+                            <span class="lang-chip">Estruturas de Dados</span>
+                            <span class="lang-chip">Algoritmos</span>
+                            <span class="lang-chip">Machine Learning</span>
+                            <span class="lang-chip">Deep Learning</span>
+                            <span class="lang-chip">Redes Neurais</span>
                         </div>
-                        <div class="col">
-                            <div class="blocoPreto"></div>
-                        </div>
-                        <div class="col">
-                            <div class="blocoPreto"></div>
-                        </div>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-md-6 order-1">
-                            <i class="bi bi-1-circle-fill"></i>
-                            <h3>Responsividade em todos os dispositivos moveis!</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo velit accusamus soluta
-                                officiis
-                                eaque consequatur itaque odit eius ea ut saepe, asperiores reiciendis quasi?
-                                Dignissimos, eum?
-                                Consequuntur suscipit quas eius.</p>
-                        </div>
-                        <div class="col-md-6 order-2">
-                            <img src="src/skylerAndComputer-removebg-preview.png" alt="img-fluid">
-                        </div>
-                    </div>
-
-                    <div class="row align-items-center ">
-                        <div class="col-md-6 order-lg-2 order-md-1 order-sm-1">
-                            <i class="bi bi-2-circle-fill"></i>
-                            <h3>Estilo de acordo com sua criatividade!</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo velit accusamus soluta
-                                officiis
-                                eaque consequatur itaque odit eius ea ut saepe, asperiores reiciendis quasi?
-                                Dignissimos, eum?
-                                Consequuntur suscipit quas eius.</p>
-                        </div>
-                        <div class="col-md-6 order-lg-1 order-md-2 order-sm-2"> <img src="src/mob-msg.png"
-                                alt="img-fluid">
+                        <div class="marquee__group" aria-hidden="true">
+                            <span class="lang-chip">Fundamentos de IA</span>
+                            <span class="lang-chip">Algebra Linear</span>
+                            <span class="lang-chip">Calculo</span>
+                            <span class="lang-chip">Probabilidade</span>
+                            <span class="lang-chip">Estatistica</span>
+                            <span class="lang-chip">Programacao em Python</span>
+                            <span class="lang-chip">Estruturas de Dados</span>
+                            <span class="lang-chip">Algoritmos</span>
+                            <span class="lang-chip">Machine Learning</span>
+                            <span class="lang-chip">Deep Learning</span>
+                            <span class="lang-chip">Redes Neurais</span>
                         </div>
                     </div>
                 </div>
+                <div class="marquee marquee--right" aria-label="Topicos de bacharelado em IA">
+                    <div class="marquee__track">
+                        <div class="marquee__group">
+                            <span class="lang-chip">NLP</span>
+                            <span class="lang-chip">Visao Computacional</span>
+                            <span class="lang-chip">Robotica</span>
+                            <span class="lang-chip">Sistemas Inteligentes</span>
+                            <span class="lang-chip">Mineracao de Dados</span>
+                            <span class="lang-chip">Big Data</span>
+                            <span class="lang-chip">Otimizacao</span>
+                            <span class="lang-chip">Etica em IA</span>
+                            <span class="lang-chip">Computacao Evolutiva</span>
+                            <span class="lang-chip">Aprendizado por Reforco</span>
+                            <span class="lang-chip">Engenharia de Dados</span>
+                        </div>
+                        <div class="marquee__group" aria-hidden="true">
+                            <span class="lang-chip">NLP</span>
+                            <span class="lang-chip">Visao Computacional</span>
+                            <span class="lang-chip">Robotica</span>
+                            <span class="lang-chip">Sistemas Inteligentes</span>
+                            <span class="lang-chip">Mineracao de Dados</span>
+                            <span class="lang-chip">Big Data</span>
+                            <span class="lang-chip">Otimizacao</span>
+                            <span class="lang-chip">Etica em IA</span>
+                            <span class="lang-chip">Computacao Evolutiva</span>
+                            <span class="lang-chip">Aprendizado por Reforco</span>
+                            <span class="lang-chip">Engenharia de Dados</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="about-atom-zone">
+            <canvas class="zone-particles" aria-hidden="true"></canvas>
+            <section id="about" class="about">
+            <div class="container">
+                <div class="row align-items-start gy-4">
+                    <div class="col-12 col-lg-4">
+                        <h1 class="about-title">Quem sou eu</h1>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <div class="about-card">
+                            <div class="row align-items-center justify-content-center">
+                                <div
+                                    class="col-lg-6 col-md-12 text-center text-lg-start mb-4 mb-lg-0 order-1 order-lg-1">
+                                    <h2 class="about-name">Wesley Santos (Syler)</h2>
+                                    <p class="about-role">Estudante de Bacharelado em Inteligência Artificial · Brasil</p>
+                                    <p class="about-summary">
+                                        Foco em construir soluções inteligentes orientadas a dados, com base sólida em
+                                        matemática e ciência da computação. Interesse em aplicar IA para resolver
+                                        problemas reais e gerar impacto mensurável.
+                                    </p>
+                                    <div class="about-tags">
+                                        <span class="tag">Machine Learning</span>
+                                        <span class="tag">Deep Learning</span>
+                                        <span class="tag">Análise de Dados</span>
+                                        <span class="tag">Automação</span>
+                                        <span class="tag">Python</span>
+                                    </div>
+                                    <div class="about-metrics">
+                                        <div class="metric">
+                                            <h3 class="about-count" data-target="0">+0</h3>
+                                            <p>Projetos acadêmicos</p>
+                                        </div>
+                                        <div class="metric">
+                                            <h3 class="about-count" data-target="0">+0</h3>
+                                            <p>Projetos de extensão</p>
+                                        </div>
+                                        <div class="metric">
+                                            <h3 class="about-count" data-target="0">+0</h3>
+                                            <p>Competições tecnológicas</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-8 col-10 d-flex justify-content-center order-2 order-lg-2">
+                                    <div class="container-portrait">
+                                        <div class="box-portrait">
+                                            <img src="img/my-photo.jpeg" alt="img ilustrativa do criador do site"
+                                                class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <section id="atom-section" class="atom-section">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="atom-stage">
+                            <div class="atom-bubble atom-bubble--tl">
+                                <h4>Machine Learning</h4>
+                                <p>Algoritmos que aprendem com dados</p>
+                            </div>
+                            <div class="atom-bubble atom-bubble--br">
+                                <h4>Inteligência Artificial</h4>
+                                <p>Explorando dados e sistemas inteligentes</p>
+                            </div>
+
+                            <div class="atom-core-wrap" role="img" aria-label="Atomo tecnologico animado">
+                                <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <defs>
+                                        <radialGradient id="atomGlow" cx="50%" cy="40%" r="60%">
+                                            <stop offset="0%" stop-color="#E0F2FE" />
+                                            <stop offset="55%" stop-color="#7C3AED" />
+                                            <stop offset="100%" stop-color="#0F172A" />
+                                        </radialGradient>
+                                        <linearGradient id="orbitStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#38BDF8" />
+                                            <stop offset="100%" stop-color="#A78BFA" />
+                                        </linearGradient>
+                                    </defs>
+                                    <g class="atom-core">
+                                        <circle cx="210" cy="210" r="52" fill="url(#atomGlow)" />
+                                        <circle cx="210" cy="210" r="78" fill="url(#atomGlow)" opacity="0.22" />
+                                        <circle cx="210" cy="210" r="100" fill="none" stroke="url(#orbitStroke)"
+                                            stroke-width="2" stroke-dasharray="6 12" opacity="0.7" />
+                                    </g>
+                                    <g class="atom-orbit atom-orbit--one">
+                                        <ellipse cx="210" cy="210" rx="150" ry="70" fill="none"
+                                            stroke="url(#orbitStroke)" stroke-width="3" />
+                                        <circle class="atom-electron" cx="360" cy="210" r="8" fill="#38BDF8" />
+                                    </g>
+                                    <g class="atom-orbit atom-orbit--two">
+                                        <ellipse cx="210" cy="210" rx="110" ry="155" fill="none"
+                                            stroke="url(#orbitStroke)" stroke-width="3" />
+                                        <circle class="atom-electron" cx="210" cy="55" r="8" fill="#A78BFA" />
+                                    </g>
+                                    <g class="atom-orbit atom-orbit--three">
+                                        <ellipse cx="210" cy="210" rx="155" ry="115" fill="none"
+                                            stroke="url(#orbitStroke)" stroke-width="3" />
+                                        <circle class="atom-electron" cx="85" cy="285" r="8" fill="#E0F2FE" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </section>
         </div>
-        <section id="contact">
-            <div class="container py-5">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-md-8">
-                        <h1><span>Hey!</span> Bora tirar sua ideia do papel e colocá-la na tela!</h1>
-                        <p>É só contar um pouquinho pra gente o publico alvo e a historia da sua empresa. Ah, e não
-                            esquece
-                            de seguir a gente nas redes sociais, tá? Vamos botar esse trem pra voar.</p>
+        <div id="contact" class="bg-light" style="height: 100vh">
+        <section id="timeline" class="timeline-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h1 class="timeline-title">Trajetoria</h1>
+                        <p class="text-muted">Minha jornada profissional.</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
+                                <div class="timeline-card">
+                                    <h3>Inicio na tecnologia - 2020</h3>
+                                    <p>Curiosidade por computacao e primeiros estudos em programacao.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
+                                <img class="timeline-image img-fluid"
+                                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
+                                    alt="Inicio na tecnologia">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
+                                <div class="timeline-card">
+                                    <h3>Primeiro projeto web - 2024</h3>
+                                    <p>Construindo interfaces e aprendendo fundamentos de desenvolvimento web.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
+                                <img class="timeline-image img-fluid"
+                                    src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop"
+                                    alt="Primeiro projeto web">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
+                                <div class="timeline-card">
+                                    <h3>Ingresso na universidade - 2026</h3>
+                                    <p>Base teorica forte e disciplinas de Inteligencia artificial.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
+                                <img class="timeline-image img-fluid"
+                                    src="img/Unifei.png">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
+                                <div class="timeline-card">
+                                    <h3>Estudos em inteligencia artificial</h3>
+                                    <p>Foco em aprendizado de maquina, redes neurais e dados.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
+                                <img class="timeline-image img-fluid"
+                                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"
+                                    alt="Estudos em inteligencia artificial">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
+                                <div class="timeline-card">
+                                    <h3>Desenvolvimento de projetos academicos</h3>
+                                    <p>Aplicando IA para resolver problemas reais e validar ideias.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
+                                <img class="timeline-image img-fluid"
+                                    src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800&auto=format&fit=crop"
+                                    alt="Desenvolvimento de projetos academicos">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="pre-footer">
-            <div class="container py-5 text-center">
-                <div class="row">
-                    <div class="col">
-                        <h1>Vamos tirar a ideia do papel!</h1>
+
+        <section id="portfolio" class="portfolio-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 text-center">
+                        <h1 class="portfolio-title">Projetos e Experimentos</h1>
+                        <p class="portfolio-subtitle">Projetos desenvolvidos durante minha jornada acadêmica em tecnologia
+                            e Inteligência Artificial.</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <button class="btn-style">Enviar uma mensagem</button>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project-card">
+                            <div class="project-media">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=900&auto=format&fit=crop"
+                                    alt="Análise de Dados com Python">
+                            </div>
+                            <div class="project-body">
+                                <h3>Análise de Dados com Python</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet</p>
+                                <div class="project-tags">
+                                    <span>Python</span>
+                                    <span>Pandas</span>
+                                    <span>EDA</span>
+                                </div>
+                                <a class="project-btn" href="#">Ver Projeto</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project-card">
+                            <div class="project-media">
+                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=900&auto=format&fit=crop"
+                                    alt="Modelo de Machine Learning">
+                            </div>
+                            <div class="project-body">
+                                <h3>Modelo de Machine Learning</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet.</p>
+                                <div class="project-tags">
+                                    <span>Scikit-learn</span>
+                                    <span>ML</span>
+                                    <span>Metrics</span>
+                                </div>
+                                <a class="project-btn" href="#">Ver Projeto</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project-card">
+                            <div class="project-media">
+                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=900&auto=format&fit=crop"
+                                    alt="Experimentos com Redes Neurais">
+                            </div>
+                            <div class="project-body">
+                                <h3>Experimentos com Redes Neurais</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet</p>
+                                <div class="project-tags">
+                                    <span>TensorFlow</span>
+                                    <span>DL</span>
+                                    <span>GPU</span>
+                                </div>
+                                <a class="project-btn" href="#">Ver Projeto</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project-card">
+                            <div class="project-media">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop"
+                                    alt="Visualização de Dados">
+                            </div>
+                            <div class="project-body">
+                                <h3>Visualização de Dados</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet  </p>
+                                <div class="project-tags">
+                                    <span>Plotly</span>
+                                    <span>Dash</span>
+                                    <span>BI</span>
+                                </div>
+                                <a class="project-btn" href="#">Ver Projeto</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project-card">
+                            <div class="project-media">
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop"
+                                    alt="Projeto de Automação">
+                            </div>
+                            <div class="project-body">
+                                <h3>Projeto de Automação</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet</p>
+                                <div class="project-tags">
+                                    <span>Python</span>
+                                    <span>APIs</span>
+                                    <span>Automation</span>
+                                </div>
+                                <a class="project-btn" href="#">Ver Projeto</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <article class="project-card">
+                            <div class="project-media">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format&fit=crop"
+                                    alt="Estudo de Algoritmos">
+                            </div>
+                            <div class="project-body">
+                                <h3>Estudo de Algoritmos</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet</p>
+                                <div class="project-tags">
+                                    <span>Algoritmos</span>
+                                    <span>Otimização</span>
+                                    <span>C++</span>
+                                </div>
+                                <a class="project-btn" href="#">Ver Projeto</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
-        <footer>
-            <div class="container py-3">
-                <div class="row g-4 text-center text-md-start justify-content-center">
-                    <div class="col-md-4">
-                        <h2>WESLEY SANTOS</h2>
-                        <p>transformando sonhos em linhas de codigo.</p>
-                    </div>
-                    <div class="col-md-4 d-flex flex-column ">
-                        <h2>LINKS RÁPIDOS</h2>
-                        <a class="btn text-start" href="#portifolio">Portifólio</a>
-                        <a class="btn text-start" href="#about">Sobre</a>
-                        <a class="btn text-start" href="#contact">Contato</a>
-                    </div>
-                    <div class="col-md-4">
-                        <h2>REDES SOCIAIS</h2>
-                        <a onclick="alert('Olá eu removi este botão')"><i class="bi bi-instagram"></i></a>
-                    </div>
-                </div>
-                <hr class="border-light my-4">
+        </div>
 
-                <div class="text-center small text-secondary">
-                    © 2025 Syler0x26. Todos os direitos reservados.
-                </div>
-
-            </div>
-        </footer>
-
-    </div> <!-- /#smooth-content -->
-    </div> <!-- /#smooth-wrapper -->
-    <script src="script.js"></script>
+    </main>
     <script src="vendor/Jquery/jquery-3.7.1.js"></script>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- gsap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollSmoother.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script>
-  window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.glass-nav');
-    
-    // Se rolar mais que 50px, adiciona a classe, senão remove
-    if (window.scrollY > 50) {
-      navbar.classList.add('shrink');
-    } else {
-      navbar.classList.remove('shrink');
-    }
-  });
-
-  // (Opcional) Script para o botão hamburger animado que você já fez
-  const toggler = document.querySelector('.navbar-toggler');
-  toggler.addEventListener('click', function() {
-    this.classList.toggle('aberto');
-  });
-</script>
     <script>
-        gsap.registerPlugin(ScrollSmoother);
+        const header = document.querySelector("header");
 
-        ScrollSmoother.create({
-            wrapper: "#smooth-wrapper",
-            content: "#smooth-content",
-            smooth: 2,    // controle de inércia do scroll
-            smoothTouch: 0.1,   // para mobile
-            effects: true,  // permite efeitos baseados no scroll
-        });
+        function onScroll() {
+            if (window.scrollY > 40) {
+                header.classList.add("is-shrunk");
+            } else {
+                header.classList.remove("is-shrunk");
+            }
+        }
 
-        //section two
-        gsap.utils.toArray(".painel").forEach((panel) => {
-            gsap.fromTo(panel,
-                { rotateX: 10, y: 100, opacity: 0.6 },
-                {
-                    rotateX: 0,
-                    y: 0,
-                    opacity: 1,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: panel,
-                        start: "top 80%",
-                        end: "center 50%",
-                        scrub: true,
-                    }
-                }
-            );
-        });
-
+        window.addEventListener("scroll", onScroll);
+        onScroll();
     </script>
     <script>
-        const btnMenu = document.querySelector('.navbar-toggler');
-        const menu = document.querySelector('#navbarNav');
+        const aboutSection = document.querySelector("#about");
 
-        menu.addEventListener('shown.bs.collapse', () => {
-            btnMenu.classList.add('aberto');
-        });
+        if (aboutSection) {
+            function updateAboutBg() {
+                const rect = aboutSection.getBoundingClientRect();
+                const viewportH = window.innerHeight || document.documentElement.clientHeight;
 
-        menu.addEventListener('hidden.bs.collapse', () => {
-            btnMenu.classList.remove('aberto');
-        });
+                const start = viewportH * 0.9;
+                const end = viewportH * 0.2;
+                const t = (start - rect.top) / (start - end);
+
+                if (t >= 0.5) {
+                    aboutSection.classList.add("is-dark");
+                } else {
+                    aboutSection.classList.remove("is-dark");
+                }
+            }
+
+            window.addEventListener("scroll", updateAboutBg, { passive: true });
+            window.addEventListener("resize", updateAboutBg);
+            updateAboutBg();
+        }
+    </script>
+    <script>
+        const timelineItems = document.querySelectorAll(".timeline-item");
+        if (timelineItems.length) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                        } else {
+                            entry.target.classList.remove("is-visible");
+                        }
+                    });
+                },
+                { threshold: 0.25, rootMargin: "0px 0px -10% 0px" }
+            );
+            timelineItems.forEach((item) => observer.observe(item));
+        }
+    </script>
+    <script>
+        const aboutSectionForCount = document.querySelector("#about");
+        const aboutCounts = document.querySelectorAll(".about-count");
+
+        function animateCount(el) {
+            const target = Number(el.dataset.target || el.textContent.replace(/\D/g, "")) || 0;
+            const duration = 1400;
+            const start = performance.now();
+
+            function tick(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const base = Math.floor(target * eased);
+                const jitterMax = Math.max(6, target + 6);
+                const jitter = Math.floor(Math.random() * jitterMax);
+                const value = progress < 0.9 ? jitter : base;
+                el.textContent = `+${value}`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(tick);
+                } else {
+                    el.textContent = `+${target}`;
+                }
+            }
+
+            requestAnimationFrame(tick);
+        }
+
+        if (aboutSectionForCount && aboutCounts.length) {
+            let hasAnimated = false;
+            const aboutObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting && !hasAnimated) {
+                            hasAnimated = true;
+                            aboutCounts.forEach(animateCount);
+                        }
+                    });
+                },
+                { threshold: 0.4 }
+            );
+            aboutObserver.observe(aboutSectionForCount);
+        }
+    </script>
+    <script>
+        const homeSection = document.querySelector("#home");
+        const canvas = homeSection?.querySelector(".hero-particles");
+
+        if (homeSection && canvas) {
+            const ctx = canvas.getContext("2d");
+            const prefersCoarse = window.matchMedia("(pointer: coarse)").matches;
+            let width = 0;
+            let height = 0;
+            let nodes = [];
+            let mouse = { x: 0, y: 0, active: false };
+            let rafId = null;
+
+            function resize() {
+                const rect = homeSection.getBoundingClientRect();
+                width = Math.max(1, Math.floor(rect.width));
+                height = Math.max(1, Math.floor(rect.height));
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                canvas.style.width = `${width}px`;
+                canvas.style.height = `${height}px`;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            function createNodes() {
+                const count = prefersCoarse ? 40 : 70;
+                nodes = Array.from({ length: count }, () => {
+                    const x = Math.random() * width;
+                    const y = Math.random() * height;
+                    return {
+                        x,
+                        y,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        size: 1.6 + Math.random() * 2,
+                        anchorX: x,
+                        anchorY: y,
+                        stuck: 0
+                    };
+                });
+            }
+
+            function step() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.lineCap = "round";
+
+                const linkDist = 140;
+
+                for (const node of nodes) {
+                    const ax = node.anchorX - node.x;
+                    const ay = node.anchorY - node.y;
+                    node.vx += ax * 0.0004;
+                    node.vy += ay * 0.0004;
+
+                    if (mouse.active && !prefersCoarse) {
+                        const dx = mouse.x - node.x;
+                        const dy = mouse.y - node.y;
+                        const dist = Math.hypot(dx, dy);
+                        if (dist < 150) {
+                            const force = (1 - dist / 150) * 0.06;
+                            node.vx += dx * force * 0.01;
+                            node.vy += dy * force * 0.01;
+                            if (dist < 26 && node.stuck <= 0) {
+                                node.stuck = 10 + Math.random() * 18;
+                            }
+                        }
+                    }
+
+                    if (node.stuck > 0 && mouse.active) {
+                        node.x += (mouse.x - node.x) * 0.18;
+                        node.y += (mouse.y - node.y) * 0.18;
+                        node.stuck -= 1;
+                    } else {
+                        node.x += node.vx;
+                        node.y += node.vy;
+                    }
+                    node.vx *= 0.98;
+                    node.vy *= 0.98;
+
+                    if (node.x < -60) node.x = width + 60;
+                    if (node.x > width + 60) node.x = -60;
+                    if (node.y < -60) node.y = height + 60;
+                    if (node.y > height + 60) node.y = -60;
+                }
+
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const a = nodes[i];
+                        const b = nodes[j];
+                        const dx = a.x - b.x;
+                        const dy = a.y - b.y;
+                        const dist = Math.hypot(dx, dy);
+                        if (dist < linkDist) {
+                            const alpha = 1 - dist / linkDist;
+                            ctx.strokeStyle = `rgba(125, 211, 252, ${alpha * 0.6})`;
+                            ctx.lineWidth = 1;
+                            ctx.shadowColor = "rgba(56, 189, 248, 0.2)";
+                            ctx.shadowBlur = 6;
+                            ctx.beginPath();
+                            ctx.moveTo(a.x, a.y);
+                            ctx.lineTo(b.x, b.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                for (const node of nodes) {
+                    ctx.fillStyle = "rgba(226, 232, 240, 0.95)";
+                    ctx.shadowColor = "rgba(56, 189, 248, 0.9)";
+                    ctx.shadowBlur = 12;
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                rafId = requestAnimationFrame(step);
+            }
+
+            resize();
+            createNodes();
+            step();
+
+            window.addEventListener("resize", () => {
+                resize();
+                createNodes();
+            });
+
+            if (!prefersCoarse) {
+                homeSection.addEventListener("mousemove", (event) => {
+                    const rect = canvas.getBoundingClientRect();
+                    mouse.x = event.clientX - rect.left;
+                    mouse.y = event.clientY - rect.top;
+                });
+                homeSection.addEventListener("mouseenter", () => {
+                    mouse.active = true;
+                });
+                homeSection.addEventListener("mouseleave", () => {
+                    mouse.active = false;
+                });
+            }
+        }
+    </script>
+    <script>
+        const zone = document.querySelector(".about-atom-zone");
+        const zoneCanvas = zone?.querySelector(".zone-particles");
+
+        if (zone && zoneCanvas) {
+            const ctx = zoneCanvas.getContext("2d");
+            const prefersCoarse = window.matchMedia("(pointer: coarse)").matches;
+            let width = 0;
+            let height = 0;
+            let nodes = [];
+            let mouse = { x: 0, y: 0, active: false };
+
+            function resizeZone() {
+                const rect = zone.getBoundingClientRect();
+                width = Math.max(1, Math.floor(rect.width));
+                height = Math.max(1, Math.floor(rect.height));
+                const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                zoneCanvas.width = width * dpr;
+                zoneCanvas.height = height * dpr;
+                zoneCanvas.style.width = `${width}px`;
+                zoneCanvas.style.height = `${height}px`;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            function createNodes() {
+                const count = prefersCoarse ? 60 : 100;
+                nodes = Array.from({ length: count }, () => {
+                    const x = Math.random() * width;
+                    const y = Math.random() * height;
+                    return {
+                        x,
+                        y,
+                        vx: (Math.random() - 0.5) * 0.6,
+                        vy: (Math.random() - 0.5) * 0.6,
+                        size: 2 + Math.random() * 2,
+                        anchorX: x,
+                        anchorY: y
+                    };
+                });
+            }
+
+            function stepZone() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.lineCap = "round";
+
+                const linkDist = prefersCoarse ? 110 : 140;
+
+                for (const node of nodes) {
+                    const ax = node.anchorX - node.x;
+                    const ay = node.anchorY - node.y;
+                    node.vx += ax * 0.0004;
+                    node.vy += ay * 0.0004;
+
+                    if (mouse.active && !prefersCoarse) {
+                        const dx = node.x - mouse.x;
+                        const dy = node.y - mouse.y;
+                        const dist = Math.hypot(dx, dy);
+                        const radius = 180;
+                        if (dist < radius && dist > 0.1) {
+                            const force = (1 - dist / radius) * 1.2;
+                            node.vx += (dx / dist) * force * 0.06;
+                            node.vy += (dy / dist) * force * 0.06;
+                        }
+                    }
+
+                    node.x += node.vx;
+                    node.y += node.vy;
+                    node.vx *= 0.98;
+                    node.vy *= 0.98;
+
+                    if (node.x < -60) node.x = width + 60;
+                    if (node.x > width + 60) node.x = -60;
+                    if (node.y < -60) node.y = height + 60;
+                    if (node.y > height + 60) node.y = -60;
+                }
+
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const a = nodes[i];
+                        const b = nodes[j];
+                        const dx = a.x - b.x;
+                        const dy = a.y - b.y;
+                        const dist = Math.hypot(dx, dy);
+                        if (dist < linkDist) {
+                            const alpha = 1 - dist / linkDist;
+                            ctx.strokeStyle = `rgba(125, 211, 252, ${alpha * 0.35})`;
+                            ctx.lineWidth = 1;
+                            ctx.shadowColor = "rgba(56, 189, 248, 0.2)";
+                            ctx.shadowBlur = 6;
+                            ctx.beginPath();
+                            ctx.moveTo(a.x, a.y);
+                            ctx.lineTo(b.x, b.y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                for (const node of nodes) {
+                    ctx.fillStyle = "rgba(226, 232, 240, 0.9)";
+                    ctx.shadowColor = "rgba(56, 189, 248, 0.6)";
+                    ctx.shadowBlur = 8;
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                requestAnimationFrame(stepZone);
+            }
+
+            function onZoneMove(event) {
+                const rect = zoneCanvas.getBoundingClientRect();
+                mouse.x = event.clientX - rect.left;
+                mouse.y = event.clientY - rect.top;
+            }
+
+            function onZoneEnter() {
+                mouse.active = true;
+            }
+
+            function onZoneLeave() {
+                mouse.active = false;
+            }
+
+            resizeZone();
+            createNodes();
+            stepZone();
+
+            window.addEventListener("resize", () => {
+                resizeZone();
+                createNodes();
+            });
+
+            if (!prefersCoarse) {
+                zone.addEventListener("mousemove", onZoneMove);
+                zone.addEventListener("mouseenter", onZoneEnter);
+                zone.addEventListener("mouseleave", onZoneLeave);
+            }
+        }
+    </script>
+    <script>
+        const projectCards = document.querySelectorAll(".project-card");
+        if (projectCards.length) {
+            const projectObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("is-visible");
+                        }
+                    });
+                },
+                { threshold: 0.2 }
+            );
+            projectCards.forEach((card) => projectObserver.observe(card));
+        }
     </script>
 
 </body>

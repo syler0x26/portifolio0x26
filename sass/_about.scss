@@ -1,29 +1,32 @@
 @use "colors" as c;
-#about{
-    .h1-big{
-        font-size: 10rem;
-    }
-    .h2-about{
-    font-family: "glamora", Arial, Helvetica, sans-serif;
+.about {
+  padding: 72px 0;
+  min-height: 100vh;
+  transition: background-color 800ms ease-in-out;
 }
-.container-portrait {
-/*     background-color: #F8F3EC; */
-    width: 300px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-/*     box-shadow: 0.1rem 0.1rem 0.8rem rgb(105, 104, 104); */
-    .box-portrait {
-        width: 270px;
-        height: 270px;
-    }
+
+.about-title {
+  position: sticky;
+  top: 80px;
+  font-family: c.$font-principal;
+  font-size: clamp(28px, 4vw, 56px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: c.$cor04;
+  margin: 0;
 }
+
+.about-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
-.coverAbout{
-    background: url("../src/sobre-mim.png") center center no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  height: 500px;
-  width: 100vw;
+
+@media (max-width: 991.98px) {
+  .about-title {
+    position: static;
+    text-align: left;
+  }
 }
+

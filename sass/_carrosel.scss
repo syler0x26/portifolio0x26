@@ -1,0 +1,76 @@
+@use "colors" as c;
+
+.carrosel {
+  width: 100%;
+  padding: 24px 0;
+  display: grid;
+  gap: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 10%,
+    #000 90%,
+    transparent
+  );
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  will-change: transform;
+}
+
+.marquee__group {
+  display: flex;
+  gap: 16px;
+  padding-right: 16px;
+}
+
+.lang-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  background: c.$cor-principal-alpha;
+  color: c.$cor-principal;
+  white-space: nowrap;
+  border: 1px solid #6b46ff33;
+}
+
+.marquee--left .marquee__track {
+  animation: marquee-left 40s linear infinite;
+}
+
+.marquee--right .marquee__track {
+  animation: marquee-right 42s linear infinite;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}

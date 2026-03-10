@@ -1,0 +1,12 @@
+@use "colors" as c;
+
+.projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 800ms ease-in-out;
+}
+
+.projects .flip-card {
+  margin: 0 auto;
+}
