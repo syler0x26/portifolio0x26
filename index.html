@@ -333,7 +333,7 @@
                             </div>
                             <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
                                 <img class="timeline-image img-fluid"
-                                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop"
+                                    src="img/img-dominante.jpg"
                                     alt="Inicio na tecnologia">
                             </div>
                         </div>
@@ -350,7 +350,7 @@
                             </div>
                             <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
                                 <img class="timeline-image img-fluid"
-                                    src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&auto=format&fit=crop"
+                                    src="img/img-dominante.jpg"
                                     alt="Primeiro projeto web">
                             </div>
                         </div>
@@ -383,7 +383,7 @@
                             </div>
                             <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
                                 <img class="timeline-image img-fluid"
-                                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"
+                                    src="img/img-dominante.jpg"
                                     alt="Estudos em inteligencia artificial">
                             </div>
                         </div>
@@ -400,7 +400,7 @@
                             </div>
                             <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
                                 <img class="timeline-image img-fluid"
-                                    src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800&auto=format&fit=crop"
+                                    src="img/img-dominante.jpg"
                                     alt="Desenvolvimento de projetos academicos">
                             </div>
                         </div>
@@ -422,7 +422,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="project-card">
                             <div class="project-media">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=900&auto=format&fit=crop"
+                                <img src="img/img-dominante.jpg"
                                     alt="Análise de Dados com Python">
                             </div>
                             <div class="project-body">
@@ -441,7 +441,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="project-card">
                             <div class="project-media">
-                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=900&auto=format&fit=crop"
+                                <img src="img/img-dominante.jpg"
                                     alt="Modelo de Machine Learning">
                             </div>
                             <div class="project-body">
@@ -460,7 +460,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="project-card">
                             <div class="project-media">
-                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=900&auto=format&fit=crop"
+                                <img src="img/img-dominante.jpg"
                                     alt="Experimentos com Redes Neurais">
                             </div>
                             <div class="project-body">
@@ -479,7 +479,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="project-card">
                             <div class="project-media">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=900&auto=format&fit=crop"
+                                <img src="img/img-dominante.jpg"
                                     alt="Visualização de Dados">
                             </div>
                             <div class="project-body">
@@ -498,7 +498,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="project-card">
                             <div class="project-media">
-                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop"
+                                <img src="img/img-dominante.jpg"
                                     alt="Projeto de Automação">
                             </div>
                             <div class="project-body">
@@ -517,7 +517,7 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="project-card">
                             <div class="project-media">
-                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format&fit=crop"
+                                <img src="img/img-dominante.jpg"
                                     alt="Estudo de Algoritmos">
                             </div>
                             <div class="project-body">
@@ -540,404 +540,7 @@
     </main>
     <script src="vendor/Jquery/jquery-3.7.1.js"></script>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const header = document.querySelector("header");
-
-        function onScroll() {
-            if (window.scrollY > 40) {
-                header.classList.add("is-shrunk");
-            } else {
-                header.classList.remove("is-shrunk");
-            }
-        }
-
-        window.addEventListener("scroll", onScroll);
-        onScroll();
-    </script>
-    <script>
-        const aboutSection = document.querySelector("#about");
-
-        if (aboutSection) {
-            function updateAboutBg() {
-                const rect = aboutSection.getBoundingClientRect();
-                const viewportH = window.innerHeight || document.documentElement.clientHeight;
-
-                const start = viewportH * 0.9;
-                const end = viewportH * 0.2;
-                const t = (start - rect.top) / (start - end);
-
-                if (t >= 0.5) {
-                    aboutSection.classList.add("is-dark");
-                } else {
-                    aboutSection.classList.remove("is-dark");
-                }
-            }
-
-            window.addEventListener("scroll", updateAboutBg, { passive: true });
-            window.addEventListener("resize", updateAboutBg);
-            updateAboutBg();
-        }
-    </script>
-    <script>
-        const timelineItems = document.querySelectorAll(".timeline-item");
-        if (timelineItems.length) {
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("is-visible");
-                        } else {
-                            entry.target.classList.remove("is-visible");
-                        }
-                    });
-                },
-                { threshold: 0.25, rootMargin: "0px 0px -10% 0px" }
-            );
-            timelineItems.forEach((item) => observer.observe(item));
-        }
-    </script>
-    <script>
-        const aboutSectionForCount = document.querySelector("#about");
-        const aboutCounts = document.querySelectorAll(".about-count");
-
-        function animateCount(el) {
-            const target = Number(el.dataset.target || el.textContent.replace(/\D/g, "")) || 0;
-            const duration = 1400;
-            const start = performance.now();
-
-            function tick(now) {
-                const progress = Math.min((now - start) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                const base = Math.floor(target * eased);
-                const jitterMax = Math.max(6, target + 6);
-                const jitter = Math.floor(Math.random() * jitterMax);
-                const value = progress < 0.9 ? jitter : base;
-                el.textContent = `+${value}`;
-
-                if (progress < 1) {
-                    requestAnimationFrame(tick);
-                } else {
-                    el.textContent = `+${target}`;
-                }
-            }
-
-            requestAnimationFrame(tick);
-        }
-
-        if (aboutSectionForCount && aboutCounts.length) {
-            let hasAnimated = false;
-            const aboutObserver = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting && !hasAnimated) {
-                            hasAnimated = true;
-                            aboutCounts.forEach(animateCount);
-                        }
-                    });
-                },
-                { threshold: 0.4 }
-            );
-            aboutObserver.observe(aboutSectionForCount);
-        }
-    </script>
-    <script>
-        const homeSection = document.querySelector("#home");
-        const canvas = homeSection?.querySelector(".hero-particles");
-
-        if (homeSection && canvas) {
-            const ctx = canvas.getContext("2d");
-            const prefersCoarse = window.matchMedia("(pointer: coarse)").matches;
-            let width = 0;
-            let height = 0;
-            let nodes = [];
-            let mouse = { x: 0, y: 0, active: false };
-            let rafId = null;
-
-            function resize() {
-                const rect = homeSection.getBoundingClientRect();
-                width = Math.max(1, Math.floor(rect.width));
-                height = Math.max(1, Math.floor(rect.height));
-                const dpr = Math.min(window.devicePixelRatio || 1, 2);
-                canvas.width = width * dpr;
-                canvas.height = height * dpr;
-                canvas.style.width = `${width}px`;
-                canvas.style.height = `${height}px`;
-                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-            }
-
-            function createNodes() {
-                const count = prefersCoarse ? 40 : 70;
-                nodes = Array.from({ length: count }, () => {
-                    const x = Math.random() * width;
-                    const y = Math.random() * height;
-                    return {
-                        x,
-                        y,
-                        vx: (Math.random() - 0.5) * 0.5,
-                        vy: (Math.random() - 0.5) * 0.5,
-                        size: 1.6 + Math.random() * 2,
-                        anchorX: x,
-                        anchorY: y,
-                        stuck: 0
-                    };
-                });
-            }
-
-            function step() {
-                ctx.clearRect(0, 0, width, height);
-                ctx.lineCap = "round";
-
-                const linkDist = 140;
-
-                for (const node of nodes) {
-                    const ax = node.anchorX - node.x;
-                    const ay = node.anchorY - node.y;
-                    node.vx += ax * 0.0004;
-                    node.vy += ay * 0.0004;
-
-                    if (mouse.active && !prefersCoarse) {
-                        const dx = mouse.x - node.x;
-                        const dy = mouse.y - node.y;
-                        const dist = Math.hypot(dx, dy);
-                        if (dist < 150) {
-                            const force = (1 - dist / 150) * 0.06;
-                            node.vx += dx * force * 0.01;
-                            node.vy += dy * force * 0.01;
-                            if (dist < 26 && node.stuck <= 0) {
-                                node.stuck = 10 + Math.random() * 18;
-                            }
-                        }
-                    }
-
-                    if (node.stuck > 0 && mouse.active) {
-                        node.x += (mouse.x - node.x) * 0.18;
-                        node.y += (mouse.y - node.y) * 0.18;
-                        node.stuck -= 1;
-                    } else {
-                        node.x += node.vx;
-                        node.y += node.vy;
-                    }
-                    node.vx *= 0.98;
-                    node.vy *= 0.98;
-
-                    if (node.x < -60) node.x = width + 60;
-                    if (node.x > width + 60) node.x = -60;
-                    if (node.y < -60) node.y = height + 60;
-                    if (node.y > height + 60) node.y = -60;
-                }
-
-                for (let i = 0; i < nodes.length; i++) {
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const a = nodes[i];
-                        const b = nodes[j];
-                        const dx = a.x - b.x;
-                        const dy = a.y - b.y;
-                        const dist = Math.hypot(dx, dy);
-                        if (dist < linkDist) {
-                            const alpha = 1 - dist / linkDist;
-                            ctx.strokeStyle = `rgba(125, 211, 252, ${alpha * 0.6})`;
-                            ctx.lineWidth = 1;
-                            ctx.shadowColor = "rgba(56, 189, 248, 0.2)";
-                            ctx.shadowBlur = 6;
-                            ctx.beginPath();
-                            ctx.moveTo(a.x, a.y);
-                            ctx.lineTo(b.x, b.y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-
-                for (const node of nodes) {
-                    ctx.fillStyle = "rgba(226, 232, 240, 0.95)";
-                    ctx.shadowColor = "rgba(56, 189, 248, 0.9)";
-                    ctx.shadowBlur = 12;
-                    ctx.beginPath();
-                    ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-
-                rafId = requestAnimationFrame(step);
-            }
-
-            resize();
-            createNodes();
-            step();
-
-            window.addEventListener("resize", () => {
-                resize();
-                createNodes();
-            });
-
-            if (!prefersCoarse) {
-                homeSection.addEventListener("mousemove", (event) => {
-                    const rect = canvas.getBoundingClientRect();
-                    mouse.x = event.clientX - rect.left;
-                    mouse.y = event.clientY - rect.top;
-                });
-                homeSection.addEventListener("mouseenter", () => {
-                    mouse.active = true;
-                });
-                homeSection.addEventListener("mouseleave", () => {
-                    mouse.active = false;
-                });
-            }
-        }
-    </script>
-    <script>
-        const zone = document.querySelector(".about-atom-zone");
-        const zoneCanvas = zone?.querySelector(".zone-particles");
-
-        if (zone && zoneCanvas) {
-            const ctx = zoneCanvas.getContext("2d");
-            const prefersCoarse = window.matchMedia("(pointer: coarse)").matches;
-            let width = 0;
-            let height = 0;
-            let nodes = [];
-            let mouse = { x: 0, y: 0, active: false };
-
-            function resizeZone() {
-                const rect = zone.getBoundingClientRect();
-                width = Math.max(1, Math.floor(rect.width));
-                height = Math.max(1, Math.floor(rect.height));
-                const dpr = Math.min(window.devicePixelRatio || 1, 2);
-                zoneCanvas.width = width * dpr;
-                zoneCanvas.height = height * dpr;
-                zoneCanvas.style.width = `${width}px`;
-                zoneCanvas.style.height = `${height}px`;
-                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-            }
-
-            function createNodes() {
-                const count = prefersCoarse ? 60 : 100;
-                nodes = Array.from({ length: count }, () => {
-                    const x = Math.random() * width;
-                    const y = Math.random() * height;
-                    return {
-                        x,
-                        y,
-                        vx: (Math.random() - 0.5) * 0.6,
-                        vy: (Math.random() - 0.5) * 0.6,
-                        size: 2 + Math.random() * 2,
-                        anchorX: x,
-                        anchorY: y
-                    };
-                });
-            }
-
-            function stepZone() {
-                ctx.clearRect(0, 0, width, height);
-                ctx.lineCap = "round";
-
-                const linkDist = prefersCoarse ? 110 : 140;
-
-                for (const node of nodes) {
-                    const ax = node.anchorX - node.x;
-                    const ay = node.anchorY - node.y;
-                    node.vx += ax * 0.0004;
-                    node.vy += ay * 0.0004;
-
-                    if (mouse.active && !prefersCoarse) {
-                        const dx = node.x - mouse.x;
-                        const dy = node.y - mouse.y;
-                        const dist = Math.hypot(dx, dy);
-                        const radius = 180;
-                        if (dist < radius && dist > 0.1) {
-                            const force = (1 - dist / radius) * 1.2;
-                            node.vx += (dx / dist) * force * 0.06;
-                            node.vy += (dy / dist) * force * 0.06;
-                        }
-                    }
-
-                    node.x += node.vx;
-                    node.y += node.vy;
-                    node.vx *= 0.98;
-                    node.vy *= 0.98;
-
-                    if (node.x < -60) node.x = width + 60;
-                    if (node.x > width + 60) node.x = -60;
-                    if (node.y < -60) node.y = height + 60;
-                    if (node.y > height + 60) node.y = -60;
-                }
-
-                for (let i = 0; i < nodes.length; i++) {
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const a = nodes[i];
-                        const b = nodes[j];
-                        const dx = a.x - b.x;
-                        const dy = a.y - b.y;
-                        const dist = Math.hypot(dx, dy);
-                        if (dist < linkDist) {
-                            const alpha = 1 - dist / linkDist;
-                            ctx.strokeStyle = `rgba(125, 211, 252, ${alpha * 0.35})`;
-                            ctx.lineWidth = 1;
-                            ctx.shadowColor = "rgba(56, 189, 248, 0.2)";
-                            ctx.shadowBlur = 6;
-                            ctx.beginPath();
-                            ctx.moveTo(a.x, a.y);
-                            ctx.lineTo(b.x, b.y);
-                            ctx.stroke();
-                        }
-                    }
-                }
-
-                for (const node of nodes) {
-                    ctx.fillStyle = "rgba(226, 232, 240, 0.9)";
-                    ctx.shadowColor = "rgba(56, 189, 248, 0.6)";
-                    ctx.shadowBlur = 8;
-                    ctx.beginPath();
-                    ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-
-                requestAnimationFrame(stepZone);
-            }
-
-            function onZoneMove(event) {
-                const rect = zoneCanvas.getBoundingClientRect();
-                mouse.x = event.clientX - rect.left;
-                mouse.y = event.clientY - rect.top;
-            }
-
-            function onZoneEnter() {
-                mouse.active = true;
-            }
-
-            function onZoneLeave() {
-                mouse.active = false;
-            }
-
-            resizeZone();
-            createNodes();
-            stepZone();
-
-            window.addEventListener("resize", () => {
-                resizeZone();
-                createNodes();
-            });
-
-            if (!prefersCoarse) {
-                zone.addEventListener("mousemove", onZoneMove);
-                zone.addEventListener("mouseenter", onZoneEnter);
-                zone.addEventListener("mouseleave", onZoneLeave);
-            }
-        }
-    </script>
-    <script>
-        const projectCards = document.querySelectorAll(".project-card");
-        if (projectCards.length) {
-            const projectObserver = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("is-visible");
-                        }
-                    });
-                },
-                { threshold: 0.2 }
-            );
-            projectCards.forEach((card) => projectObserver.observe(card));
-        }
-    </script>
+    <script src="js/main.js"></script>
 
 </body>
 
