@@ -861,7 +861,7 @@ span {
 }
 
 .ai-brain {
-  animation: float-up 6s ease-in-out infinite;
+  animation: none;
 }
 
 .ai-brain .atom-pulse {
@@ -871,14 +871,7 @@ span {
 
 .ai-brain .atom-orbit {
   transform-origin: 50% 50%;
-}
-
-.ai-brain .atom-orbit--a {
-  animation: orbit-spin 12s linear infinite;
-}
-
-.ai-brain .atom-orbit--b {
-  animation: orbit-spin-reverse 10s linear infinite;
+  animation: none !important;
 }
 
 .ai-brain,
