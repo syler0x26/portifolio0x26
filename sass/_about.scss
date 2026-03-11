@@ -5,6 +5,12 @@
   transition: background-color 800ms ease-in-out;
 }
 
+@media (max-width: 788.98px) {
+  .about {
+    transition: none;
+  }
+}
+
 .about-title {
   position: sticky;
   top: 80px;
@@ -29,4 +35,3 @@
     text-align: left;
   }
 }
-
