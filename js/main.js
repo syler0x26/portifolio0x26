@@ -100,177 +100,181 @@
   if (homeSection && homeCanvas) {
     const ctx = homeCanvas.getContext("2d");
     const prefersCoarse = window.matchMedia("(pointer: coarse)").matches;
-    let width = 0;
-    let height = 0;
-    let nodes = [];
-    let mouse = { x: 0, y: 0, active: false };
-    let rafId = null;
-    let isActive = true;
+    const isSmallScreen = window.matchMedia("(max-width: 767.98px)").matches;
 
-    const resize = () => {
-      const rect = homeSection.getBoundingClientRect();
-      width = Math.max(1, Math.floor(rect.width));
-      height = Math.max(1, Math.floor(rect.height));
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      homeCanvas.width = width * dpr;
-      homeCanvas.height = height * dpr;
-      homeCanvas.style.width = `${width}px`;
-      homeCanvas.style.height = `${height}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    };
+    if (!(prefersCoarse || isSmallScreen)) {
+      let width = 0;
+      let height = 0;
+      let nodes = [];
+      let mouse = { x: 0, y: 0, active: false };
+      let rafId = null;
+      let isActive = true;
 
-    const createNodes = () => {
-      const count = prefersCoarse ? 30 : 50;
-      nodes = Array.from({ length: count }, () => {
-        const x = Math.random() * width;
-        const y = Math.random() * height;
-        return {
-          x,
-          y,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          size: 1.6 + Math.random() * 2,
-          anchorX: x,
-          anchorY: y,
-          stuck: 0
-        };
-      });
-    };
+      const resize = () => {
+        const rect = homeSection.getBoundingClientRect();
+        width = Math.max(1, Math.floor(rect.width));
+        height = Math.max(1, Math.floor(rect.height));
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        homeCanvas.width = width * dpr;
+        homeCanvas.height = height * dpr;
+        homeCanvas.style.width = `${width}px`;
+        homeCanvas.style.height = `${height}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      };
 
-    const step = () => {
-      ctx.clearRect(0, 0, width, height);
-      ctx.lineCap = "round";
+      const createNodes = () => {
+        const count = prefersCoarse ? 30 : 50;
+        nodes = Array.from({ length: count }, () => {
+          const x = Math.random() * width;
+          const y = Math.random() * height;
+          return {
+            x,
+            y,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            size: 1.6 + Math.random() * 2,
+            anchorX: x,
+            anchorY: y,
+            stuck: 0
+          };
+        });
+      };
 
-      const linkDist = 120;
-      const linkDist2 = linkDist * linkDist;
+      const step = () => {
+        ctx.clearRect(0, 0, width, height);
+        ctx.lineCap = "round";
 
-      for (const node of nodes) {
-        const ax = node.anchorX - node.x;
-        const ay = node.anchorY - node.y;
-        node.vx += ax * 0.0004;
-        node.vy += ay * 0.0004;
+        const linkDist = 120;
+        const linkDist2 = linkDist * linkDist;
 
-        if (mouse.active && !prefersCoarse) {
-          const dx = mouse.x - node.x;
-          const dy = mouse.y - node.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < 150) {
-            const force = (1 - dist / 150) * 0.06;
-            node.vx += dx * force * 0.01;
-            node.vy += dy * force * 0.01;
-            if (dist < 26 && node.stuck <= 0) {
-              node.stuck = 10 + Math.random() * 18;
+        for (const node of nodes) {
+          const ax = node.anchorX - node.x;
+          const ay = node.anchorY - node.y;
+          node.vx += ax * 0.0004;
+          node.vy += ay * 0.0004;
+
+          if (mouse.active && !prefersCoarse) {
+            const dx = mouse.x - node.x;
+            const dy = mouse.y - node.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 150) {
+              const force = (1 - dist / 150) * 0.06;
+              node.vx += dx * force * 0.01;
+              node.vy += dy * force * 0.01;
+              if (dist < 26 && node.stuck <= 0) {
+                node.stuck = 10 + Math.random() * 18;
+              }
+            }
+          }
+
+          if (node.stuck > 0 && mouse.active) {
+            node.x += (mouse.x - node.x) * 0.18;
+            node.y += (mouse.y - node.y) * 0.18;
+            node.stuck -= 1;
+          } else {
+            node.x += node.vx;
+            node.y += node.vy;
+          }
+
+          node.vx *= 0.98;
+          node.vy *= 0.98;
+
+          if (node.x < -60) node.x = width + 60;
+          if (node.x > width + 60) node.x = -60;
+          if (node.y < -60) node.y = height + 60;
+          if (node.y > height + 60) node.y = -60;
+        }
+
+        for (let i = 0; i < nodes.length; i++) {
+          let links = 0;
+          for (let j = i + 1; j < nodes.length; j++) {
+            const a = nodes[i];
+            const b = nodes[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const dist2 = dx * dx + dy * dy;
+            if (dist2 < linkDist2) {
+              const dist = Math.sqrt(dist2);
+              const alpha = 1 - dist / linkDist;
+              ctx.strokeStyle = `rgba(56, 189, 248, ${alpha * 0.8})`;
+              ctx.lineWidth = 1;
+              ctx.shadowColor = "rgba(56, 189, 248, 0.15)";
+              ctx.shadowBlur = 4;
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.stroke();
+              links += 1;
+              if (links >= 4) break;
             }
           }
         }
 
-        if (node.stuck > 0 && mouse.active) {
-          node.x += (mouse.x - node.x) * 0.18;
-          node.y += (mouse.y - node.y) * 0.18;
-          node.stuck -= 1;
-        } else {
-          node.x += node.vx;
-          node.y += node.vy;
+        for (const node of nodes) {
+          ctx.fillStyle = "rgba(59, 130, 246, 0.95)";
+          ctx.shadowColor = "rgba(56, 189, 248, 0.95)";
+          ctx.shadowBlur = 16;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
+          ctx.fill();
         }
 
-        node.vx *= 0.98;
-        node.vy *= 0.98;
-
-        if (node.x < -60) node.x = width + 60;
-        if (node.x > width + 60) node.x = -60;
-        if (node.y < -60) node.y = height + 60;
-        if (node.y > height + 60) node.y = -60;
-      }
-
-      for (let i = 0; i < nodes.length; i++) {
-        let links = 0;
-        for (let j = i + 1; j < nodes.length; j++) {
-          const a = nodes[i];
-          const b = nodes[j];
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const dist2 = dx * dx + dy * dy;
-          if (dist2 < linkDist2) {
-            const dist = Math.sqrt(dist2);
-            const alpha = 1 - dist / linkDist;
-            ctx.strokeStyle = `rgba(125, 211, 252, ${alpha * 0.6})`;
-            ctx.lineWidth = 1;
-            ctx.shadowColor = "rgba(56, 189, 248, 0.15)";
-            ctx.shadowBlur = 4;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-            links += 1;
-            if (links >= 4) break;
-          }
+        if (isActive) {
+          rafId = requestAnimationFrame(step);
         }
-      }
+      };
 
-      for (const node of nodes) {
-        ctx.fillStyle = "rgba(226, 232, 240, 0.95)";
-        ctx.shadowColor = "rgba(56, 189, 248, 0.9)";
-        ctx.shadowBlur = 12;
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      if (isActive) {
+      const start = () => {
+        if (rafId) return;
+        isActive = true;
         rafId = requestAnimationFrame(step);
-      }
-    };
+      };
 
-    const start = () => {
-      if (rafId) return;
-      isActive = true;
-      rafId = requestAnimationFrame(step);
-    };
+      const stop = () => {
+        isActive = false;
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      };
 
-    const stop = () => {
-      isActive = false;
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-        rafId = null;
-      }
-    };
-
-    resize();
-    createNodes();
-    start();
-
-    window.addEventListener("resize", () => {
       resize();
       createNodes();
-    });
+      start();
 
-    if (!prefersCoarse) {
-      homeSection.addEventListener("mousemove", (event) => {
-        const rect = homeCanvas.getBoundingClientRect();
-        mouse.x = event.clientX - rect.left;
-        mouse.y = event.clientY - rect.top;
+      window.addEventListener("resize", () => {
+        resize();
+        createNodes();
       });
-      homeSection.addEventListener("mouseenter", () => {
-        mouse.active = true;
-      });
-      homeSection.addEventListener("mouseleave", () => {
-        mouse.active = false;
-      });
-    }
 
-    const homeObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            start();
-          } else {
-            stop();
-          }
+      if (!prefersCoarse) {
+        homeSection.addEventListener("mousemove", (event) => {
+          const rect = homeCanvas.getBoundingClientRect();
+          mouse.x = event.clientX - rect.left;
+          mouse.y = event.clientY - rect.top;
         });
-      },
-      { threshold: 0.1 }
-    );
-    homeObserver.observe(homeSection);
+        homeSection.addEventListener("mouseenter", () => {
+          mouse.active = true;
+        });
+        homeSection.addEventListener("mouseleave", () => {
+          mouse.active = false;
+        });
+      }
+
+      const homeObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              start();
+            } else {
+              stop();
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      homeObserver.observe(homeSection);
+    }
   }
 
   const zone = document.querySelector(".about-atom-zone");
@@ -279,173 +283,177 @@
   if (zone && zoneCanvas) {
     const ctx = zoneCanvas.getContext("2d");
     const prefersCoarse = window.matchMedia("(pointer: coarse)").matches;
-    let width = 0;
-    let height = 0;
-    let nodes = [];
-    let mouse = { x: 0, y: 0, active: false };
-    let rafId = null;
-    let isActive = true;
+    const isSmallScreen = window.matchMedia("(max-width: 767.98px)").matches;
 
-    const resizeZone = () => {
-      const rect = zone.getBoundingClientRect();
-      width = Math.max(1, Math.floor(rect.width));
-      height = Math.max(1, Math.floor(rect.height));
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      zoneCanvas.width = width * dpr;
-      zoneCanvas.height = height * dpr;
-      zoneCanvas.style.width = `${width}px`;
-      zoneCanvas.style.height = `${height}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    };
+    if (!(prefersCoarse || isSmallScreen)) {
+      let width = 0;
+      let height = 0;
+      let nodes = [];
+      let mouse = { x: 0, y: 0, active: false };
+      let rafId = null;
+      let isActive = true;
 
-    const createZoneNodes = () => {
-      const count = prefersCoarse ? 45 : 70;
-      nodes = Array.from({ length: count }, () => {
-        const x = Math.random() * width;
-        const y = Math.random() * height;
-        return {
-          x,
-          y,
-          vx: (Math.random() - 0.5) * 0.6,
-          vy: (Math.random() - 0.5) * 0.6,
-          size: 2 + Math.random() * 2,
-          anchorX: x,
-          anchorY: y
-        };
-      });
-    };
+      const resizeZone = () => {
+        const rect = zone.getBoundingClientRect();
+        width = Math.max(1, Math.floor(rect.width));
+        height = Math.max(1, Math.floor(rect.height));
+        const dpr = 1;
+        zoneCanvas.width = width * dpr;
+        zoneCanvas.height = height * dpr;
+        zoneCanvas.style.width = `${width}px`;
+        zoneCanvas.style.height = `${height}px`;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      };
 
-    const stepZone = () => {
-      ctx.clearRect(0, 0, width, height);
-      ctx.lineCap = "round";
+      const createZoneNodes = () => {
+        const count = prefersCoarse ? 28 : 40;
+        nodes = Array.from({ length: count }, () => {
+          const x = Math.random() * width;
+          const y = Math.random() * height;
+          return {
+            x,
+            y,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            size: 2 + Math.random() * 2,
+            anchorX: x,
+            anchorY: y
+          };
+        });
+      };
 
-      const linkDist = prefersCoarse ? 100 : 120;
-      const linkDist2 = linkDist * linkDist;
+      const stepZone = () => {
+        ctx.clearRect(0, 0, width, height);
+        ctx.lineCap = "round";
 
-      for (const node of nodes) {
-        const ax = node.anchorX - node.x;
-        const ay = node.anchorY - node.y;
-        node.vx += ax * 0.0004;
-        node.vy += ay * 0.0004;
+        const linkDist = prefersCoarse ? 100 : 120;
+        const linkDist2 = linkDist * linkDist;
 
-        if (mouse.active && !prefersCoarse) {
-          const dx = node.x - mouse.x;
-          const dy = node.y - mouse.y;
-          const dist = Math.hypot(dx, dy);
-          const radius = 180;
-          if (dist < radius && dist > 0.1) {
-            const force = (1 - dist / radius) * 1.2;
-            node.vx += (dx / dist) * force * 0.06;
-            node.vy += (dy / dist) * force * 0.06;
+        for (const node of nodes) {
+          const ax = node.anchorX - node.x;
+          const ay = node.anchorY - node.y;
+          node.vx += ax * 0.0004;
+          node.vy += ay * 0.0004;
+
+          if (mouse.active && !prefersCoarse) {
+            const dx = node.x - mouse.x;
+            const dy = node.y - mouse.y;
+            const dist = Math.hypot(dx, dy);
+            const radius = 180;
+            if (dist < radius && dist > 0.1) {
+              const force = (1 - dist / radius) * 1.2;
+              node.vx += (dx / dist) * force * 0.06;
+              node.vy += (dy / dist) * force * 0.06;
+            }
+          }
+
+          node.x += node.vx;
+          node.y += node.vy;
+          node.vx *= 0.98;
+          node.vy *= 0.98;
+
+          if (node.x < -60) node.x = width + 60;
+          if (node.x > width + 60) node.x = -60;
+          if (node.y < -60) node.y = height + 60;
+          if (node.y > height + 60) node.y = -60;
+        }
+
+        for (let i = 0; i < nodes.length; i++) {
+          let links = 0;
+          for (let j = i + 1; j < nodes.length; j++) {
+            const a = nodes[i];
+            const b = nodes[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const dist2 = dx * dx + dy * dy;
+            if (dist2 < linkDist2) {
+              const dist = Math.sqrt(dist2);
+              const alpha = 1 - dist / linkDist;
+              ctx.strokeStyle = `rgba(125, 211, 252, ${alpha * 0.35})`;
+              ctx.lineWidth = 1;
+              ctx.shadowColor = "rgba(56, 189, 248, 0.15)";
+              ctx.shadowBlur = 4;
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.stroke();
+              links += 1;
+              if (links >= 3) break;
+            }
           }
         }
 
-        node.x += node.vx;
-        node.y += node.vy;
-        node.vx *= 0.98;
-        node.vy *= 0.98;
-
-        if (node.x < -60) node.x = width + 60;
-        if (node.x > width + 60) node.x = -60;
-        if (node.y < -60) node.y = height + 60;
-        if (node.y > height + 60) node.y = -60;
-      }
-
-      for (let i = 0; i < nodes.length; i++) {
-        let links = 0;
-        for (let j = i + 1; j < nodes.length; j++) {
-          const a = nodes[i];
-          const b = nodes[j];
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const dist2 = dx * dx + dy * dy;
-          if (dist2 < linkDist2) {
-            const dist = Math.sqrt(dist2);
-            const alpha = 1 - dist / linkDist;
-            ctx.strokeStyle = `rgba(125, 211, 252, ${alpha * 0.35})`;
-            ctx.lineWidth = 1;
-            ctx.shadowColor = "rgba(56, 189, 248, 0.15)";
-            ctx.shadowBlur = 4;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-            links += 1;
-            if (links >= 3) break;
-          }
+        for (const node of nodes) {
+          ctx.fillStyle = "rgba(226, 232, 240, 0.9)";
+          ctx.shadowColor = "rgba(56, 189, 248, 0.6)";
+          ctx.shadowBlur = 8;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
+          ctx.fill();
         }
-      }
 
-      for (const node of nodes) {
-        ctx.fillStyle = "rgba(226, 232, 240, 0.9)";
-        ctx.shadowColor = "rgba(56, 189, 248, 0.6)";
-        ctx.shadowBlur = 8;
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
+        if (isActive) {
+          rafId = requestAnimationFrame(stepZone);
+        }
+      };
 
-      if (isActive) {
+      const onZoneMove = (event) => {
+        const rect = zoneCanvas.getBoundingClientRect();
+        mouse.x = event.clientX - rect.left;
+        mouse.y = event.clientY - rect.top;
+      };
+
+      const onZoneEnter = () => {
+        mouse.active = true;
+      };
+
+      const onZoneLeave = () => {
+        mouse.active = false;
+      };
+
+      const start = () => {
+        if (rafId) return;
+        isActive = true;
         rafId = requestAnimationFrame(stepZone);
-      }
-    };
+      };
 
-    const onZoneMove = (event) => {
-      const rect = zoneCanvas.getBoundingClientRect();
-      mouse.x = event.clientX - rect.left;
-      mouse.y = event.clientY - rect.top;
-    };
+      const stop = () => {
+        isActive = false;
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      };
 
-    const onZoneEnter = () => {
-      mouse.active = true;
-    };
-
-    const onZoneLeave = () => {
-      mouse.active = false;
-    };
-
-    const start = () => {
-      if (rafId) return;
-      isActive = true;
-      rafId = requestAnimationFrame(stepZone);
-    };
-
-    const stop = () => {
-      isActive = false;
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-        rafId = null;
-      }
-    };
-
-    resizeZone();
-    createZoneNodes();
-    start();
-
-    window.addEventListener("resize", () => {
       resizeZone();
       createZoneNodes();
-    });
+      start();
 
-    if (!prefersCoarse) {
-      zone.addEventListener("mousemove", onZoneMove);
-      zone.addEventListener("mouseenter", onZoneEnter);
-      zone.addEventListener("mouseleave", onZoneLeave);
+      window.addEventListener("resize", () => {
+        resizeZone();
+        createZoneNodes();
+      });
+
+      if (!prefersCoarse) {
+        zone.addEventListener("mousemove", onZoneMove);
+        zone.addEventListener("mouseenter", onZoneEnter);
+        zone.addEventListener("mouseleave", onZoneLeave);
+      }
+
+      const zoneObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              start();
+            } else {
+              stop();
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      zoneObserver.observe(zone);
     }
-
-    const zoneObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            start();
-          } else {
-            stop();
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    zoneObserver.observe(zone);
   }
 
   const projectCards = document.querySelectorAll(".project-card");
@@ -462,4 +470,33 @@
     );
     projectCards.forEach((card) => projectObserver.observe(card));
   }
+
+  const pixCopyButtons = document.querySelectorAll(".pix-copy");
+  if (pixCopyButtons.length) {
+    pixCopyButtons.forEach((button) => {
+      const feedback = button.closest(".support-card")?.querySelector(".pix-feedback");
+      const text = button.dataset.copyText || "";
+
+      const showFeedback = (message) => {
+        if (feedback) {
+          feedback.textContent = message;
+        }
+        button.classList.add("is-copied");
+        window.setTimeout(() => {
+          button.classList.remove("is-copied");
+        }, 900);
+      };
+
+      button.addEventListener("click", async () => {
+        if (!text) return;
+        try {
+          await navigator.clipboard.writeText(text);
+          showFeedback("Chave copiada");
+        } catch (error) {
+          showFeedback("Copie manualmente");
+        }
+      });
+    });
+  }
+
 })();
