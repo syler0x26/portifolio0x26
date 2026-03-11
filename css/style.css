@@ -80,6 +80,15 @@ figure .green {
   transform: rotateX(0deg);
 }
 
+.about,
+.atom-section,
+.timeline-section,
+.portfolio-section,
+.connect-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}
+
 .about {
   padding: 72px 0;
   min-height: 100vh;
@@ -786,6 +795,27 @@ body {
   .zone-particles {
     display: none;
   }
+
+  .btn-home-style-1,
+  .btn-home-style-2,
+  .about-card,
+  .connect-card,
+  header.is-shrunk nav,
+  .atom-bubble {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .ai-brain,
+  .atom-orbit,
+  .atom-bubble,
+  .marquee__track {
+    animation: none !important;
+  }
+
+  .atom-core-wrap {
+    filter: none !important;
+  }
 }
 span {
   color: #6B46FF;
@@ -826,6 +856,14 @@ span {
   animation: orbit-spin-reverse 10s linear infinite;
 }
 
+.ai-brain,
+.ai-brain .atom-orbit,
+.atom-orbit,
+.marquee__track,
+.atom-bubble {
+  will-change: transform;
+}
+
 @keyframes orbit-spin {
   to {
     transform: rotate(360deg);
@@ -864,6 +902,11 @@ span {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .marquee__track,
+  .atom-orbit,
+  .atom-bubble {
+    animation: none !important;
+  }
   .ai-brain .atom-orbit {
     animation: none;
   }
