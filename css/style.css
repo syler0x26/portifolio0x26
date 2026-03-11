@@ -165,6 +165,44 @@ figure .green {
   backdrop-filter: blur(10px);
 }
 
+.container-portrait {
+  width: 100%;
+}
+
+.box-portrait {
+  position: relative;
+  width: min(320px, 80vw);
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+}
+
+.box-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 400ms ease;
+}
+
+.box-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../img/my-011.jpeg") center / cover no-repeat;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.box-portrait:hover::after {
+  opacity: 1;
+}
+
+.box-portrait:hover img {
+  opacity: 0;
+}
+
 .about-name {
   font-weight: 700;
   font-size: clamp(24px, 3vw, 34px);
@@ -929,6 +967,17 @@ span {
   }
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee__track,
   .atom-orbit,
@@ -960,6 +1009,7 @@ span {
   padding: 28px 26px;
   box-shadow: 0 20px 50px rgba(2, 6, 23, 0.45);
   backdrop-filter: blur(12px);
+  animation: fade-up 700ms ease both;
 }
 
 .connect-badge {
@@ -1049,11 +1099,20 @@ span {
   color: #cbd5f5;
   box-shadow: 0 16px 34px rgba(2, 6, 23, 0.35);
   transition: transform 200ms ease, border-color 200ms ease;
+  animation: fade-up 700ms ease both;
 }
 
 .support-card:hover {
   transform: translateY(-2px);
   border-color: rgba(56, 189, 248, 0.4);
+}
+
+.support-card:nth-of-type(2) {
+  animation-delay: 120ms;
+}
+
+.support-card:nth-of-type(3) {
+  animation-delay: 220ms;
 }
 
 .support-card__title {
