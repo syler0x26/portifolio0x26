@@ -806,15 +806,40 @@ body {
     -webkit-backdrop-filter: none;
   }
 
-  .ai-brain,
-  .atom-orbit,
-  .atom-bubble,
-  .marquee__track {
-    animation: none !important;
-  }
-
   .atom-core-wrap {
     filter: none !important;
+  }
+
+  .ai-brain {
+    animation: float-up-soft 10s ease-in-out infinite;
+  }
+
+  .ai-brain .atom-orbit--a {
+    animation-duration: 18s;
+  }
+
+  .ai-brain .atom-orbit--b {
+    animation-duration: 16s;
+  }
+
+  .atom-orbit--one {
+    animation-duration: 20s;
+  }
+
+  .atom-orbit--two {
+    animation-duration: 18s;
+  }
+
+  .atom-orbit--three {
+    animation-duration: 22s;
+  }
+
+  .marquee--left .marquee__track {
+    animation-duration: 70s;
+  }
+
+  .marquee--right .marquee__track {
+    animation-duration: 74s;
   }
 }
 span {
@@ -898,6 +923,16 @@ span {
   }
   50% {
     transform: translateY(-8px);
+  }
+}
+
+@keyframes float-up-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
 
