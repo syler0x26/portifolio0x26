@@ -14,6 +14,320 @@
     onScroll();
   }
 
+  const translations = {
+    pt: {
+      nav_about: "Sobre mim",
+      nav_projects: "Projetos",
+      nav_timeline: "Trajetoria",
+      home_title: "Portf\u00f3lio Acad\u00eamico em <span>Intelig\u00eancia Artificial</span>",
+      home_btn_work: "ver meu trabalho",
+      home_btn_contact: "meu contato",
+      courses_title: "Cursos",
+      courses_subtitle: "Programas focados em tecnologia, programacao e inteligencia artificial.",
+      course_ai: "Inteligencia Artificial",
+      course_python: "Python",
+      label_soon: "Em breve",
+      about_title: "Quem sou eu",
+      about_role: "Estudante de Bacharelado em Intelig\u00eancia Artificial \u00b7 Brasil",
+      about_summary:
+        "Foco em construir solu\u00e7\u00f5es inteligentes orientadas a dados, com base s\u00f3lida em matem\u00e1tica e ci\u00eancia da computa\u00e7\u00e3o. Interesse em aplicar IA para resolver problemas reais e gerar impacto mensur\u00e1vel.",
+      tag_ml: "Machine Learning",
+      tag_dl: "Deep Learning",
+      tag_data: "An\u00e1lise de Dados",
+      tag_auto: "Automa\u00e7\u00e3o",
+      tag_python: "Python",
+      metric_academic: "Projetos acad\u00eamicos",
+      metric_extension: "Projetos de extens\u00e3o",
+      metric_competitions: "Competi\u00e7\u00f5es tecnol\u00f3gicas",
+      atom_ml_title: "Machine Learning",
+      atom_ml_desc: "Algoritmos que aprendem com dados",
+      atom_ai_title: "Intelig\u00eancia Artificial",
+      atom_ai_desc: "Explorando dados e sistemas inteligentes",
+      timeline_title: "Trajetoria",
+      timeline_subtitle: "Minha jornada profissional.",
+      timeline_2020_title: "Inicio na tecnologia - 2020",
+      timeline_2020_desc: "Curiosidade por computacao e primeiros estudos em programacao.",
+      timeline_2024_title: "Primeiro projeto web - 2024",
+      timeline_2024_desc: "Construindo interfaces e aprendendo fundamentos de desenvolvimento web.",
+      timeline_2026_title: "Ingresso na universidade - 2026",
+      timeline_2026_desc: "Base teorica forte e disciplinas de Inteligencia artificial.",
+      timeline_ai_title: "Estudos em inteligencia artificial",
+      timeline_ai_desc: "Foco em aprendizado de maquina, redes neurais e dados.",
+      timeline_projects_title: "Desenvolvimento de projetos academicos",
+      timeline_projects_desc: "Aplicando IA para resolver problemas reais e validar ideias.",
+      portfolio_title: "Projetos e Experimentos",
+      portfolio_subtitle: "Projetos desenvolvidos durante minha jornada acad\u00eamica em tecnologia e Intelig\u00eancia Artificial.",
+      project_data_title: "An\u00e1lise de Dados com Python",
+      project_data_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_ml_title: "Modelo de Machine Learning",
+      project_ml_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet.",
+      project_nn_title: "Experimentos com Redes Neurais",
+      project_nn_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_viz_title: "Visualiza\u00e7\u00e3o de Dados",
+      project_viz_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_auto_title: "Projeto de Automa\u00e7\u00e3o",
+      project_auto_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_algo_title: "Estudo de Algoritmos",
+      project_algo_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_btn: "Ver Projeto",
+      connect_badge: "CONECTE-SE",
+      connect_title: "<span>Hey!!</span> Acompanhe minha jornada na tecnologia",
+      connect_desc:
+        "Estou construindo projetos, aprendendo e evoluindo na area de tecnologia e desenvolvimento. Se voce quer acompanhar essa jornada e ver os projetos que estou criando, me segue nas redes sociais.",
+      social_instagram: "Instagram",
+      social_github: "GitHub",
+      social_linkedin: "LinkedIn",
+      support_title: "Apoie o <span>Projeto</span>",
+      support_desc:
+        "Se voce acredita no projeto e quer ajudar no crescimento dessa jornada na tecnologia, pode apoiar abaixo.",
+      support_pix_title: "Doar via Pix",
+      support_pix_desc: "Seu apoio ajuda a manter a jornada ativa e a construir novos projetos.",
+      support_pix_scan: "Escaneie para doar",
+      support_pix_copy_title: "Copiar chave Pix",
+      support_pix_copy_btn: "Copiar chave",
+      pix_copied: "Chave copiada",
+      pix_manual: "Copie manualmente",
+      alt_creator: "img ilustrativa do criador do site",
+      alt_timeline_2020: "Inicio na tecnologia",
+      alt_timeline_2024: "Primeiro projeto web",
+      alt_timeline_ai: "Estudos em inteligencia artificial",
+      alt_timeline_projects: "Desenvolvimento de projetos academicos",
+      alt_project_data: "An\u00e1lise de Dados com Python",
+      alt_project_ml: "Modelo de Machine Learning",
+      alt_project_nn: "Experimentos com Redes Neurais",
+      alt_project_viz: "Visualiza\u00e7\u00e3o de Dados",
+      alt_project_auto: "Projeto de Automa\u00e7\u00e3o",
+      alt_project_algo: "Estudo de Algoritmos"
+    },
+    en: {
+      nav_about: "About me",
+      nav_projects: "Projects",
+      nav_timeline: "Timeline",
+      home_title: "Academic Portfolio in <span>Artificial Intelligence</span>",
+      home_btn_work: "see my work",
+      home_btn_contact: "my contact",
+      courses_title: "Courses",
+      courses_subtitle: "Programs focused on technology, programming, and artificial intelligence.",
+      course_ai: "Artificial Intelligence",
+      course_python: "Python",
+      label_soon: "Coming soon",
+      about_title: "About me",
+      about_role: "BSc Student in Artificial Intelligence \u00b7 Brazil",
+      about_summary:
+        "Focused on building data-driven intelligent solutions with a solid foundation in math and computer science. Interested in applying AI to solve real problems and create measurable impact.",
+      tag_ml: "Machine Learning",
+      tag_dl: "Deep Learning",
+      tag_data: "Data Analysis",
+      tag_auto: "Automation",
+      tag_python: "Python",
+      metric_academic: "Academic projects",
+      metric_extension: "Extension projects",
+      metric_competitions: "Tech competitions",
+      atom_ml_title: "Machine Learning",
+      atom_ml_desc: "Algorithms that learn from data",
+      atom_ai_title: "Artificial Intelligence",
+      atom_ai_desc: "Exploring data and intelligent systems",
+      timeline_title: "Timeline",
+      timeline_subtitle: "My professional journey.",
+      timeline_2020_title: "Start in technology - 2020",
+      timeline_2020_desc: "Curiosity for computing and first steps in programming.",
+      timeline_2024_title: "First web project - 2024",
+      timeline_2024_desc: "Building interfaces and learning web development fundamentals.",
+      timeline_2026_title: "University admission - 2026",
+      timeline_2026_desc: "Strong theoretical base and AI-focused coursework.",
+      timeline_ai_title: "Artificial intelligence studies",
+      timeline_ai_desc: "Focus on machine learning, neural networks, and data.",
+      timeline_projects_title: "Academic project development",
+      timeline_projects_desc: "Applying AI to solve real problems and validate ideas.",
+      portfolio_title: "Projects and Experiments",
+      portfolio_subtitle: "Projects developed during my academic journey in technology and Artificial Intelligence.",
+      project_data_title: "Data Analysis with Python",
+      project_data_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_ml_title: "Machine Learning Model",
+      project_ml_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet.",
+      project_nn_title: "Neural Network Experiments",
+      project_nn_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_viz_title: "Data Visualization",
+      project_viz_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_auto_title: "Automation Project",
+      project_auto_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_algo_title: "Algorithms Study",
+      project_algo_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_btn: "View Project",
+      connect_badge: "CONNECT",
+      connect_title: "<span>Hey!!</span> Follow my journey in tech",
+      connect_desc:
+        "I am building projects, learning, and evolving in technology and development. If you want to follow this journey and see what I am creating, connect with me on social media.",
+      social_instagram: "Instagram",
+      social_github: "GitHub",
+      social_linkedin: "LinkedIn",
+      support_title: "Support the <span>Project</span>",
+      support_desc:
+        "If you believe in the project and want to help this journey grow in tech, you can support below.",
+      support_pix_title: "Donate via Pix",
+      support_pix_desc: "Your support helps keep the journey active and build new projects.",
+      support_pix_scan: "Scan to donate",
+      support_pix_copy_title: "Copy Pix key",
+      support_pix_copy_btn: "Copy key",
+      pix_copied: "Key copied",
+      pix_manual: "Copy manually",
+      alt_creator: "illustrative image of the site creator",
+      alt_timeline_2020: "Start in technology",
+      alt_timeline_2024: "First web project",
+      alt_timeline_ai: "Artificial intelligence studies",
+      alt_timeline_projects: "Academic project development",
+      alt_project_data: "Data Analysis with Python",
+      alt_project_ml: "Machine Learning Model",
+      alt_project_nn: "Neural Network Experiments",
+      alt_project_viz: "Data Visualization",
+      alt_project_auto: "Automation Project",
+      alt_project_algo: "Algorithms Study"
+    },
+    es: {
+      nav_about: "Sobre m\u00ed",
+      nav_projects: "Proyectos",
+      nav_timeline: "Trayectoria",
+      home_title: "Portafolio Acad\u00e9mico en <span>Inteligencia Artificial</span>",
+      home_btn_work: "ver mi trabajo",
+      home_btn_contact: "mi contacto",
+      courses_title: "Cursos",
+      courses_subtitle: "Programas enfocados en tecnolog\u00eda, programaci\u00f3n e inteligencia artificial.",
+      course_ai: "Inteligencia Artificial",
+      course_python: "Python",
+      label_soon: "Pr\u00f3ximamente",
+      about_title: "Sobre m\u00ed",
+      about_role: "Estudiante de Licenciatura en Inteligencia Artificial \u00b7 Brasil",
+      about_summary:
+        "Enfocado en construir soluciones inteligentes orientadas a datos, con una base s\u00f3lida en matem\u00e1tica y ciencias de la computaci\u00f3n. Interesado en aplicar IA para resolver problemas reales y generar impacto medible.",
+      tag_ml: "Machine Learning",
+      tag_dl: "Deep Learning",
+      tag_data: "An\u00e1lisis de Datos",
+      tag_auto: "Automatizaci\u00f3n",
+      tag_python: "Python",
+      metric_academic: "Proyectos acad\u00e9micos",
+      metric_extension: "Proyectos de extensi\u00f3n",
+      metric_competitions: "Competiciones tecnol\u00f3gicas",
+      atom_ml_title: "Machine Learning",
+      atom_ml_desc: "Algoritmos que aprenden con datos",
+      atom_ai_title: "Inteligencia Artificial",
+      atom_ai_desc: "Explorando datos y sistemas inteligentes",
+      timeline_title: "Trayectoria",
+      timeline_subtitle: "Mi trayectoria profesional.",
+      timeline_2020_title: "Inicio en la tecnolog\u00eda - 2020",
+      timeline_2020_desc: "Curiosidad por la computaci\u00f3n y primeros estudios en programaci\u00f3n.",
+      timeline_2024_title: "Primer proyecto web - 2024",
+      timeline_2024_desc: "Construyendo interfaces y aprendiendo fundamentos del desarrollo web.",
+      timeline_2026_title: "Ingreso a la universidad - 2026",
+      timeline_2026_desc: "Base te\u00f3rica fuerte y asignaturas de inteligencia artificial.",
+      timeline_ai_title: "Estudios en inteligencia artificial",
+      timeline_ai_desc: "Enfoque en aprendizaje autom\u00e1tico, redes neuronales y datos.",
+      timeline_projects_title: "Desarrollo de proyectos acad\u00e9micos",
+      timeline_projects_desc: "Aplicando IA para resolver problemas reales y validar ideas.",
+      portfolio_title: "Proyectos y Experimentos",
+      portfolio_subtitle: "Proyectos desarrollados durante mi trayectoria acad\u00e9mica en tecnolog\u00eda e Inteligencia Artificial.",
+      project_data_title: "An\u00e1lisis de Datos con Python",
+      project_data_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_ml_title: "Modelo de Machine Learning",
+      project_ml_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet.",
+      project_nn_title: "Experimentos con Redes Neuronales",
+      project_nn_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_viz_title: "Visualizaci\u00f3n de Datos",
+      project_viz_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_auto_title: "Proyecto de Automatizaci\u00f3n",
+      project_auto_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_algo_title: "Estudio de Algoritmos",
+      project_algo_desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet",
+      project_btn: "Ver Proyecto",
+      connect_badge: "CONECTA",
+      connect_title: "<span>Hey!!</span> Acompa\u00f1a mi camino en tecnolog\u00eda",
+      connect_desc:
+        "Estoy construyendo proyectos, aprendiendo y evolucionando en tecnolog\u00eda y desarrollo. Si quieres acompa\u00f1ar este camino y ver lo que estoy creando, s\u00edgueme en las redes sociales.",
+      social_instagram: "Instagram",
+      social_github: "GitHub",
+      social_linkedin: "LinkedIn",
+      support_title: "Apoya el <span>Proyecto</span>",
+      support_desc:
+        "Si crees en el proyecto y quieres ayudar a que esta jornada crezca en tecnolog\u00eda, puedes apoyar abajo.",
+      support_pix_title: "Donar via Pix",
+      support_pix_desc: "Tu apoyo ayuda a mantener la jornada activa y a construir nuevos proyectos.",
+      support_pix_scan: "Escanea para donar",
+      support_pix_copy_title: "Copiar clave Pix",
+      support_pix_copy_btn: "Copiar clave",
+      pix_copied: "Clave copiada",
+      pix_manual: "Copia manualmente",
+      alt_creator: "imagen ilustrativa del creador del sitio",
+      alt_timeline_2020: "Inicio en la tecnolog\u00eda",
+      alt_timeline_2024: "Primer proyecto web",
+      alt_timeline_ai: "Estudios en inteligencia artificial",
+      alt_timeline_projects: "Desarrollo de proyectos acad\u00e9micos",
+      alt_project_data: "An\u00e1lisis de Datos con Python",
+      alt_project_ml: "Modelo de Machine Learning",
+      alt_project_nn: "Experimentos con Redes Neuronales",
+      alt_project_viz: "Visualizaci\u00f3n de Datos",
+      alt_project_auto: "Proyecto de Automatizaci\u00f3n",
+      alt_project_algo: "Estudio de Algoritmos"
+    }
+  };
+
+  let currentLang = "pt";
+  const translate = (key) => {
+    const pack = translations[currentLang] || translations.pt;
+    return pack[key] || translations.pt[key] || key;
+  };
+
+  const applyLanguage = (lang) => {
+    currentLang = translations[lang] ? lang : "pt";
+    const pack = translations[currentLang];
+    document.documentElement.setAttribute("lang", currentLang);
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.dataset.i18n;
+      const value = pack[key];
+      if (value === undefined) return;
+
+      if (el.dataset.i18nAttr) {
+        el.setAttribute(el.dataset.i18nAttr, value);
+        return;
+      }
+
+      if (el.dataset.i18nHtml !== undefined) {
+        el.innerHTML = value;
+        return;
+      }
+
+      el.textContent = value;
+    });
+
+    const buttons = document.querySelectorAll(".lang-btn");
+    buttons.forEach((btn) => {
+      btn.classList.toggle("is-active", btn.dataset.lang === currentLang);
+    });
+
+    try {
+      window.localStorage.setItem("site_lang", currentLang);
+    } catch (error) {
+      // ignore storage errors
+    }
+  };
+
+  const langButtons = document.querySelectorAll(".lang-btn");
+  if (langButtons.length) {
+    langButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        applyLanguage(btn.dataset.lang);
+      });
+    });
+  }
+
+  const savedLang = (() => {
+    try {
+      return window.localStorage.getItem("site_lang");
+    } catch (error) {
+      return null;
+    }
+  })();
+  applyLanguage(savedLang || "pt");
+
   const aboutSection = document.querySelector("#about");
 
   if (aboutSection) {
@@ -693,9 +1007,9 @@
         if (!text) return;
         try {
           await navigator.clipboard.writeText(text);
-          showFeedback("Chave copiada");
+          showFeedback(translate("pix_copied"));
         } catch (error) {
-          showFeedback("Copie manualmente");
+          showFeedback(translate("pix_manual"));
         }
       });
     });
