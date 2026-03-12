@@ -19,14 +19,18 @@
       nav_about: "Sobre mim",
       nav_projects: "Projetos",
       nav_timeline: "Trajetoria",
+      lang_menu: "Idioma",
       home_title: "Portf\u00f3lio Acad\u00eamico em <span>Intelig\u00eancia Artificial</span>",
       home_btn_work: "ver meu trabalho",
       home_btn_contact: "meu contato",
       courses_title: "Cursos",
       courses_subtitle: "Programas focados em tecnologia, programacao e inteligencia artificial.",
       course_ai: "Inteligencia Artificial",
+      course_ai_desc: "Curso de Inteligencia Artificial",
       course_python: "Python",
+      course_python_desc: "Curso de Python",
       label_soon: "Em breve",
+      course_btn: "Ver no YouTube",
       about_title: "Quem sou eu",
       about_role: "Estudante de Bacharelado em Intelig\u00eancia Artificial \u00b7 Brasil",
       about_summary:
@@ -103,14 +107,18 @@
       nav_about: "About me",
       nav_projects: "Projects",
       nav_timeline: "Timeline",
+      lang_menu: "Language",
       home_title: "Academic Portfolio in <span>Artificial Intelligence</span>",
       home_btn_work: "see my work",
       home_btn_contact: "my contact",
       courses_title: "Courses",
       courses_subtitle: "Programs focused on technology, programming, and artificial intelligence.",
       course_ai: "Artificial Intelligence",
+      course_ai_desc: "Artificial Intelligence course",
       course_python: "Python",
+      course_python_desc: "Python course",
       label_soon: "Coming soon",
+      course_btn: "Watch on YouTube",
       about_title: "About me",
       about_role: "BSc Student in Artificial Intelligence \u00b7 Brazil",
       about_summary:
@@ -187,14 +195,18 @@
       nav_about: "Sobre m\u00ed",
       nav_projects: "Proyectos",
       nav_timeline: "Trayectoria",
+      lang_menu: "Idioma",
       home_title: "Portafolio Acad\u00e9mico en <span>Inteligencia Artificial</span>",
       home_btn_work: "ver mi trabajo",
       home_btn_contact: "mi contacto",
       courses_title: "Cursos",
       courses_subtitle: "Programas enfocados en tecnolog\u00eda, programaci\u00f3n e inteligencia artificial.",
       course_ai: "Inteligencia Artificial",
+      course_ai_desc: "Curso de Inteligencia Artificial",
       course_python: "Python",
+      course_python_desc: "Curso de Python",
       label_soon: "Pr\u00f3ximamente",
+      course_btn: "Ver en YouTube",
       about_title: "Sobre m\u00ed",
       about_role: "Estudiante de Licenciatura en Inteligencia Artificial \u00b7 Brasil",
       about_summary:
@@ -298,6 +310,10 @@
       el.textContent = value;
     });
 
+    document.querySelectorAll(".course-btn[data-soon]").forEach((btn) => {
+      btn.setAttribute("data-soon", pack.label_soon || translations.pt.label_soon);
+    });
+
     const buttons = document.querySelectorAll(".lang-btn");
     buttons.forEach((btn) => {
       btn.classList.toggle("is-active", btn.dataset.lang === currentLang);
@@ -310,11 +326,28 @@
     }
   };
 
+  const langToggle = document.querySelector(".lang-toggle");
+  const langDrawer = document.querySelector(".lang-drawer");
+  if (langToggle && langDrawer) {
+    langToggle.addEventListener("click", () => {
+      const isOpen = langDrawer.classList.toggle("is-open");
+      langToggle.setAttribute("aria-expanded", String(isOpen));
+      langDrawer.setAttribute("aria-hidden", String(!isOpen));
+    });
+  }
+
   const langButtons = document.querySelectorAll(".lang-btn");
   if (langButtons.length) {
     langButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         applyLanguage(btn.dataset.lang);
+        if (langDrawer && langDrawer.classList.contains("is-open")) {
+          langDrawer.classList.remove("is-open");
+          if (langToggle) {
+            langToggle.setAttribute("aria-expanded", "false");
+          }
+          langDrawer.setAttribute("aria-hidden", "true");
+        }
       });
     });
   }

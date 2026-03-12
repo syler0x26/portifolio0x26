@@ -28,6 +28,16 @@
                             <button class="lang-btn" type="button" data-lang="en">EN</button>
                             <button class="lang-btn" type="button" data-lang="es">ES</button>
                         </div>
+                        <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="lang-drawer">
+                            <i class="bi bi-translate" aria-hidden="true"></i>
+                            <span data-i18n="lang_menu">Idioma</span>
+                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div id="lang-drawer" class="lang-drawer" aria-hidden="true">
+                            <button class="lang-btn" type="button" data-lang="pt">PT</button>
+                            <button class="lang-btn" type="button" data-lang="en">EN</button>
+                            <button class="lang-btn" type="button" data-lang="es">ES</button>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -248,7 +258,12 @@
                             <div class="card-body d-flex flex-column align-items-center">
                                 <i class="bi bi-cpu course-icon" aria-hidden="true"></i>
                                 <h3 class="course-name" data-i18n="course_ai">Inteligencia Artificial</h3>
-                                <span class="badge course-badge" data-i18n="label_soon">Em breve</span>
+                                <p class="course-desc" data-i18n="course_ai_desc">Curso de Inteligencia Artificial</p>
+                                
+                                <button class="course-btn" type="button" disabled data-soon="Em breve">
+                                    <i class="bi bi-youtube" aria-hidden="true"></i>
+                                    <span data-i18n="course_btn">Ver no YouTube</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -257,7 +272,12 @@
                             <div class="card-body d-flex flex-column align-items-center">
                                 <i class="bi bi-code-slash course-icon" aria-hidden="true"></i>
                                 <h3 class="course-name" data-i18n="course_python">Python</h3>
-                                <span class="badge course-badge" data-i18n="label_soon">Em breve</span>
+                                <p class="course-desc" data-i18n="course_python_desc">Curso de Python</p>
+                                
+                                <button class="course-btn" type="button" disabled data-soon="Em breve">
+                                    <i class="bi bi-youtube" aria-hidden="true"></i>
+                                    <span data-i18n="course_btn">Ver no YouTube</span>
+                                </button>
                             </div>
                         </div>
                     </div>

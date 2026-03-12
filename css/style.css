@@ -401,6 +401,28 @@ header nav .nav-link {
   background: #6B46FF;
   color: #fff;
 }
+
+.lang-toggle {
+  display: none;
+  border: none;
+  background: rgba(107, 70, 255, 0.12);
+  color: #6B46FF;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  gap: 6px;
+  align-items: center;
+}
+
+.lang-toggle i {
+  font-size: 14px;
+}
+
+.lang-drawer {
+  display: none;
+}
 header.is-shrunk {
   padding: 5px 0;
 }
@@ -442,13 +464,37 @@ header.is-shrunk .lang-btn.is-active {
 @media (max-width: 575.98px) {
   header nav {
     flex-wrap: wrap;
-    gap: 8px 12px;
+    gap: 8px 10px;
+    padding: 10px 12px;
   }
 
   .lang-switcher {
-    position: static;
-    transform: none;
+    display: none;
+  }
+
+  header nav .nav-link {
+    font-size: 14px;
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+  }
+
+  .lang-drawer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
     margin-top: 6px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 180ms ease, max-height 180ms ease;
+  }
+
+  .lang-drawer.is-open {
+    opacity: 1;
+    max-height: 60px;
   }
 }
 
@@ -599,6 +645,12 @@ header.is-shrunk .lang-btn.is-active {
   color: #f8fafc;
 }
 
+.course-desc {
+  margin: 0 0 14px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
 .course-badge {
   background: rgba(56, 189, 248, 0.18);
   border: 1px solid rgba(56, 189, 248, 0.35);
@@ -607,6 +659,46 @@ header.is-shrunk .lang-btn.is-active {
   border-radius: 999px;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+.course-btn {
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.14);
+  color: rgba(248, 250, 252, 0.7);
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: not-allowed;
+  opacity: 0.7;
+  position: relative;
+}
+
+.course-btn::after {
+  content: attr(data-soon);
+  position: absolute;
+  left: 50%;
+  top: -36px;
+  transform: translateX(-50%) scale(0.98);
+  background: rgba(15, 23, 42, 0.95);
+  color: #e2e8f0;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  white-space: nowrap;
+}
+
+.course-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
 .marquee {
