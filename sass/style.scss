@@ -1,16 +1,14 @@
-@use "home";
-@use "about";
-@use "colors";
 @use "colors" as c;
-@use "header";
-@use "projects";
-@use "carrosel";
+@use "colors";
+@use "base";
 @use "button";
+@use "header";
+@use "home";
+@use "carrosel";
+@use "courses";
+@use "about";
+@use "projects";
+@use "connect";
 @use "footer";
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap');
-body{
-    font-family: "Poppins", sans-serif;
-}
-span{
-    color: c.$cor-principal;
-}
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Lobster&family=Poppins:wght@400;700&display=swap");

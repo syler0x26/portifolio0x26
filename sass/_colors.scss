@@ -1,14 +1,47 @@
-$font-principal:"Poppins", serif;
-$font-secundaria: "Lobster", serif;
-$cor-principal: #6B46FF;
-$cor-destaque: #ffad32; 
-$cor-principal-alpha: #747bff2d;
-$cor-gradiente-01: #ffe7c2;
-$cor-gradiente-02: #bdacff;
-$cor01: #f9f9f9;
-$cor02: #b8c0c7;
-$cor03: #767f86;
-$cor04: #3c4852;
-$cor05: #00000043;
-    /*box shadow*/
-$shadow: 0 0.3rem 0.4rem 0.1rem var(--cor05);
+$white: #fff;
+$white-pure: #ffffff;
+$black: #000;
+
+$brand-primary: #6B46FF;
+$brand-secondary: #38bdf8;
+$brand-lavender: #a78bfa;
+$brand-sky: #93c5fd;
+$brand-sky-200: #bae6fd;
+$brand-blue-600: #2563EB;
+$brand-purple-700: #732BBA;
+$brand-violet-500: #4c4edb;
+$brand-blue-400: #60a5fa;
+$brand-indigo-300: #a5b4fc;
+$brand-green-400: #4ade80;
+$brand-red-400: #f87171;
+$brand-red-500: #ef4444;
+$brand-yellow-400: #fbbf24;
+
+$ink-980: #020617;
+$ink-950: #06080f;
+$ink-900: #0b0f1a;
+$ink-880: #0c0f1c;
+$ink-850: #0a0e19;
+$ink-800: #0f172a;
+$ink-780: #111827;
+$ink-700: #1f2937;
+$ink-650: #1f2a44;
+
+$slate-700: #3c4852;
+$slate-600: #475569;
+$slate-500: #64748b;
+$slate-400: #94a3b8;
+$slate-300: #cbd5f5;
+$slate-250: #c7d2fe;
+$slate-200: #e2e8f0;
+$slate-150: #e5e7eb;
+$slate-100: #f1f5f9;
+$slate-90: #f8fafc;
+$slate-80: #f9f9ff;
+
+$gray-500: #808080;
+
+$orange: orange;
+$gray: gray;
+$green: green;
+

@@ -1,0 +1,151 @@
+@use "colors" as c;
+
+.connect-section {
+  background: radial-gradient(circle at top, rgba(c.$ink-800, 0.9), rgba(c.$ink-800, 0.98)),
+    linear-gradient(135deg, rgba(c.$brand-secondary, 0.08), rgba(c.$brand-indigo-300, 0.06));
+  color: c.$slate-200;
+  padding: 110px 0;
+}
+
+.connect-card {
+  background: rgba(c.$ink-980, 0.6);
+  border: 1px solid rgba(c.$slate-400, 0.18);
+  border-radius: 22px;
+  padding: 28px 26px;
+  box-shadow: 0 20px 50px rgba(c.$ink-980, 0.45);
+  backdrop-filter: blur(12px);
+  animation: fade-up 700ms ease both;
+}
+
+.connect-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: c.$brand-sky;
+  border: 1px solid rgba(c.$slate-400, 0.24);
+  background: rgba(c.$ink-700, 0.4);
+  margin-bottom: 16px;
+}
+
+.connect-card h2 {
+  font-size: clamp(28px, 3.5vw, 42px);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: c.$slate-90;
+}
+
+.connect-card p {
+  color: c.$slate-300;
+  margin-bottom: 24px;
+}
+
+.social-links {
+  display: grid;
+  gap: 12px;
+}
+
+.support-area {
+  display: grid;
+  gap: 20px;
+}
+
+.support-header h3 {
+  margin-bottom: 8px;
+  color: c.$slate-90;
+  font-size: clamp(20px, 2.4vw, 28px);
+}
+
+.support-header p {
+  margin: 0;
+  color: c.$slate-300;
+}
+
+.support-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.support-card {
+  background: rgba(c.$ink-980, 0.6);
+  border: 1px solid rgba(c.$slate-400, 0.18);
+  border-radius: 18px;
+  padding: 18px 20px;
+  color: c.$slate-300;
+  box-shadow: 0 16px 34px rgba(c.$ink-980, 0.35);
+  transition: transform 200ms ease, border-color 200ms ease;
+  animation: fade-up 700ms ease both;
+}
+
+.support-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(c.$brand-secondary, 0.4);
+}
+
+.support-card:nth-of-type(2) {
+  animation-delay: 120ms;
+}
+
+.support-card:nth-of-type(3) {
+  animation-delay: 220ms;
+}
+
+.support-card__title {
+  font-weight: 700;
+  color: c.$slate-200;
+  margin-bottom: 8px;
+}
+
+.support-card p {
+  margin-bottom: 16px;
+}
+
+.pix-qr {
+  width: min(220px, 70vw);
+  aspect-ratio: 1;
+  background: c.$white-pure;
+  border-radius: 16px;
+  padding: 10px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 16px 34px rgba(c.$ink-800, 0.25);
+  margin: 12px 0 8px;
+}
+
+.pix-qr canvas,
+.pix-qr img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.pix-qr__label {
+  color: rgba(c.$slate-200, 0.8);
+  font-size: 13px;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.pix-keyline {
+  font-weight: 600;
+  color: c.$slate-200;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.pix-feedback {
+  font-size: 12px;
+  color: c.$brand-blue-400;
+  min-height: 16px;
+  margin-top: 8px;
+}
+
+@media (max-width: 767.98px) {
+  .connect-section {
+    padding: 90px 0;
+  }
+}

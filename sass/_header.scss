@@ -2,27 +2,115 @@
 
 header {
   transition: padding 500ms ease, background-color 500ms ease;
-  padding: 32px 0; // estado grande
+  padding: 32px 0;
+}
 
-  nav {
-    background-color: #fff;
-    transition: padding 500ms ease, box-shadow 500ms ease, background-color 500ms ease, color 500ms ease;
-    padding: 12px 0; // estado grande do nav
-    .nav-link{
-        color: c.$cor-principal;
-    }
+header nav {
+  background-color: c.$white;
+  transition: padding 500ms ease, box-shadow 500ms ease, background-color 500ms ease, color 500ms ease;
+  padding: 12px 0;
+}
+
+header nav .nav-link {
+  color: c.$brand-primary;
+}
+
+.lang-switcher {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(c.$ink-800, 0.08);
+  border: 1px solid rgba(c.$slate-400, 0.2);
+}
+
+.lang-switcher i {
+  color: c.$brand-primary;
+  font-size: 16px;
+}
+
+.lang-drawer {
+  display: none;
+}
+
+header.is-shrunk {
+  padding: 5px 0;
+}
+
+header.is-shrunk nav {
+  padding: 6px 12px;
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: 999px;
+  background-color: rgba(c.$ink-800, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(c.$slate-200, 0.2);
+  box-shadow: 0 12px 30px rgba(c.$ink-800, 0.2);
+}
+
+header.is-shrunk nav .nav-link {
+  color: rgba(c.$white, 0.86);
+  letter-spacing: 0.02em;
+}
+
+header.is-shrunk .lang-switcher {
+  background: rgba(c.$ink-800, 0.55);
+  border-color: rgba(c.$slate-200, 0.18);
+}
+
+header.is-shrunk .lang-switcher i {
+  color: c.$brand-sky;
+}
+
+header.is-shrunk .lang-btn {
+  color: c.$slate-200;
+  background: rgba(c.$slate-400, 0.2);
+}
+
+header.is-shrunk .lang-btn.is-active {
+  background: c.$brand-secondary;
+  color: c.$ink-900;
+}
+
+@media (max-width: 575.98px) {
+  header nav {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    padding: 10px 12px;
   }
 
-  &.is-shrunk {
-    padding: 5px 0; // estado pequeno
+  .lang-switcher {
+    display: none;
+  }
 
-    nav {
-      padding: 4px 0; // estado pequeno do nav
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-      background-color: c.$cor-principal;
-      .nav-link {
-        color: #fff;
-      }
-    }
+  header nav .nav-link {
+    font-size: 14px;
+  }
+
+  .lang-toggle {
+    display: inline-flex;
+  }
+
+  .lang-drawer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 180ms ease, max-height 180ms ease;
+  }
+
+  .lang-drawer.is-open {
+    opacity: 1;
+    max-height: 60px;
   }
 }

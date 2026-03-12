@@ -1,89 +1,178 @@
 @use "colors" as c;
-.btn-home-style-1 {
-        border: none;
-        border-radius: 2rem;
-        padding: 1rem;
-        font-weight: 500;
-        backdrop-filter: blur(12px);
-        transition: all .4s;
 
-        &:hover {
-            background-color: rgba(128, 128, 128, 0.788);
-        }
-    }
-
-    .btn-home-style-2 {
-        border: none;
-        border-radius: 2rem;
-        background-color: #6B46FF;
-        color: white;
-        padding: 1rem;
-        font-weight: 500;
-        backdrop-filter: blur(12px);
-        transition: all .4s;
-
-        &:hover {
-            background-color: #6b46ffb7;
-        }
-
-    }
-    /* meu painel */
-    figure {
+figure {
   height: 100%;
   width: 100%;
-
-  .bola {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: #6B46FF;
-  }
-
-  .colorRed {
-    background-color: #EF4444;
-  }
-
-  .colorYelow {
-    background-color: #EAB308;
-  }
-
-  .colorGreen {
-    background-color: #22C55E;
-  }
-
-  .orange {
-    color: orange;
-  }
-
-  .blue {
-    color: #2563EB;
-  }
-
-  .purple {
-    color: #732BBA;
-  }
-
-  .gray {
-    color: gray;
-  }
-
-  .green {
-    color: green;
-  }
-
 }
+
+figure .bola {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: c.$brand-primary;
+  box-shadow: 0 0 10px rgba(c.$ink-800, 0.35);
+}
+
+figure .colorRed {
+  background-color: c.$brand-red-400;
+}
+
+figure .colorYelow {
+  background-color: c.$brand-yellow-400;
+}
+
+figure .colorGreen {
+  background-color: c.$brand-green-400;
+}
+
+figure .orange {
+  color: c.$orange;
+}
+
+figure .blue {
+  color: c.$brand-blue-600;
+}
+
+figure .purple {
+  color: c.$brand-purple-700;
+}
+
+figure .gray {
+  color: c.$gray;
+}
+
+figure .green {
+  color: c.$green;
+}
+
 .painel-vs-code {
   height: 100%;
   width: 100%;
-  background-color: #0D111F;
-  box-shadow: 0 0 0.2rem #6B46FF;
-  border-radius: 1.5rem;
-  padding: 2rem;
+  background: rgba(c.$ink-880, 0.9);
+  border: 1px solid rgba(c.$slate-400, 0.2);
+  box-shadow: 0 24px 60px rgba(c.$ink-980, 0.6);
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
   transform-style: preserve-3d;
   transform: rotateX(8deg);
   transition: transform 1s ease;
 }
 
+.painel-vs-code .row {
+  margin: 0;
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+.painel-vs-code .col {
+  padding: 0;
+}
+
+.painel-vs-code .row:first-child {
+  margin: 0;
+  padding: 14px 18px;
+  background: rgba(c.$ink-800, 0.75);
+  border-bottom: 1px solid rgba(c.$slate-400, 0.18);
+  align-items: center;
+}
+
+.painel-vs-code .row:first-child .col {
+  padding: 0;
+}
+
+.painel-vs-code .row:first-child p {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(c.$slate-200, 0.7);
+}
+
+.painel-vs-code .row:last-child {
+  padding: 22px 24px 26px;
+}
+
+.painel-vs-code code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.65;
+  color: c.$slate-250;
+}
+
+.painel-vs-code code p {
+  margin: 0;
+  color: c.$slate-300;
+}
+
+.painel-vs-code code .gray {
+  color: c.$slate-400;
+}
+
+.painel-vs-code code .blue {
+  color: c.$brand-secondary;
+}
+
+.painel-vs-code code .purple {
+  color: c.$brand-lavender;
+}
+
+.painel-vs-code code .green {
+  color: c.$brand-green-400;
+}
+
+.painel-vs-code code .orange {
+  color: c.$brand-yellow-400;
+}
+
 .painel-vs-code.is-visible {
   transform: rotateX(0deg);
+}
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ai-brain {
+  width: min(360px, 80vw);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+.ai-brain svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 18px 30px rgba(c.$brand-primary, 0.35));
+}
+
+.ai-brain {
+  animation: none;
+}
+
+.ai-brain .atom-pulse {
+  transform-origin: 50% 50%;
+  animation: core-pulse 2.6s ease-in-out infinite;
+}
+
+.ai-brain .atom-orbit {
+  transform-origin: 50% 50%;
+  animation: none !important;
+}
+
+.ai-brain,
+.ai-brain .atom-orbit,
+.atom-orbit,
+.marquee__track,
+.atom-bubble {
+  will-change: transform;
 }

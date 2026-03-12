@@ -1,0 +1,144 @@
+@use "colors" as c;
+
+.courses-section {
+  padding: 96px 0;
+  background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.14), transparent 55%),
+    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.2), transparent 55%), c.$ink-950;
+  color: c.$slate-200;
+}
+
+.courses-title {
+  font-family: "Poppins", serif;
+  font-size: clamp(28px, 4vw, 54px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: c.$slate-200;
+  margin-bottom: 10px;
+}
+
+.courses-subtitle {
+  color: c.$slate-400;
+  margin: 0 auto;
+  max-width: 560px;
+}
+
+.course-terminal {
+  background: rgba(c.$ink-880, 0.9);
+  border-radius: 20px;
+  border: 1px solid rgba(c.$slate-400, 0.2);
+  box-shadow: 0 24px 60px rgba(c.$ink-980, 0.6);
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  background: rgba(c.$ink-800, 0.75);
+  border-bottom: 1px solid rgba(c.$slate-400, 0.18);
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(c.$ink-800, 0.4);
+}
+
+.terminal-dot--red {
+  background: c.$brand-red-400;
+}
+
+.terminal-dot--yellow {
+  background: c.$brand-yellow-400;
+}
+
+.terminal-dot--green {
+  background: c.$brand-green-400;
+}
+
+.terminal-title {
+  margin-left: auto;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(c.$slate-200, 0.7);
+}
+
+.terminal-body {
+  padding: 22px 24px 26px;
+}
+
+.terminal-body pre {
+  margin: 0;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.65;
+  color: c.$slate-250;
+  white-space: pre-wrap;
+}
+
+.terminal-body code .gray {
+  color: c.$slate-400;
+}
+
+.terminal-body code .blue {
+  color: c.$brand-secondary;
+}
+
+.terminal-body code .purple {
+  color: c.$brand-lavender;
+}
+
+.terminal-body code .green {
+  color: c.$brand-green-400;
+}
+
+.terminal-body code .orange {
+  color: c.$brand-yellow-400;
+}
+
+.course-card {
+  background: rgba(c.$ink-850, 0.92);
+  border: 1px solid rgba(c.$slate-400, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(c.$ink-980, 0.5);
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+  min-height: 220px;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(c.$brand-secondary, 0.5);
+  box-shadow: 0 26px 60px rgba(c.$brand-secondary, 0.25);
+}
+
+.course-icon {
+  font-size: 44px;
+  color: c.$brand-blue-400;
+  margin-bottom: 16px;
+}
+
+.course-name {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: c.$slate-90;
+}
+
+.course-desc {
+  margin: 0 0 14px;
+  color: c.$slate-400;
+  font-size: 14px;
+}
+
+.course-badge {
+  background: rgba(c.$brand-secondary, 0.18);
+  border: 1px solid rgba(c.$brand-secondary, 0.35);
+  color: c.$brand-sky-200;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
