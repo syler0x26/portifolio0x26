@@ -1,1 +1,8 @@
 @use "colors" as c;
+.site-footer {
+  padding: 30px 0 40px;
+  text-align: center;
+  color: white;
+  background: c.$ink-650;
+  font-size: 14px;
+}

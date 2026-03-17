@@ -1,8 +1,13 @@
 @use "colors" as c;
 
-body {
+body, html {
   font-family: "Poppins", sans-serif;
-  position: relative;
+  position: relative; 
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 40%),
+    radial-gradient(circle at 30% 80%, rgba(167, 139, 250, 0.18), transparent 45%),
+    #0b0f1a;
+  color: #e2e8f0;
+  line-height: 1.6;
 }
 
 span {
