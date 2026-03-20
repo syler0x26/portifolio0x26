@@ -3,10 +3,10 @@
 
   if (header) {
     const onScroll = () => {
-      if (window.scrollY > 40) {
-        header.classList.add("is-shrunk");
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
       } else {
-        header.classList.remove("is-shrunk");
+        header.classList.remove("scrolled");
       }
     };
 
@@ -16,13 +16,17 @@
 
   const translations = {
     pt: {
-      nav_about: "Sobre mim",
+      nav_home: "In\u00edcio",
+      nav_about: "Sobre",
       nav_projects: "Projetos",
-      nav_timeline: "Trajetoria",
-      lang_menu: "Idioma",
-      home_title: "Portf\u00f3lio Acad\u00eamico em <span>Intelig\u00eancia Artificial</span>",
-      home_btn_work: "ver meu trabalho",
-      home_btn_contact: "meu contato",
+      nav_timeline: "Trajet\u00f3ria",
+      nav_contact: "Contato",
+      home_eyebrow: "Estudante de Intelig\u00eancia Artificial",
+      home_title: "Wesley Santos <span>Construindo minha base em IA e software.</span>",
+      home_subtitle:
+        "Em constante aprendizado com foco em programa\u00e7\u00e3o, estruturas de dados e aplica\u00e7\u00f5es inteligentes.",
+      home_btn_work: "Ver projetos",
+      home_btn_contact: "Entrar em contato",
       courses_title: "Cursos",
       courses_subtitle: "Programas focados em tecnologia, programacao e inteligencia artificial.",
       course_ai: "Inteligencia Artificial",
@@ -104,13 +108,17 @@
       alt_project_algo: "Estudo de Algoritmos"
     },
     en: {
-      nav_about: "About me",
+      nav_home: "Home",
+      nav_about: "About",
       nav_projects: "Projects",
-      nav_timeline: "Timeline",
-      lang_menu: "Language",
-      home_title: "Academic Portfolio in <span>Artificial Intelligence</span>",
-      home_btn_work: "see my work",
-      home_btn_contact: "my contact",
+      nav_timeline: "Journey",
+      nav_contact: "Contact",
+      home_eyebrow: "Artificial Intelligence student",
+      home_title: "Wesley Santos <span>Building my foundations in AI and software.</span>",
+      home_subtitle:
+        "Always learning with a focus on programming, data structures, and intelligent applications.",
+      home_btn_work: "View projects",
+      home_btn_contact: "Get in touch",
       courses_title: "Courses",
       courses_subtitle: "Programs focused on technology, programming, and artificial intelligence.",
       course_ai: "Artificial Intelligence",
@@ -192,13 +200,17 @@
       alt_project_algo: "Algorithms Study"
     },
     es: {
-      nav_about: "Sobre m\u00ed",
+      nav_home: "Inicio",
+      nav_about: "Sobre",
       nav_projects: "Proyectos",
       nav_timeline: "Trayectoria",
-      lang_menu: "Idioma",
-      home_title: "Portafolio Acad\u00e9mico en <span>Inteligencia Artificial</span>",
-      home_btn_work: "ver mi trabajo",
-      home_btn_contact: "mi contacto",
+      nav_contact: "Contacto",
+      home_eyebrow: "Estudiante de Inteligencia Artificial",
+      home_title: "Wesley Santos <span>Construyendo mi base en IA y software.</span>",
+      home_subtitle:
+        "En aprendizaje constante con foco en programaci\u00f3n, estructuras de datos y aplicaciones inteligentes.",
+      home_btn_work: "Ver proyectos",
+      home_btn_contact: "Entrar en contacto",
       courses_title: "Cursos",
       courses_subtitle: "Programas enfocados en tecnolog\u00eda, programaci\u00f3n e inteligencia artificial.",
       course_ai: "Inteligencia Artificial",
@@ -291,6 +303,10 @@
     currentLang = translations[lang] ? lang : "pt";
     const pack = translations[currentLang];
     document.documentElement.setAttribute("lang", currentLang);
+    const select = document.querySelector("#lang-select");
+    if (select) {
+      select.value = currentLang;
+    }
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.dataset.i18n;
@@ -326,29 +342,10 @@
     }
   };
 
-  const langToggle = document.querySelector(".lang-toggle");
-  const langDrawer = document.querySelector(".lang-drawer");
-  if (langToggle && langDrawer) {
-    langToggle.addEventListener("click", () => {
-      const isOpen = langDrawer.classList.toggle("is-open");
-      langToggle.setAttribute("aria-expanded", String(isOpen));
-      langDrawer.setAttribute("aria-hidden", String(!isOpen));
-    });
-  }
-
-  const langButtons = document.querySelectorAll(".lang-btn");
-  if (langButtons.length) {
-    langButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        applyLanguage(btn.dataset.lang);
-        if (langDrawer && langDrawer.classList.contains("is-open")) {
-          langDrawer.classList.remove("is-open");
-          if (langToggle) {
-            langToggle.setAttribute("aria-expanded", "false");
-          }
-          langDrawer.setAttribute("aria-hidden", "true");
-        }
-      });
+  const langSelect = document.querySelector("#lang-select");
+  if (langSelect) {
+    langSelect.addEventListener("change", () => {
+      applyLanguage(langSelect.value);
     });
   }
 
@@ -362,54 +359,6 @@
   applyLanguage(savedLang || "pt");
 
   const aboutSection = document.querySelector("#about");
-
-  if (aboutSection) {
-    const smallScreenQuery = window.matchMedia("(max-width: 788.98px)");
-    let isListening = false;
-    const updateAboutBg = () => {
-      if (smallScreenQuery.matches) {
-        aboutSection.classList.add("is-dark");
-        return;
-      }
-
-      const rect = aboutSection.getBoundingClientRect();
-      const viewportH = window.innerHeight || document.documentElement.clientHeight;
-      const start = viewportH * 0.9;
-      const end = viewportH * 0.2;
-      const t = (start - rect.top) / (start - end);
-
-      if (t >= 0.5) {
-        aboutSection.classList.add("is-dark");
-      } else {
-        aboutSection.classList.remove("is-dark");
-      }
-    };
-
-    const setAboutBgBehavior = () => {
-      if (smallScreenQuery.matches) {
-        if (isListening) {
-          window.removeEventListener("scroll", updateAboutBg);
-          isListening = false;
-        }
-        aboutSection.classList.add("is-dark");
-        return;
-      }
-
-      if (!isListening) {
-        window.addEventListener("scroll", updateAboutBg, { passive: true });
-        isListening = true;
-      }
-      updateAboutBg();
-    };
-
-    window.addEventListener("resize", setAboutBgBehavior);
-    if (smallScreenQuery.addEventListener) {
-      smallScreenQuery.addEventListener("change", setAboutBgBehavior);
-    } else if (smallScreenQuery.addListener) {
-      smallScreenQuery.addListener(setAboutBgBehavior);
-    }
-    setAboutBgBehavior();
-  }
 
   const timelineItems = document.querySelectorAll(".timeline-item");
   if (timelineItems.length) {
@@ -1019,6 +968,7 @@
     );
     projectCards.forEach((card) => projectObserver.observe(card));
   }
+
 
   const pixCopyButtons = document.querySelectorAll(".pix-copy");
   if (pixCopyButtons.length) {

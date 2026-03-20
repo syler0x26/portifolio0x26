@@ -6,7 +6,11 @@
   display: grid;
   gap: 16px;
   overflow: hidden;
-  background: c.$white;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 40%),
+    radial-gradient(circle at 30% 80%, rgba(167, 139, 250, 0.18), transparent 45%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
 .marquee {

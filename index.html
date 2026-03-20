@@ -13,112 +13,90 @@
     <title>TheSyler</title>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#nav-example" data-bs-smooth-scroll="true" tabindex="0">
-    <header>
-        <div class="container py-5">
-            <div class="row">
-                <div class="col">
-                    <nav id="nav-example" class="nav justify-content-center fixed-top">
-                        <a class="nav-link" href="#about" data-i18n="nav_about">Sobre mim</a>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-smooth-scroll="true" tabindex="0">
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+                <a class="navbar-brand" href="#home" aria-label="Syler">
+                    Syler
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="Alternar navega??o">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <div class="navbar-nav align-items-md-center">
+                        <a class="nav-link" href="#home" data-i18n="nav_home">In?cio</a>
+                        <a class="nav-link" href="#about" data-i18n="nav_about">Sobre</a>
                         <a class="nav-link" href="#portfolio" data-i18n="nav_projects">Projetos</a>
-                        <a class="nav-link" href="#contact" data-i18n="nav_timeline">Trajetoria</a>
-                        <div class="lang-switcher">
+                        <a class="nav-link" href="#contact" data-i18n="nav_timeline">Trajet?ria</a>
+                    </div>
+                    <div class="nav-extra">
+                        <div class="lang-select">
                             <i class="bi bi-translate" aria-hidden="true"></i>
-                            <button class="lang-btn" type="button" data-lang="pt">PT</button>
-                            <button class="lang-btn" type="button" data-lang="en">EN</button>
-                            <button class="lang-btn" type="button" data-lang="es">ES</button>
+                            <select id="lang-select" class="lang-select__control" aria-label="Selecionar idioma">
+                                <option value="pt">PT</option>
+                                <option value="en">EN</option>
+                                <option value="es">ES</option>
+                            </select>
                         </div>
-                        <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="lang-drawer">
-                            <i class="bi bi-translate" aria-hidden="true"></i>
-                            <span data-i18n="lang_menu">Idioma</span>
-                            <i class="bi bi-chevron-down" aria-hidden="true"></i>
-                        </button>
-                        <div id="lang-drawer" class="lang-drawer" aria-hidden="true">
-                            <button class="lang-btn" type="button" data-lang="pt">PT</button>
-                            <button class="lang-btn" type="button" data-lang="en">EN</button>
-                            <button class="lang-btn" type="button" data-lang="es">ES</button>
-                        </div>
-                    </nav>
+                        <a class="nav-cta" href="#contact" data-i18n="nav_contact">Contato</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main>
-
-
-        <section id="home" class="home-hero" style="height: 70vh">
-            <canvas class="hero-particles" aria-hidden="true"></canvas>
-            <div class="container">
-                <div class="row text-center align-items-center justify-content-center ">
-                    <div class="col-md-6 order-md-2 order1">
-                        <div class="ai-brain" role="img" aria-label="Atomo de IA girando">
-                            <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <defs>
-                                    <radialGradient id="brainGlow" cx="50%" cy="35%" r="60%">
-                                        <stop offset="0%" stop-color="#A78BFA" />
-                                        <stop offset="55%" stop-color="#6B46FF" />
-                                        <stop offset="100%" stop-color="#1E1B4B" />
-                                    </radialGradient>
-                                    <linearGradient id="circuitLine" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#93C5FD" />
-                                        <stop offset="100%" stop-color="#C4B5FD" />
-                                    </linearGradient>
-                                    <linearGradient id="neonRing" x1="0%" y1="100%" x2="100%" y2="0%">
-                                        <stop offset="0%" stop-color="#22D3EE" />
-                                        <stop offset="50%" stop-color="#A78BFA" />
-                                        <stop offset="100%" stop-color="#38BDF8" />
-                                    </linearGradient>
-                                    <radialGradient id="corePulse" cx="50%" cy="50%" r="50%">
-                                        <stop offset="0%" stop-color="#E0E7FF" />
-                                        <stop offset="60%" stop-color="#A78BFA" />
-                                        <stop offset="100%" stop-color="#6B46FF" />
-                                    </radialGradient>
-                                    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-                                        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
-                                        <feMerge>
-                                            <feMergeNode in="blur" />
-                                            <feMergeNode in="SourceGraphic" />
-                                        </feMerge>
-                                    </filter>
-                                </defs>
-                                <g class="atom-core">
-                                    <circle cx="200" cy="200" r="80" fill="url(#brainGlow)" opacity="0.18"
-                                        filter="url(#softGlow)" />
-                                    <circle class="atom-pulse" cx="200" cy="200" r="42" fill="url(#corePulse)"
-                                        filter="url(#softGlow)" />
-                                    <circle cx="200" cy="200" r="60" fill="url(#brainGlow)" opacity="0.25" />
-                                    <circle cx="200" cy="200" r="92" fill="none" stroke="url(#neonRing)"
-                                        stroke-width="2" stroke-dasharray="6 10" opacity="0.7" />
-                                </g>
-                                <g class="atom-orbit atom-orbit--a" filter="url(#softGlow)">
-                                    <ellipse cx="200" cy="200" rx="150" ry="68" fill="none"
-                                        stroke="url(#circuitLine)" stroke-width="3" />
-                                    <circle class="orbit-node" cx="350" cy="200" r="9" fill="#22D3EE" />
-                                    <circle class="orbit-node" cx="50" cy="200" r="7" fill="#A78BFA" />
-                                </g>
-                                <g class="atom-orbit atom-orbit--b" filter="url(#softGlow)">
-                                    <ellipse cx="200" cy="200" rx="120" ry="150" fill="none"
-                                        stroke="url(#circuitLine)" stroke-width="3" />
-                                    <circle class="orbit-node" cx="200" cy="50" r="9" fill="#C4B5FD" />
-                                    <circle class="orbit-node" cx="200" cy="350" r="7" fill="#38BDF8" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 order-md-1 order2 ">
-                        <h1 data-i18n-html="home_title">Portfólio Acadêmico em <span>Inteligência Artificial</span>
-                        </h1>
-                        <button class="btn-home-style-1" data-i18n="home_btn_work">ver meu trabalho</button>
-                        <a class="btn-home-style-2" href="https://www.instagram.com/syler0x26?igsh=bTU5azNkY3dnZ2J1" data-i18n="home_btn_contact" target="_blank" rel="noopener noreferrer">meu contato</a>
-
-                    </div>
+        <section id="home" class="home-hero">
+    <canvas class="hero-particles" aria-hidden="true"></canvas>
+    <div class="container">
+        <div class="row text-center text-md-start align-items-center justify-content-center">
+            <div class="col-md-6 order-md-2 order1">
+                <div class="ai-brain" role="img" aria-label="Átomo tecnológico">
+                    <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <radialGradient id="atomCore" cx="50%" cy="45%" r="55%">
+                                <stop offset="0%" stop-color="#38BDF8" />
+                                <stop offset="55%" stop-color="#A78BFA" />
+                                <stop offset="100%" stop-color="#0F172A" />
+                            </radialGradient>
+                            <linearGradient id="atomStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#60A5FA" />
+                                <stop offset="100%" stop-color="#A78BFA" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="atom-pulse" cx="210" cy="210" r="70" fill="url(#atomCore)" opacity="0.85" />
+                        <ellipse class="atom-orbit atom-orbit--one" cx="210" cy="210" rx="150" ry="70"
+                            fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.85" />
+                        <ellipse class="atom-orbit atom-orbit--two" cx="210" cy="210" rx="150" ry="70"
+                            fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.7"
+                            transform="rotate(60 210 210)" />
+                        <ellipse class="atom-orbit atom-orbit--three" cx="210" cy="210" rx="150" ry="70"
+                            fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.6"
+                            transform="rotate(-60 210 210)" />
+                        <circle cx="360" cy="210" r="7" fill="#38BDF8" />
+                        <circle cx="70" cy="210" r="6" fill="#A78BFA" />
+                        <circle cx="210" cy="60" r="6" fill="#60A5FA" />
+                    </svg>
                 </div>
             </div>
-        </section>
+            <div class="col-md-6 order-md-1 order2">
+                <div class="hero-eyebrow" data-i18n="home_eyebrow">Estudante de Inteligência Artificial</div>
+                <h1 class="hero-title" data-i18n-html="home_title">
+                    Wesley Santos
+                    <span>Construindo minha base em IA e software.</span>
+                </h1>
+                <div class="hero-actions">
+                    <button class="btn-home-style-1" data-i18n="home_btn_work">Ver projetos</button>
+                    <a class="btn-home-style-2" href="https://www.instagram.com/syler0x26?igsh=bTU5azNkY3dnZ2J1"
+                        data-i18n="home_btn_contact" target="_blank" rel="noopener noreferrer">Entrar em contato</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        
         <!-- Meu painel -->
         <figure>
             <div class="container align-items-center justify-content-center">
@@ -136,11 +114,11 @@
                     <div class="row">
                         <div class="col text-start">
                             <code>
-                            <p class="gray">//Full-Stack</p>
-                            <p><span>const</span> <span class="blue">developer</span> = {</p>
+                            <p class="gray">//Roadmap de estudos</p>
+                            <p><span>const</span> <span class="blue">student</span> = {</p>
                             <p><span class="purple">name</span>: <span class="green">'Wesley Santos'</span>,</p>
-                            <p><span class="purple">skills</span>: <span class="orange">[</span> <span class="green">'React'</span> , <span class="green">'Node.js'</span> , <span class="green">'javaScript'</span> <span class="orange">]</span>,</p>
-                            <p><span class="purple">focuses</span>: <span class="orange">[</span> <span class="green">'Full-Stack',</span> <span class="green">'UI/UX'</span> <span class="orange">]</span></p>
+                            <p><span class="purple">learning</span>: <span class="orange">[</span> <span class="green">'Algoritmos'</span> , <span class="green">'Estruturas de Dados'</span> , <span class="green">'Python'</span> <span class="orange">]</span>,</p>
+                            <p><span class="purple">focus</span>: <span class="orange">[</span> <span class="green">'IA aplicada'</span> , <span class="green">'Machine Learning'</span> <span class="orange">]</span></p>
                             <p>};</p>
                         </code>
                         </div>
@@ -218,7 +196,8 @@
                 <div class="row justify-content-center text-center mb-5">
                     <div class="col-12 col-lg-8">
                         <h2 class="courses-title" data-i18n="courses_title">Cursos</h2>
-                        <p class="courses-subtitle" data-i18n="courses_subtitle">Programas focados em tecnologia, programacao e inteligencia artificial.</p>
+                        <p class="courses-subtitle" data-i18n="courses_subtitle">Programas focados em tecnologia,
+                            programacao e inteligencia artificial.</p>
                     </div>
                 </div>
                 <div class="row justify-content-center mb-5">
@@ -259,7 +238,7 @@
                                 <i class="bi bi-cpu course-icon" aria-hidden="true"></i>
                                 <h3 class="course-name" data-i18n="course_ai">Inteligencia Artificial</h3>
                                 <p class="course-desc" data-i18n="course_ai_desc">Curso de Inteligencia Artificial</p>
-                                
+
                                 <button class="course-btn" type="button" disabled data-soon="Em breve">
                                     <i class="bi bi-youtube" aria-hidden="true"></i>
                                     <span data-i18n="course_btn">Ver no YouTube</span>
@@ -273,7 +252,7 @@
                                 <i class="bi bi-code-slash course-icon" aria-hidden="true"></i>
                                 <h3 class="course-name" data-i18n="course_python">Python</h3>
                                 <p class="course-desc" data-i18n="course_python_desc">Curso de Python</p>
-                                
+
                                 <button class="course-btn" type="button" disabled data-soon="Em breve">
                                     <i class="bi bi-youtube" aria-hidden="true"></i>
                                     <span data-i18n="course_btn">Ver no YouTube</span>
@@ -286,343 +265,337 @@
         </section>
         <div class="about-atom-zone">
             <canvas class="zone-particles" aria-hidden="true"></canvas>
-            <section id="about" class="about">
-            <div class="container">
-                <div class="row align-items-start gy-4">
-                    <div class="col-12 col-lg-4">
-                        <h1 class="about-title" data-i18n="about_title">Quem sou eu</h1>
+            <section id="about" class="section about">
+                <div class="container">
+                    <div class="section-head" data-aos="fade-up">
+                        <p class="eyebrow">Sobre mim</p>
+                        <h2>Jornada de um estudante</h2>
                     </div>
-                    <div class="col-12 col-lg-8">
-                        <div class="about-card">
-                            <div class="row align-items-center justify-content-center">
-                                <div
-                                    class="col-lg-6 col-md-12 text-center text-lg-start mb-4 mb-lg-0 order-1 order-lg-1">
-                                    <h2 class="about-name">Wesley Santos (Syler)</h2>
-                                    <p class="about-role" data-i18n="about_role">Estudante de Bacharelado em Inteligência Artificial · Brasil</p>
-                                    <p class="about-summary" data-i18n="about_summary">
-                                        Foco em construir soluções inteligentes orientadas a dados, com base sólida em
-                                        matemática e ciência da computação. Interesse em aplicar IA para resolver
-                                        problemas reais e gerar impacto mensurável.
-                                    </p>
-                                    <div class="about-tags">
-                                        <span class="tag" data-i18n="tag_ml">Machine Learning</span>
-                                        <span class="tag" data-i18n="tag_dl">Deep Learning</span>
-                                        <span class="tag" data-i18n="tag_data">Análise de Dados</span>
-                                        <span class="tag" data-i18n="tag_auto">Automação</span>
-                                        <span class="tag" data-i18n="tag_python">Python</span>
-                                    </div>
-                                    <div class="about-metrics">
-                                        <div class="metric">
-                                            <h3 class="about-count" data-target="0">+0</h3>
-                                            <p data-i18n="metric_academic">Projetos acadêmicos</p>
-                                        </div>
-                                        <div class="metric">
-                                            <h3 class="about-count" data-target="0">+0</h3>
-                                            <p data-i18n="metric_extension">Projetos de extensão</p>
-                                        </div>
-                                        <div class="metric">
-                                            <h3 class="about-count" data-target="0">+0</h3>
-                                            <p data-i18n="metric_competitions">Competições tecnológicas</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-8 col-10 d-flex justify-content-center order-2 order-lg-2">
-                                    <div class="container-portrait">
-                                        <div class="box-portrait">
-                                            <img src="img/my-photo.jpeg" alt="img ilustrativa do criador do site" data-i18n="alt_creator" data-i18n-attr="alt"
-                                                class="img-fluid">
-                                        </div>
-                                    </div>
-                                </div>
-
+                    <div class="about-grid">
+                        <article class="about-card" data-aos="fade" data-aos-delay="100">
+                            <h3>Quem sou</h3>
+                            <p>
+                               Olá! Sou Wesley Santos, estudante de Inteligência Artificial no Brasil. Atualmente, estou focado em desenvolver uma base sólida em tecnologia, estudando programação, lógica e fundamentos de IA, sempre buscando evoluir através da prática e do aprendizado contínuo.
+                            </p>
+                            <div class="about-tags">
+                                <span>Design systems</span>
+                                <span>IA aplicada</span>
+                                <span>UI/UX</span>
                             </div>
-                        </div>
+                        </article>
+                        <article class="about-card" data-aos="fade-up" data-aos-delay="180">
+                            <h3>Foco atual</h3>
+                            <ul class="about-list">
+
+                                <li>Estudo intensivo de programação e IA</li>
+                                <li>Desenvolvimento de projetos práticos</li>
+                                <li>Construção de base sólida em tecnologia</li>
+                                <li>Evolução contínua como desenvolvedor</li>
+
+                            </ul>
+                        </article>
                     </div>
                 </div>
-            </div>
             </section>
             <section id="atom-section" class="atom-section">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center justify-content-center">
-                    <div class="col-12 d-flex justify-content-center">
-                        <div class="atom-stage">
-                            <div class="atom-bubble atom-bubble--tl">
-                                <h4 data-i18n="atom_ml_title">Machine Learning</h4>
-                                <p data-i18n="atom_ml_desc">Algoritmos que aprendem com dados</p>
-                            </div>
-                            <div class="atom-bubble atom-bubble--br">
-                                <h4 data-i18n="atom_ai_title">Inteligência Artificial</h4>
-                                <p data-i18n="atom_ai_desc">Explorando dados e sistemas inteligentes</p>
-                            </div>
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-center">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="atom-stage">
+                                <div class="atom-bubble atom-bubble--tl">
+                                    <h4 data-i18n="atom_ml_title">Machine Learning</h4>
+                                    <p data-i18n="atom_ml_desc">Algoritmos que aprendem com dados</p>
+                                </div>
+                                <div class="atom-bubble atom-bubble--br">
+                                    <h4 data-i18n="atom_ai_title">Inteligência Artificial</h4>
+                                    <p data-i18n="atom_ai_desc">Explorando dados e sistemas inteligentes</p>
+                                </div>
 
-                            <div class="atom-core-wrap" role="img" aria-label="Atomo tecnologico animado">
-                                <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                    <defs>
-                                        <radialGradient id="atomGlow" cx="50%" cy="40%" r="60%">
-                                            <stop offset="0%" stop-color="#E0F2FE" />
-                                            <stop offset="55%" stop-color="#7C3AED" />
-                                            <stop offset="100%" stop-color="#0F172A" />
-                                        </radialGradient>
-                                        <linearGradient id="orbitStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#38BDF8" />
-                                            <stop offset="100%" stop-color="#A78BFA" />
-                                        </linearGradient>
-                                    </defs>
-                                    <g class="atom-core">
-                                        <circle cx="210" cy="210" r="52" fill="url(#atomGlow)" />
-                                        <circle cx="210" cy="210" r="78" fill="url(#atomGlow)" opacity="0.22" />
-                                        <circle cx="210" cy="210" r="100" fill="none" stroke="url(#orbitStroke)"
-                                            stroke-width="2" stroke-dasharray="6 12" opacity="0.7" />
-                                    </g>
-                                    <g class="atom-orbit atom-orbit--one">
-                                        <ellipse cx="210" cy="210" rx="150" ry="70" fill="none"
-                                            stroke="url(#orbitStroke)" stroke-width="3" />
-                                        <circle class="atom-electron" cx="360" cy="210" r="8" fill="#38BDF8" />
-                                    </g>
-                                    <g class="atom-orbit atom-orbit--two">
-                                        <ellipse cx="210" cy="210" rx="110" ry="155" fill="none"
-                                            stroke="url(#orbitStroke)" stroke-width="3" />
-                                        <circle class="atom-electron" cx="210" cy="55" r="8" fill="#A78BFA" />
-                                    </g>
-                                    <g class="atom-orbit atom-orbit--three">
-                                        <ellipse cx="210" cy="210" rx="155" ry="115" fill="none"
-                                            stroke="url(#orbitStroke)" stroke-width="3" />
-                                        <circle class="atom-electron" cx="85" cy="285" r="8" fill="#E0F2FE" />
-                                    </g>
-                                </svg>
+                                                                <div class="atom-core-wrap" role="img" aria-label="Rede neural abstrata">
+                                    <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <defs>
+                                            <radialGradient id="nnCore" cx="50%" cy="45%" r="55%">
+                                                <stop offset="0%" stop-color="#38BDF8" />
+                                                <stop offset="55%" stop-color="#A78BFA" />
+                                                <stop offset="100%" stop-color="#0F172A" />
+                                            </radialGradient>
+                                            <linearGradient id="nnStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#60A5FA" />
+                                                <stop offset="100%" stop-color="#A78BFA" />
+                                            </linearGradient>
+                                        </defs>
+                                        <g class="nn-glow">
+                                            <circle cx="210" cy="210" r="120" fill="url(#nnCore)" opacity="0.25" />
+                                        </g>
+                                        <g class="nn-lines" stroke="url(#nnStroke)" stroke-width="2.2" fill="none" opacity="0.85">
+                                            <path class="nn-flow" d="M90 110 C150 160 270 160 330 110" />
+                                            <path class="nn-flow" d="M70 190 C150 230 270 230 350 190" />
+                                            <path class="nn-flow" d="M90 270 C170 300 250 300 330 270" />
+                                            <path class="nn-flow" d="M120 340 C180 310 240 310 300 340" />
+                                            <path class="nn-flow" d="M110 100 L70 190 L90 270 L120 340" />
+                                            <path class="nn-flow" d="M210 90 L210 170 L210 250 L210 330" />
+                                            <path class="nn-flow" d="M310 110 L350 190 L330 270 L300 340" />
+                                        </g>
+                                        <g class="nn-nodes" fill="#38BDF8" stroke="#0F172A" stroke-width="2">
+                                            <circle class="nn-node" cx="110" cy="100" r="9" />
+                                            <circle class="nn-node" cx="210" cy="90" r="9" />
+                                            <circle class="nn-node" cx="310" cy="110" r="9" />
+                                            <circle class="nn-node" cx="70" cy="190" r="9" />
+                                            <circle class="nn-node" cx="210" cy="170" r="10" />
+                                            <circle class="nn-node" cx="350" cy="190" r="9" />
+                                            <circle class="nn-node" cx="90" cy="270" r="9" />
+                                            <circle class="nn-node" cx="210" cy="250" r="10" />
+                                            <circle class="nn-node" cx="330" cy="270" r="9" />
+                                            <circle class="nn-node" cx="120" cy="340" r="9" />
+                                            <circle class="nn-node" cx="210" cy="330" r="9" />
+                                            <circle class="nn-node" cx="300" cy="340" r="9" />
+                                        </g>
+                                    </svg>
+
+
+                                
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </section>
         </div>
         <div id="contact" class="bg-light" style="min-height: 140vh">
-        <section id="timeline" class="timeline-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-                        <h1 class="timeline-title" data-i18n="timeline_title">Trajetoria</h1>
-                        <p class="text-muted" data-i18n="timeline_subtitle">Minha jornada profissional.</p>
+            <section id="timeline" class="timeline-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center mb-5">
+                            <h1 class="timeline-title" data-i18n="timeline_title">Trajetoria</h1>
+                            <p class="text-muted" data-i18n="timeline_subtitle">Minha jornada profissional.</p>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-line"></div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
+                                    <div class="timeline-card">
+                                        <h3 data-i18n="timeline_2020_title">Inicio na tecnologia - 2020</h3>
+                                        <p data-i18n="timeline_2020_desc">Curiosidade por computacao e primeiros estudos
+                                            em programacao.</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
+                                    <img class="timeline-image img-fluid" src="img/gustavo-guanabara.jpg"
+                                        alt="Inicio na tecnologia" data-i18n="alt_timeline_2020" data-i18n-attr="alt">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
+                                    <div class="timeline-card">
+                                        <h3 data-i18n="timeline_2024_title">Primeiro projeto web - 2024</h3>
+                                        <p data-i18n="timeline_2024_desc">Construindo interfaces e aprendendo
+                                            fundamentos de desenvolvimento web.</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
+                                    <img class="timeline-image img-fluid" src="img/img-dominante.jpg"
+                                        alt="Primeiro projeto web" data-i18n="alt_timeline_2024" data-i18n-attr="alt">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
+                                    <div class="timeline-card">
+                                        <h3 data-i18n="timeline_2026_title">Ingresso na universidade - 2026</h3>
+                                        <p data-i18n="timeline_2026_desc">Base teorica forte e disciplinas de
+                                            Inteligencia artificial.</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
+                                    <img class="timeline-image img-fluid" src="img/Unifei.png">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
+                                    <div class="timeline-card">
+                                        <h3 data-i18n="timeline_ai_title">Estudos em inteligencia artificial</h3>
+                                        <p data-i18n="timeline_ai_desc">Foco em aprendizado de maquina, redes neurais e
+                                            dados.</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
+                                    <img class="timeline-image img-fluid" src="img/img-ia.jpg"
+                                        alt="Estudos em inteligencia artificial" data-i18n="alt_timeline_ai"
+                                        data-i18n-attr="alt">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
+                                    <div class="timeline-card">
+                                        <h3 data-i18n="timeline_projects_title">Desenvolvimento de projetos academicos
+                                        </h3>
+                                        <p data-i18n="timeline_projects_desc">Aplicando IA para resolver problemas reais
+                                            e validar ideias.</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
+                                    <img class="timeline-image img-fluid" src="img/img-dominante.jpg"
+                                        alt="Desenvolvimento de projetos academicos" data-i18n="alt_timeline_projects"
+                                        data-i18n-attr="alt">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline">
-                    <div class="timeline-line"></div>
+            </section>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="row align-items-center g-4">
-                            <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
-                                <div class="timeline-card">
-                                    <h3 data-i18n="timeline_2020_title">Inicio na tecnologia - 2020</h3>
-                                    <p data-i18n="timeline_2020_desc">Curiosidade por computacao e primeiros estudos em programacao.</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
-                                <img class="timeline-image img-fluid"
-                                    src="img/gustavo-guanabara.jpg"
-                                    alt="Inicio na tecnologia" data-i18n="alt_timeline_2020" data-i18n-attr="alt">
-                            </div>
+            <section id="portfolio" class="portfolio-section">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12 text-center">
+                            <h1 class="portfolio-title" data-i18n="portfolio_title">Projetos e Experimentos</h1>
+                            <p class="portfolio-subtitle" data-i18n="portfolio_subtitle">Projetos desenvolvidos durante
+                                minha jornada acadêmica em tecnologia
+                                e Inteligência Artificial.</p>
                         </div>
                     </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="row align-items-center g-4">
-                            <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
-                                <div class="timeline-card">
-                                    <h3 data-i18n="timeline_2024_title">Primeiro projeto web - 2024</h3>
-                                    <p data-i18n="timeline_2024_desc">Construindo interfaces e aprendendo fundamentos de desenvolvimento web.</p>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <article class="project-card">
+                                <div class="project-media">
+                                    <img src="img/img-dominante.jpg" alt="Análise de Dados com Python"
+                                        data-i18n="alt_project_data" data-i18n-attr="alt">
                                 </div>
-                            </div>
-                            <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
-                                <img class="timeline-image img-fluid"
-                                    src="img/img-dominante.jpg"
-                                    alt="Primeiro projeto web" data-i18n="alt_timeline_2024" data-i18n-attr="alt">
-                            </div>
+                                <div class="project-body">
+                                    <h3 data-i18n="project_data_title">Análise de Dados com Python</h3>
+                                    <p data-i18n="project_data_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. Quaerat eveniet</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>Pandas</span>
+                                        <span>EDA</span>
+                                    </div>
+                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                </div>
+                            </article>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="row align-items-center g-4">
-                            <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
-                                <div class="timeline-card">
-                                    <h3 data-i18n="timeline_2026_title">Ingresso na universidade - 2026</h3>
-                                    <p data-i18n="timeline_2026_desc">Base teorica forte e disciplinas de Inteligencia artificial.</p>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <article class="project-card">
+                                <div class="project-media">
+                                    <img src="img/img-dominante.jpg" alt="Modelo de Machine Learning"
+                                        data-i18n="alt_project_ml" data-i18n-attr="alt">
                                 </div>
-                            </div>
-                            <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
-                                <img class="timeline-image img-fluid"
-                                    src="img/Unifei.png">
-                            </div>
+                                <div class="project-body">
+                                    <h3 data-i18n="project_ml_title">Modelo de Machine Learning</h3>
+                                    <p data-i18n="project_ml_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. Quaerat eveniet.</p>
+                                    <div class="project-tags">
+                                        <span>Scikit-learn</span>
+                                        <span>ML</span>
+                                        <span>Metrics</span>
+                                    </div>
+                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                </div>
+                            </article>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="row align-items-center g-4">
-                            <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
-                                <div class="timeline-card">
-                                    <h3 data-i18n="timeline_ai_title">Estudos em inteligencia artificial</h3>
-                                    <p data-i18n="timeline_ai_desc">Foco em aprendizado de maquina, redes neurais e dados.</p>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <article class="project-card">
+                                <div class="project-media">
+                                    <img src="img/img-dominante.jpg" alt="Experimentos com Redes Neurais"
+                                        data-i18n="alt_project_nn" data-i18n-attr="alt">
                                 </div>
-                            </div>
-                            <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
-                                <img class="timeline-image img-fluid"
-                                    src="img/img-ia.jpg"
-                                    alt="Estudos em inteligencia artificial" data-i18n="alt_timeline_ai" data-i18n-attr="alt">
-                            </div>
+                                <div class="project-body">
+                                    <h3 data-i18n="project_nn_title">Experimentos com Redes Neurais</h3>
+                                    <p data-i18n="project_nn_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. Quaerat eveniet</p>
+                                    <div class="project-tags">
+                                        <span>TensorFlow</span>
+                                        <span>DL</span>
+                                        <span>GPU</span>
+                                    </div>
+                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                </div>
+                            </article>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="row align-items-center g-4">
-                            <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
-                                <div class="timeline-card">
-                                    <h3 data-i18n="timeline_projects_title">Desenvolvimento de projetos academicos</h3>
-                                    <p data-i18n="timeline_projects_desc">Aplicando IA para resolver problemas reais e validar ideias.</p>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <article class="project-card">
+                                <div class="project-media">
+                                    <img src="img/img-dominante.jpg" alt="Visualização de Dados"
+                                        data-i18n="alt_project_viz" data-i18n-attr="alt">
                                 </div>
-                            </div>
-                            <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
-                                <img class="timeline-image img-fluid"
-                                    src="img/img-dominante.jpg"
-                                    alt="Desenvolvimento de projetos academicos" data-i18n="alt_timeline_projects" data-i18n-attr="alt">
-                            </div>
+                                <div class="project-body">
+                                    <h3 data-i18n="project_viz_title">Visualização de Dados</h3>
+                                    <p data-i18n="project_viz_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. Quaerat eveniet </p>
+                                    <div class="project-tags">
+                                        <span>Plotly</span>
+                                        <span>Dash</span>
+                                        <span>BI</span>
+                                    </div>
+                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <article class="project-card">
+                                <div class="project-media">
+                                    <img src="img/img-dominante.jpg" alt="Projeto de Automação"
+                                        data-i18n="alt_project_auto" data-i18n-attr="alt">
+                                </div>
+                                <div class="project-body">
+                                    <h3 data-i18n="project_auto_title">Projeto de Automação</h3>
+                                    <p data-i18n="project_auto_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. Quaerat eveniet</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>APIs</span>
+                                        <span>Automation</span>
+                                    </div>
+                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <article class="project-card">
+                                <div class="project-media">
+                                    <img src="img/img-dominante.jpg" alt="Estudo de Algoritmos"
+                                        data-i18n="alt_project_algo" data-i18n-attr="alt">
+                                </div>
+                                <div class="project-body">
+                                    <h3 data-i18n="project_algo_title">Estudo de Algoritmos</h3>
+                                    <p data-i18n="project_algo_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
+                                        elit. Quaerat eveniet</p>
+                                    <div class="project-tags">
+                                        <span>Algoritmos</span>
+                                        <span>Otimização</span>
+                                        <span>C++</span>
+                                    </div>
+                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="portfolio-section">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-12 text-center">
-                        <h1 class="portfolio-title" data-i18n="portfolio_title">Projetos e Experimentos</h1>
-                        <p class="portfolio-subtitle" data-i18n="portfolio_subtitle">Projetos desenvolvidos durante minha jornada acadêmica em tecnologia
-                            e Inteligência Artificial.</p>
-                    </div>
-                </div>
-                <div class="row g-4">
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="project-card">
-                            <div class="project-media">
-                                <img src="img/img-dominante.jpg"
-                                    alt="Análise de Dados com Python" data-i18n="alt_project_data" data-i18n-attr="alt">
-                            </div>
-                            <div class="project-body">
-                                <h3 data-i18n="project_data_title">Análise de Dados com Python</h3>
-                                <p data-i18n="project_data_desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet</p>
-                                <div class="project-tags">
-                                    <span>Python</span>
-                                    <span>Pandas</span>
-                                    <span>EDA</span>
-                                </div>
-                                <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="project-card">
-                            <div class="project-media">
-                                <img src="img/img-dominante.jpg"
-                                    alt="Modelo de Machine Learning" data-i18n="alt_project_ml" data-i18n-attr="alt">
-                            </div>
-                            <div class="project-body">
-                                <h3 data-i18n="project_ml_title">Modelo de Machine Learning</h3>
-                                <p data-i18n="project_ml_desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet.</p>
-                                <div class="project-tags">
-                                    <span>Scikit-learn</span>
-                                    <span>ML</span>
-                                    <span>Metrics</span>
-                                </div>
-                                <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="project-card">
-                            <div class="project-media">
-                                <img src="img/img-dominante.jpg"
-                                    alt="Experimentos com Redes Neurais" data-i18n="alt_project_nn" data-i18n-attr="alt">
-                            </div>
-                            <div class="project-body">
-                                <h3 data-i18n="project_nn_title">Experimentos com Redes Neurais</h3>
-                                <p data-i18n="project_nn_desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet</p>
-                                <div class="project-tags">
-                                    <span>TensorFlow</span>
-                                    <span>DL</span>
-                                    <span>GPU</span>
-                                </div>
-                                <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="project-card">
-                            <div class="project-media">
-                                <img src="img/img-dominante.jpg"
-                                    alt="Visualização de Dados" data-i18n="alt_project_viz" data-i18n-attr="alt">
-                            </div>
-                            <div class="project-body">
-                                <h3 data-i18n="project_viz_title">Visualização de Dados</h3>
-                                <p data-i18n="project_viz_desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet  </p>
-                                <div class="project-tags">
-                                    <span>Plotly</span>
-                                    <span>Dash</span>
-                                    <span>BI</span>
-                                </div>
-                                <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="project-card">
-                            <div class="project-media">
-                                <img src="img/img-dominante.jpg"
-                                    alt="Projeto de Automação" data-i18n="alt_project_auto" data-i18n-attr="alt">
-                            </div>
-                            <div class="project-body">
-                                <h3 data-i18n="project_auto_title">Projeto de Automação</h3>
-                                <p data-i18n="project_auto_desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet</p>
-                                <div class="project-tags">
-                                    <span>Python</span>
-                                    <span>APIs</span>
-                                    <span>Automation</span>
-                                </div>
-                                <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <article class="project-card">
-                            <div class="project-media">
-                                <img src="img/img-dominante.jpg"
-                                    alt="Estudo de Algoritmos" data-i18n="alt_project_algo" data-i18n-attr="alt">
-                            </div>
-                            <div class="project-body">
-                                <h3 data-i18n="project_algo_title">Estudo de Algoritmos</h3>
-                                <p data-i18n="project_algo_desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet</p>
-                                <div class="project-tags">
-                                    <span>Algoritmos</span>
-                                    <span>Otimização</span>
-                                    <span>C++</span>
-                                </div>
-                                <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
         </div>
 
         <section class="connect-section">
@@ -631,7 +604,8 @@
                     <div class="col-12 col-lg-5">
                         <div class="connect-card">
                             <span class="connect-badge" data-i18n="connect_badge">CONECTE-SE</span>
-                            <h2 data-i18n-html="connect_title"><span>Hey!!</span> Acompanhe minha jornada na tecnologia</h2>
+                            <h2 data-i18n-html="connect_title"><span>Hey!!</span> Acompanhe minha jornada na tecnologia
+                            </h2>
                             <p data-i18n="connect_desc">
                                 Estou construindo projetos, aprendendo e evoluindo na area de tecnologia e
                                 desenvolvimento. Se voce quer acompanhar essa jornada e ver os projetos que estou
@@ -660,18 +634,21 @@
                         <div class="support-area" aria-label="Apoie o Projeto">
                             <div class="support-header">
                                 <h3 data-i18n-html="support_title">Apoie o <span>Projeto</span></h3>
-                                <p data-i18n="support_desc">Se voce acredita no projeto e quer ajudar no crescimento dessa jornada na tecnologia,
+                                <p data-i18n="support_desc">Se voce acredita no projeto e quer ajudar no crescimento
+                                    dessa jornada na tecnologia,
                                     pode apoiar abaixo.</p>
                             </div>
                             <div class="support-cards">
                                 <article class="support-card">
                                     <div class="support-card__title" data-i18n="support_pix_title">Doar via Pix</div>
-                                    <p data-i18n="support_pix_desc">Seu apoio ajuda a manter a jornada ativa e a construir novos projetos.</p>
+                                    <p data-i18n="support_pix_desc">Seu apoio ajuda a manter a jornada ativa e a
+                                        construir novos projetos.</p>
                                     <div class="pix-qr" aria-label="QR Code Pix">
                                         <img src="img/Qr.jpeg" alt="QR Code Pix para doacao">
                                     </div>
                                     <div class="pix-qr__label" data-i18n="support_pix_scan">Escaneie para doar</div>
-                                     <div class="support-card__title" data-i18n="support_pix_copy_title">Copiar chave Pix</div>
+                                    <div class="support-card__title" data-i18n="support_pix_copy_title">Copiar chave Pix
+                                    </div>
                                     <div class="pix-keyline">we.syler0x26@gmail.com</div>
                                     <button class="support-btn support-btn--ghost pix-copy" type="button"
                                         data-copy-text="we.syler0x26@gmail.com">
@@ -679,7 +656,7 @@
                                         <i class="bi bi-check-lg" aria-hidden="true"></i>
                                     </button>
                                     <span class="pix-feedback" aria-live="polite"></span>
-                                   
+
                                 </article>
 
                             </div>
@@ -688,11 +665,11 @@
                 </div>
             </div>
         </section>
-<footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Wesley Santos(Syler). Todos os direitos reservados.</p>
-    </div>
-  </footer>
+        <footer class="site-footer">
+            <div class="container">
+                <p>© <span id="year"></span> Wesley Santos(Syler). Todos os direitos reservados.</p>
+            </div>
+        </footer>
     </main>
     <script src="vendor/Jquery/jquery-3.7.1.js"></script>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
@@ -701,6 +678,14 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
 
 
 

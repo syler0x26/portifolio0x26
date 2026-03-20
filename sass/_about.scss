@@ -1,16 +1,97 @@
 @use "colors" as c;
 
-.about {
-  padding: 72px 0;
-  min-height: 100vh;
-  transition: background-color 800ms ease-in-out;
+.section.about {
+  padding: 88px 0;
   position: relative;
+  color: c.$slate-200;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.12), transparent 55%),
+    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.16), transparent 55%), c.$ink-900;
 }
 
-@media (max-width: 788.98px) {
-  .about {
-    transition: none;
-  }
+.section-head {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.section-head h2 {
+  font-size: clamp(24px, 3.4vw, 40px);
+  line-height: 1.15;
+  color: c.$slate-90;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 12px;
+  font-weight: 600;
+  color: c.$brand-sky;
+  margin-bottom: 10px;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.about-card {
+  background: rgba(c.$ink-800, 0.72);
+  border: 1px solid rgba(c.$slate-400, 0.2);
+  border-radius: 20px;
+  padding: 22px 24px;
+  box-shadow: 0 18px 40px rgba(c.$ink-800, 0.4);
+}
+
+.about-card h3 {
+  margin-bottom: 12px;
+  color: c.$slate-90;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.about-card p {
+  color: c.$slate-300;
+  margin-bottom: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+  background: rgba(c.$brand-secondary, 0.12);
+  color: c.$brand-sky-200;
+  border: 1px solid rgba(c.$brand-secondary, 0.3);
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+.about-list {
+  margin: 0;
+  padding-left: 20px;
+  color: c.$slate-300;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.about-list li {
+  margin-bottom: 10px;
 }
 
 .about-atom-zone {
@@ -33,160 +114,6 @@
 .atom-section {
   position: relative;
   z-index: 1;
-}
-
-.about.is-dark {
-  background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.16), transparent 55%),
-    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.18), transparent 55%), c.$ink-900;
-}
-
-.about.is-dark::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 80px;
-  background: linear-gradient(0deg, rgba(c.$ink-900, 0.9), rgba(c.$ink-900, 0));
-  pointer-events: none;
-}
-
-.about.is-dark .about-title {
-  color: c.$slate-200;
-}
-
-.about-title {
-  position: sticky;
-  top: 80px;
-  font-family: "Poppins", serif;
-  font-size: clamp(28px, 4vw, 56px);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: c.$slate-700;
-  margin: 0;
-}
-
-.about-card {
-  background: linear-gradient(135deg, rgba(c.$white, 0.96), rgba(c.$slate-90, 0.88));
-  border-radius: 22px;
-  padding: 30px;
-  border: 1px solid rgba(c.$slate-400, 0.18);
-  box-shadow: 0 20px 48px rgba(c.$ink-800, 0.12);
-  backdrop-filter: blur(10px);
-}
-
-.container-portrait {
-  width: 100%;
-}
-
-.box-portrait {
-  position: relative;
-  width: min(320px, 80vw);
-  aspect-ratio: 4 / 5;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(c.$ink-800, 0.35);
-}
-
-.box-portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: opacity 400ms ease;
-}
-
-.box-portrait::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../img/my-011.jpeg") center / cover no-repeat;
-  opacity: 0;
-  transition: opacity 400ms ease;
-}
-
-.box-portrait:hover::after {
-  opacity: 1;
-}
-
-.box-portrait:hover img {
-  opacity: 0;
-}
-
-.about-name {
-  font-weight: 700;
-  font-size: clamp(24px, 3vw, 34px);
-  color: c.$ink-800;
-  margin-bottom: 6px;
-}
-
-.about-role {
-  font-weight: 600;
-  color: c.$brand-violet-500;
-  margin-bottom: 14px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  font-size: 13px;
-}
-
-.about-summary {
-  color: c.$slate-600;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.about-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 22px;
-}
-
-.about-tags .tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 13px;
-  background: rgba(c.$ink-800, 0.08);
-  color: c.$ink-650;
-  border: 1px solid rgba(c.$ink-800, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(c.$white, 0.3);
-}
-
-.about-metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
-}
-
-.about-metrics .metric {
-  background: rgba(c.$slate-90, 0.92);
-  border-radius: 16px;
-  padding: 14px 16px;
-  text-align: left;
-  border: 1px solid rgba(c.$slate-400, 0.2);
-  box-shadow: 0 12px 24px rgba(c.$ink-800, 0.06);
-}
-
-.about-metrics .metric h3 {
-  font-size: 22px;
-  margin-bottom: 4px;
-  color: c.$ink-780;
-}
-
-.about-metrics .metric p {
-  margin: 0;
-  color: c.$slate-500;
-  font-size: 14px;
-}
-
-@media (max-width: 991.98px) {
-  .about-title {
-    position: static;
-    text-align: left;
-  }
 }
 
 .atom-section {
@@ -231,24 +158,27 @@
   height: 100%;
 }
 
-.atom-orbit {
-  transform-origin: 50% 50%;
+
+.nn-glow {
+  filter: drop-shadow(0 0 24px rgba(c.$brand-secondary, 0.45));
 }
 
-.atom-orbit--one {
-  animation: orbit-spin 14s linear infinite;
+.nn-flow {
+  stroke-dasharray: 6 10;
+  animation: nn-flow 8s linear infinite;
 }
 
-.atom-orbit--two {
-  animation: orbit-spin-reverse 12s linear infinite;
+.nn-node {
+  filter: drop-shadow(0 0 10px rgba(c.$brand-secondary, 0.75));
+  animation: nn-pulse 2.8s ease-in-out infinite;
 }
 
-.atom-orbit--three {
-  animation: orbit-spin 16s linear infinite;
+.nn-node:nth-child(3n) {
+  animation-delay: 0.4s;
 }
 
-.atom-electron {
-  filter: drop-shadow(0 0 10px rgba(c.$brand-secondary, 0.8));
+.nn-node:nth-child(4n) {
+  animation-delay: 0.8s;
 }
 
 .atom-bubble {
@@ -302,18 +232,42 @@
   }
 }
 
+@keyframes nn-flow {
+  to {
+    stroke-dashoffset: -60;
+  }
+}
+
+@keyframes nn-pulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
 .timeline-section {
   padding: 90px 0;
-  background: c.$slate-80;
+  background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.12), transparent 55%),
+    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.16), transparent 55%), c.$ink-900;
+  color: c.$slate-200;
 }
 
 .timeline-title {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-size: clamp(28px, 4vw, 52px);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: c.$slate-700;
+  color: c.$slate-90;
   margin-bottom: 12px;
+}
+
+.timeline-section .text-muted {
+  color: c.$slate-300 !important;
 }
 
 .timeline {
@@ -326,7 +280,7 @@
   bottom: 0;
   left: 50%;
   width: 2px;
-  background: rgba(c.$brand-primary, 0.25);
+  background: linear-gradient(180deg, rgba(c.$brand-secondary, 0), rgba(c.$brand-secondary, 0.6), rgba(c.$brand-secondary, 0));
   transform: translateX(-50%);
 }
 
@@ -367,8 +321,8 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: c.$brand-primary;
-  box-shadow: 0 0 0 6px rgba(c.$brand-primary, 0.15);
+  background: c.$brand-secondary;
+  box-shadow: 0 0 0 6px rgba(c.$brand-secondary, 0.15);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -377,26 +331,27 @@
 }
 
 .timeline-card {
-  background: c.$white-pure;
+  background: rgba(c.$ink-800, 0.7);
   border-radius: 18px;
   padding: 24px;
-  box-shadow: 0 16px 40px rgba(c.$black, 0.08);
+  box-shadow: 0 16px 40px rgba(c.$ink-800, 0.35);
+  border: 1px solid rgba(c.$slate-400, 0.2);
 }
 
 .timeline-card h3 {
   font-size: 22px;
   margin-bottom: 10px;
-  color: c.$ink-700;
+  color: c.$slate-90;
 }
 
 .timeline-card p {
   margin: 0;
-  color: c.$slate-600;
+  color: c.$slate-300;
 }
 
 .timeline-image {
   border-radius: 18px;
-  box-shadow: 0 14px 34px rgba(c.$ink-800, 0.15);
+  box-shadow: 0 14px 34px rgba(c.$ink-800, 0.35);
 }
 
 @media (min-width: 992px) {

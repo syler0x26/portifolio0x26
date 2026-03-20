@@ -30,45 +30,6 @@
   background-color: rgba(c.$brand-primary, 0.7176470588);
 }
 
-.lang-btn {
-  border: none;
-  background: rgba(c.$brand-primary, 0.12);
-  color: c.$brand-primary;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  padding: 4px 10px;
-  border-radius: 999px;
-  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
-}
-
-.lang-btn:hover {
-  transform: translateY(-1px);
-  background: rgba(c.$brand-primary, 0.2);
-}
-
-.lang-btn.is-active {
-  background: c.$brand-primary;
-  color: c.$white;
-}
-
-.lang-toggle {
-  display: none;
-  border: none;
-  background: rgba(c.$brand-primary, 0.12);
-  color: c.$brand-primary;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  padding: 6px 12px;
-  border-radius: 999px;
-  gap: 6px;
-  align-items: center;
-}
-
-.lang-toggle i {
-  font-size: 14px;
-}
 
 .course-btn {
   margin-top: 16px;

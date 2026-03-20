@@ -43,7 +43,7 @@ span {
   .btn-home-style-2,
   .about-card,
   .connect-card,
-  header.is-shrunk nav,
+  .site-header.scrolled,
   .atom-bubble {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
@@ -141,6 +141,45 @@ span {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes const-flow {
+  to {
+    stroke-dashoffset: -60;
+  }
+}
+
+@keyframes const-pulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes binary-float {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  20% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateY(-6px);
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-14px);
   }
 }
 
