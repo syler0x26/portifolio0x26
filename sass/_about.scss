@@ -45,7 +45,7 @@
   border: 1px solid rgba(c.$slate-400, 0.2);
   border-radius: 20px;
   padding: 22px 24px;
-  box-shadow: 0 18px 40px rgba(c.$ink-800, 0.4);
+  box-shadow: 0 10px 22px rgba(c.$ink-800, 0.28);
 }
 
 .about-card h3 {
@@ -188,7 +188,7 @@
   border: 1px solid rgba(c.$slate-400, 0.25);
   border-radius: 18px;
   padding: 14px 16px;
-  box-shadow: 0 12px 30px rgba(c.$ink-800, 0.4);
+  box-shadow: 0 8px 18px rgba(c.$ink-800, 0.25);
   backdrop-filter: blur(10px);
   animation: float-up 6s ease-in-out infinite;
 }
@@ -334,7 +334,7 @@
   background: rgba(c.$ink-800, 0.7);
   border-radius: 18px;
   padding: 24px;
-  box-shadow: 0 16px 40px rgba(c.$ink-800, 0.35);
+  box-shadow: 0 10px 22px rgba(c.$ink-800, 0.25);
   border: 1px solid rgba(c.$slate-400, 0.2);
 }
 
@@ -351,7 +351,7 @@
 
 .timeline-image {
   border-radius: 18px;
-  box-shadow: 0 14px 34px rgba(c.$ink-800, 0.35);
+  box-shadow: 0 9px 20px rgba(c.$ink-800, 0.25);
 }
 
 @media (min-width: 992px) {

@@ -360,6 +360,22 @@
 
   const aboutSection = document.querySelector("#about");
 
+  const vscodePanels = document.querySelectorAll(".painel-vs-code, .painel-vscode");
+  if (vscodePanels.length) {
+    const panelObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+    vscodePanels.forEach((panel) => panelObserver.observe(panel));
+  }
+
   const timelineItems = document.querySelectorAll(".timeline-item");
   if (timelineItems.length) {
     const observer = new IntersectionObserver(
@@ -419,6 +435,13 @@
   }
 
   const homeSection = document.querySelector("#home");
+  if (homeSection) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        homeSection.classList.add("is-loaded");
+      });
+    });
+  }
   const homeCanvas = homeSection?.querySelector(".hero-particles");
 
   if (homeSection && homeCanvas) {

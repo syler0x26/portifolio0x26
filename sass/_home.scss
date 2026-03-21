@@ -16,7 +16,7 @@ figure .bola {
   height: 12px;
   border-radius: 50%;
   background-color: c.$brand-primary;
-  box-shadow: 0 0 10px rgba(c.$ink-800, 0.35);
+  box-shadow: 0 0 8px rgba(c.$ink-800, 0.25);
 }
 
 figure .colorRed {
@@ -56,13 +56,14 @@ figure .green {
   width: 100%;
   background: rgba(c.$ink-880, 0.9);
   border: 1px solid rgba(c.$slate-400, 0.2);
-  box-shadow: 0 24px 60px rgba(c.$ink-980, 0.6);
+  box-shadow: 0 14px 32px rgba(c.$ink-980, 0.3);
   border-radius: 20px;
   padding: 0;
   overflow: hidden;
   transform-style: preserve-3d;
-  transform: rotateX(8deg);
-  transition: transform 1s ease;
+  opacity: 0;
+  transform: translateY(30px) scale(0.98) rotateX(8deg);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.5s ease-out;
 }
 
 .painel-vs-code .row {
@@ -133,7 +134,9 @@ figure .green {
 }
 
 .painel-vs-code.is-visible {
-  transform: rotateX(0deg);
+  opacity: 1;
+  transform: translateY(0) scale(1) rotateX(0deg);
+  box-shadow: 0 16px 36px rgba(c.$ink-980, 0.3), 0 0 16px rgba(56, 189, 248, 0.1);
 }
 
 .home-hero {
@@ -198,6 +201,44 @@ figure .green {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.home-hero .hero-eyebrow,
+.home-hero .hero-title,
+.home-hero .hero-title span,
+.home-hero .hero-subtitle,
+.home-hero .hero-actions,
+.home-hero .ai-brain {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.home-hero .ai-brain {
+  transform: translateY(20px) scale(0.96);
+}
+
+.home-hero.is-loaded .hero-eyebrow {
+  animation: hero-fade-up 0.7s ease-out 0.1s forwards;
+}
+
+.home-hero.is-loaded .hero-title {
+  animation: hero-fade-up 0.8s ease-out 0.22s forwards;
+}
+
+.home-hero.is-loaded .hero-title span {
+  animation: hero-fade-up 0.8s ease-out 0.34s forwards;
+}
+
+.home-hero.is-loaded .hero-subtitle {
+  animation: hero-fade-up 0.8s ease-out 0.48s forwards;
+}
+
+.home-hero.is-loaded .hero-actions {
+  animation: hero-fade-up 0.8s ease-out 0.62s forwards;
+}
+
+.home-hero.is-loaded .ai-brain {
+  animation: hero-visual-in 0.9s ease-out 0.75s forwards, hero-float 6s ease-in-out 1.6s infinite;
 }
 
 @media (max-width: 575.98px) {
@@ -283,4 +324,51 @@ figure .green {
 .marquee__track,
 .atom-bubble {
   will-change: transform;
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-visual-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero .ai-brain {
+    animation: none !important;
+  }
+
+  .home-hero .hero-eyebrow,
+  .home-hero .hero-title,
+  .home-hero .hero-title span,
+  .home-hero .hero-subtitle,
+  .home-hero .hero-actions,
+  .home-hero .ai-brain {
+    opacity: 1;
+    transform: none;
+  }
 }

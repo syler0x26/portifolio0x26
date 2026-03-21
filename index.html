@@ -15,24 +15,25 @@
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-smooth-scroll="true" tabindex="0">
     <header class="site-header">
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-lg site-nav">
             <div class="container">
-                <a class="navbar-brand" href="#home" aria-label="Syler">
-                    Syler
+                <a class="navbar-brand site-brand" href="#home" aria-label="Syler">
+                    <span class="site-brand__text">Syler</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                    aria-controls="mainNav" aria-expanded="false" aria-label="Alternar navega??o">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler site-nav__toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
+                    aria-label="Alternar navega??o">
+                    <span class="navbar-toggler-icon site-nav__icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-                    <div class="navbar-nav align-items-md-center">
-                        <a class="nav-link" href="#home" data-i18n="nav_home">In?cio</a>
-                        <a class="nav-link" href="#about" data-i18n="nav_about">Sobre</a>
-                        <a class="nav-link" href="#portfolio" data-i18n="nav_projects">Projetos</a>
-                        <a class="nav-link" href="#contact" data-i18n="nav_timeline">Trajet?ria</a>
+                <div class="collapse navbar-collapse justify-content-end site-nav__collapse" id="mainNav">
+                    <div class="navbar-nav align-items-md-center site-nav__menu">
+                        <a class="nav-link site-nav__link" href="#home" data-i18n="nav_home">In?cio</a>
+                        <a class="nav-link site-nav__link" href="#about" data-i18n="nav_about">Sobre</a>
+                        <a class="nav-link site-nav__link" href="#portfolio" data-i18n="nav_projects">Projetos</a>
+                        <a class="nav-link site-nav__link" href="#contact" data-i18n="nav_timeline">Trajet?ria</a>
                     </div>
-                    <div class="nav-extra">
-                        <div class="lang-select">
+                    <div class="site-nav__extra">
+                        <div class="lang-select site-nav__lang">
                             <i class="bi bi-translate" aria-hidden="true"></i>
                             <select id="lang-select" class="lang-select__control" aria-label="Selecionar idioma">
                                 <option value="pt">PT</option>
@@ -40,7 +41,7 @@
                                 <option value="es">ES</option>
                             </select>
                         </div>
-                        <a class="nav-cta" href="#contact" data-i18n="nav_contact">Contato</a>
+                        <a class="site-nav__cta" href="#contact" data-i18n="nav_contact">Contato</a>
                     </div>
                 </div>
             </div>
@@ -88,9 +89,13 @@
                     <span>Construindo minha base em IA e software.</span>
                 </h1>
                 <div class="hero-actions">
-                    <button class="btn-home-style-1" data-i18n="home_btn_work">Ver projetos</button>
-                    <a class="btn-home-style-2" href="https://www.instagram.com/syler0x26?igsh=bTU5azNkY3dnZ2J1"
-                        data-i18n="home_btn_contact" target="_blank" rel="noopener noreferrer">Entrar em contato</a>
+                    <button class="btn-energia" data-i18n="home_btn_work">
+                        <span>Ver projetos</span>
+                    </button>
+                    <a class="btn-energia" href="https://www.instagram.com/syler0x26?igsh=bTU5azNkY3dnZ2J1"
+                        data-i18n="home_btn_contact" target="_blank" rel="noopener noreferrer">
+                        <span>Entrar em contato</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -489,7 +494,9 @@
                                         <span>Pandas</span>
                                         <span>EDA</span>
                                     </div>
-                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                    <a class="btn-energia" href="#" data-i18n="project_btn">
+                                        <span>Ver Projeto</span>
+                                    </a>
                                 </div>
                             </article>
                         </div>
@@ -509,7 +516,9 @@
                                         <span>ML</span>
                                         <span>Metrics</span>
                                     </div>
-                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                    <a class="btn-energia" href="#" data-i18n="project_btn">
+                                        <span>Ver Projeto</span>
+                                    </a>
                                 </div>
                             </article>
                         </div>
@@ -529,7 +538,9 @@
                                         <span>DL</span>
                                         <span>GPU</span>
                                     </div>
-                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                    <a class="btn-energia" href="#" data-i18n="project_btn">
+                                        <span>Ver Projeto</span>
+                                    </a>
                                 </div>
                             </article>
                         </div>
@@ -549,7 +560,9 @@
                                         <span>Dash</span>
                                         <span>BI</span>
                                     </div>
-                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                    <a class="btn-energia" href="#" data-i18n="project_btn">
+                                        <span>Ver Projeto</span>
+                                    </a>
                                 </div>
                             </article>
                         </div>
@@ -569,7 +582,9 @@
                                         <span>APIs</span>
                                         <span>Automation</span>
                                     </div>
-                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                    <a class="btn-energia" href="#" data-i18n="project_btn">
+                                        <span>Ver Projeto</span>
+                                    </a>
                                 </div>
                             </article>
                         </div>
@@ -589,7 +604,9 @@
                                         <span>Otimização</span>
                                         <span>C++</span>
                                     </div>
-                                    <a class="project-btn" href="#" data-i18n="project_btn">Ver Projeto</a>
+                                    <a class="btn-energia" href="#" data-i18n="project_btn">
+                                        <span>Ver Projeto</span>
+                                    </a>
                                 </div>
                             </article>
                         </div>

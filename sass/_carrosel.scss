@@ -46,8 +46,8 @@
   color: c.$slate-150;
   white-space: nowrap;
   border: 1px solid rgba(c.$ink-800, 0.22);
-  box-shadow: 0 10px 22px rgba(c.$ink-800, 0.12);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  box-shadow: 0 6px 14px rgba(c.$ink-800, 0.1);
+  transition: transform 320ms ease, box-shadow 320ms ease;
 }
 
 .marquee--left .marquee__track {

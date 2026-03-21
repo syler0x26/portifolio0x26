@@ -12,7 +12,7 @@
   border: 1px solid rgba(c.$slate-400, 0.18);
   border-radius: 22px;
   padding: 28px 26px;
-  box-shadow: 0 20px 50px rgba(c.$ink-980, 0.45);
+  box-shadow: 0 12px 26px rgba(c.$ink-980, 0.3);
   backdrop-filter: blur(12px);
   animation: fade-up 700ms ease both;
 }
@@ -76,8 +76,8 @@
   border-radius: 18px;
   padding: 18px 20px;
   color: c.$slate-300;
-  box-shadow: 0 16px 34px rgba(c.$ink-980, 0.35);
-  transition: transform 200ms ease, border-color 200ms ease;
+  box-shadow: 0 10px 22px rgba(c.$ink-980, 0.25);
+  transition: transform 300ms ease, border-color 300ms ease;
   animation: fade-up 700ms ease both;
 }
 
@@ -112,7 +112,7 @@
   padding: 10px;
   display: grid;
   place-items: center;
-  box-shadow: 0 16px 34px rgba(c.$ink-800, 0.25);
+  box-shadow: 0 10px 22px rgba(c.$ink-800, 0.2);
   margin: 12px 0 8px;
 }
 
