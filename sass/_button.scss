@@ -9,15 +9,13 @@
   padding: 12px 22px;
   border-radius: 999px;
   border: 0;
-  background: linear-gradient(120deg, c.$brand-purple-700, c.$brand-blue-400);
+  background: linear-gradient(120deg, c.$brand-green-400, transparent);
   color: c.$white;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
   z-index: 0;
-  box-shadow: 0 8px 16px rgba(c.$brand-secondary, 0.22),
-    0 0 12px rgba(c.$brand-lavender, 0.18);
   transition: transform 140ms ease,
     box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.5s cubic-bezier(0.22, 1, 0.36, 1);

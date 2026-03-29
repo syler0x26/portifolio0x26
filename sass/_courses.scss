@@ -2,8 +2,14 @@
 
 .courses-section {
   padding: 96px 0;
-  background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.14), transparent 55%),
-    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.2), transparent 55%), c.$ink-950;
+background: radial-gradient(
+  ellipse at 90% 50%,
+  rgba(0, 255, 156, 0.18) 0%,
+  rgba(0, 255, 156, 0.08) 25%,
+  rgba(0, 255, 156, 0.03) 40%,
+  transparent 60%
+),
+#000000;
   color: c.$slate-200;
 }
 

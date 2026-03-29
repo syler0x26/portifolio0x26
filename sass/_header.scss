@@ -40,7 +40,7 @@
   position: relative;
   display: inline-block;
   padding-right: 8px;
-  background: linear-gradient(120deg, c.$brand-secondary, c.$brand-lavender);
+  background: linear-gradient(120deg, c.$brand-green-400, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -55,7 +55,7 @@
   width: 34px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, c.$brand-secondary, c.$brand-lavender);
+  background: linear-gradient(90deg, c.$brand-green-400, transparent);
   box-shadow: 0 0 10px rgba(34, 211, 238, 0.28);
 }
 

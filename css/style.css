@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Lobster&family=Poppins:wght@400;700&display=swap");
-body, html {
+body,
+html {
   font-family: "Poppins", sans-serif;
   position: relative;
-  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 40%), radial-gradient(circle at 30% 80%, rgba(167, 139, 250, 0.18), transparent 45%), #0b0f1a;
+  background-color: #000000;
   color: #e2e8f0;
   line-height: 1.6;
 }
 
 span {
-  color: #6B46FF;
+  color: #4ade80;
 }
 
 .about,
@@ -178,14 +179,13 @@ span {
   padding: 12px 22px;
   border-radius: 999px;
   border: 0;
-  background: linear-gradient(120deg, #732BBA, #60a5fa);
+  background: linear-gradient(120deg, #4ade80, transparent);
   color: #fff;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
   z-index: 0;
-  box-shadow: 0 8px 16px rgba(56, 189, 248, 0.22), 0 0 12px rgba(167, 139, 250, 0.18);
   transition: transform 140ms ease, box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -413,7 +413,7 @@ span {
   position: relative;
   display: inline-block;
   padding-right: 8px;
-  background: linear-gradient(120deg, #38bdf8, #a78bfa);
+  background: linear-gradient(120deg, #4ade80, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -428,7 +428,7 @@ span {
   width: 34px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  background: linear-gradient(90deg, #4ade80, transparent);
   box-shadow: 0 0 10px rgba(34, 211, 238, 0.28);
 }
 
@@ -590,8 +590,6 @@ span {
   }
 }
 .home-hero {
-  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 40%), radial-gradient(circle at 30% 80%, rgba(167, 139, 250, 0.18), transparent 45%), var(--bg);
-  color: var(--text);
   line-height: 1.6;
 }
 
@@ -604,7 +602,7 @@ figure .bola {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #6B46FF;
+  background-color: #006826;
   box-shadow: 0 0 8px rgba(15, 23, 42, 0.25);
 }
 
@@ -755,7 +753,7 @@ figure .green {
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 12px;
-  color: #93c5fd;
+  color: #4ade80;
   margin-bottom: 12px;
 }
 
@@ -841,7 +839,7 @@ figure .green {
 .ai-brain svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 18px 30px rgba(107, 70, 255, 0.35));
+  filter: drop-shadow(0 18px 30px rgba(0, 104, 38, 0.35));
 }
 
 .ai-brain {
@@ -1021,8 +1019,10 @@ figure .green {
   display: grid;
   gap: 16px;
   overflow: hidden;
-  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 40%), radial-gradient(circle at 30% 80%, rgba(167, 139, 250, 0.18), transparent 45%), var(--bg);
-  color: var(--text);
+  /*  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 40%),
+     radial-gradient(circle at 30% 80%, rgba(167, 139, 250, 0.18), transparent 45%),
+     var(--bg);
+   color: var(--text); */
   line-height: 1.6;
 }
 
@@ -1098,7 +1098,7 @@ figure .green {
 }
 .courses-section {
   padding: 96px 0;
-  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.14), transparent 55%), radial-gradient(circle at bottom, rgba(167, 139, 250, 0.2), transparent 55%), #06080f;
+  background: radial-gradient(ellipse at 90% 50%, rgba(0, 255, 156, 0.18) 0%, rgba(0, 255, 156, 0.08) 25%, rgba(0, 255, 156, 0.03) 40%, transparent 60%), #000000;
   color: #e2e8f0;
 }
 
@@ -1242,7 +1242,8 @@ figure .green {
   position: relative;
   color: #e2e8f0;
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 55%), radial-gradient(circle at bottom, rgba(167, 139, 250, 0.16), transparent 55%), #0b0f1a;
+  /* background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.12), transparent 55%),
+    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.16), transparent 55%), c.$ink-900; */
 }
 
 .section-head {
@@ -1352,8 +1353,9 @@ figure .green {
 
 .atom-section {
   min-height: 100vh;
-  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), transparent 55%), radial-gradient(circle at bottom, rgba(167, 139, 250, 0.18), transparent 55%), #0b0f1a;
-  display: flex;
+  /* background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.15), transparent 55%),
+    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.18), transparent 55%), c.$ink-900;
+  display: flex; */
   align-items: center;
   color: #e2e8f0;
   position: relative;
@@ -1366,7 +1368,7 @@ figure .green {
   right: 0;
   top: 0;
   height: 80px;
-  background: linear-gradient(180deg, rgba(11, 15, 26, 0.9), rgba(11, 15, 26, 0));
+  /*  background: linear-gradient(180deg, rgba(c.$ink-900, 0.9), rgba(c.$ink-900, 0)); */
   pointer-events: none;
 }
 
@@ -1478,7 +1480,7 @@ figure .green {
 }
 .timeline-section {
   padding: 90px 0;
-  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 55%), radial-gradient(circle at bottom, rgba(167, 139, 250, 0.16), transparent 55%), #0b0f1a;
+  background: radial-gradient(ellipse 1200px 500px at 50% 50%, rgba(0, 255, 156, 0.12), transparent 80%), #000000;
   color: #e2e8f0;
 }
 
@@ -1629,7 +1631,7 @@ figure .green {
 
 .portfolio-section {
   padding: 96px 0;
-  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 55%), radial-gradient(circle at bottom, rgba(167, 139, 250, 0.18), transparent 55%), #0b0f1a;
+  background: radial-gradient(circle 300px at 20% 30%, rgba(0, 255, 156, 0.15), transparent 60%), radial-gradient(circle 400px at 80% 40%, rgba(0, 255, 156, 0.12), transparent 65%), radial-gradient(circle 500px at 50% 90%, rgba(0, 255, 156, 0.1), transparent 70%), radial-gradient(circle 250px at 70% 10%, rgba(0, 255, 156, 0.08), transparent 60%), #000000;
   color: #e2e8f0;
 }
 
@@ -1745,7 +1747,7 @@ figure .green {
   }
 }
 .connect-section {
-  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98)), linear-gradient(135deg, rgba(56, 189, 248, 0.08), rgba(165, 180, 252, 0.06));
+  background: radial-gradient(circle 300px at 20% 30%, rgba(0, 255, 156, 0.15), transparent 60%), radial-gradient(circle 400px at 80% 40%, rgba(0, 255, 156, 0.12), transparent 65%), radial-gradient(circle 500px at 50% 90%, rgba(0, 255, 156, 0.1), transparent 70%), radial-gradient(circle 250px at 70% 10%, rgba(0, 255, 156, 0.08), transparent 60%), #000000;
   color: #e2e8f0;
   padding: 110px 0;
 }
@@ -1899,5 +1901,13 @@ figure .green {
   background: #1f2a44;
   font-size: 14px;
 }
+
+/* #mensage{
+    height: 100vh;
+    .text-big{
+        font-size: 5.3rem;
+        font-weight: 800;
+    }
+} */
 
 /*# sourceMappingURL=style.css.map */

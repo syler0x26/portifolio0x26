@@ -5,8 +5,8 @@
   position: relative;
   color: c.$slate-200;
   font-family: "Poppins", sans-serif;
-  background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.12), transparent 55%),
-    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.16), transparent 55%), c.$ink-900;
+  /* background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.12), transparent 55%),
+    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.16), transparent 55%), c.$ink-900; */
 }
 
 .section-head {
@@ -118,9 +118,9 @@
 
 .atom-section {
   min-height: 100vh;
-  background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.15), transparent 55%),
+  /* background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.15), transparent 55%),
     radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.18), transparent 55%), c.$ink-900;
-  display: flex;
+  display: flex; */
   align-items: center;
   color: c.$slate-200;
   position: relative;
@@ -133,7 +133,7 @@
   right: 0;
   top: 0;
   height: 80px;
-  background: linear-gradient(180deg, rgba(c.$ink-900, 0.9), rgba(c.$ink-900, 0));
+ /*  background: linear-gradient(180deg, rgba(c.$ink-900, 0.9), rgba(c.$ink-900, 0)); */
   pointer-events: none;
 }
 
@@ -252,8 +252,12 @@
 
 .timeline-section {
   padding: 90px 0;
-  background: radial-gradient(circle at top, rgba(c.$brand-secondary, 0.12), transparent 55%),
-    radial-gradient(circle at bottom, rgba(c.$brand-lavender, 0.16), transparent 55%), c.$ink-900;
+background: radial-gradient(
+  ellipse 1200px 500px at 50% 50%,
+  rgba(0, 255, 156, 0.12),
+  transparent 80%
+),
+#000000;
   color: c.$slate-200;
 }
 
