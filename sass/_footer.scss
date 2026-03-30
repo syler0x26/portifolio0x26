@@ -1,8 +1,156 @@
 @use "colors" as c;
+
 .site-footer {
-  padding: 30px 0 40px;
-  text-align: center;
-  color: white;
-  background: c.$ink-650;
-  font-size: 14px;
+  position: relative;
+  padding: 80px 0 46px;
+  color: c.$slate-200;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(c.$brand-secondary, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(c.$brand-lavender, 0.2), transparent 60%),
+    linear-gradient(180deg, rgba(c.$ink-900, 0.92), rgba(c.$ink-980, 0.98));
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(c.$brand-secondary, 0.18), transparent 60%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.08),
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.site-footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.2fr) repeat(2, minmax(180px, 1fr));
+  gap: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(c.$slate-400, 0.2);
+}
+
+.footer-logo {
+  font-family: "JetBrains Mono", "Poppins", system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: c.$slate-90;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* .footer-logo span {
+  color: c.$brand-secondary;
+  margin-left: 6px;
+} */
+
+.footer-desc {
+  margin: 16px 0 20px;
+  color: rgba(c.$slate-200, 0.82);
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+.footer-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(c.$brand-secondary, 0.35);
+  color: c.$brand-sky-200;
+  background: rgba(c.$ink-800, 0.6);
+}
+
+.footer-links h4 {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: c.$slate-90;
+}
+
+.footer-links a {
+  display: block;
+  color: rgba(c.$slate-200, 0.82);
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.footer-links a:hover {
+  color: c.$brand-secondary;
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 22px;
+  font-size: 13px;
+  color: rgba(c.$slate-200, 0.75);
+  flex-wrap: wrap;
+}
+
+.footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "JetBrains Mono", "Poppins", system-ui, sans-serif;
+  color: c.$brand-green-400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+}
+
+.footer-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: c.$brand-green-400;
+  box-shadow: 0 0 10px rgba(c.$brand-green-400, 0.8);
+}
+
+@media (max-width: 991.98px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .site-footer {
+    padding: 70px 0 40px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

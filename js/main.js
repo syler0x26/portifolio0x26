@@ -992,6 +992,98 @@
     projectCards.forEach((card) => projectObserver.observe(card));
   }
 
+  const initScrollReveals = () => {
+    const autoRoots = document.querySelectorAll("[data-reveal-all]");
+    const explicitSelector = ".reveal, [data-reveal], [data-aos], .fade-up, .fade-in, .slide-left, .zoom-in";
+    const skipClosestSelector =
+      ".timeline-item, .project-card, .painel-vs-code, .connect-card, .support-card, .home-hero, .carrosel, .marquee";
+    const ignoreTags = new Set(["SCRIPT", "STYLE", "LINK", "META", "NOSCRIPT", "BR", "CANVAS", "SVG"]);
+    const supportedTypes = new Set(["fade-up", "fade-in", "slide-left", "zoom-in"]);
+    const candidates = new Set();
+
+    const shouldSkipElement = (el) => {
+      if (!el || !el.tagName) return true;
+      if (ignoreTags.has(el.tagName)) return true;
+      if (el.dataset.reveal === "skip" || el.dataset.reveal === "false") return true;
+      if (el.dataset.revealSkip !== undefined || el.dataset.noReveal !== undefined) return true;
+      if (el.classList.contains("no-reveal")) return true;
+      if (skipClosestSelector && el.closest(skipClosestSelector)) return true;
+      if (el.closest("[data-reveal-skip]")) return true;
+      const style = window.getComputedStyle(el);
+      if (style.animationName !== "none" && style.animationDuration !== "0s") return true;
+      return false;
+    };
+
+    const getRevealType = (el) => {
+      const attr = (el.dataset.reveal || el.dataset.aos || "").trim().toLowerCase();
+      if (attr && attr !== "true" && supportedTypes.has(attr)) {
+        return attr;
+      }
+      for (const type of supportedTypes) {
+        if (el.classList.contains(type)) return type;
+      }
+      return "fade-up";
+    };
+
+    const applyRevealStyles = (el) => {
+      if (el.classList.contains("reveal-ready")) return;
+      const type = getRevealType(el);
+      el.classList.add("reveal", type, "reveal-ready");
+
+      const delay = el.dataset.delay || el.dataset.revealDelay || el.dataset.aosDelay || "";
+      if (delay !== "") {
+        const delayValue = Number(delay);
+        if (!Number.isNaN(delayValue)) {
+          el.style.setProperty("--reveal-delay", `${delayValue}ms`);
+        }
+      }
+
+      const duration = el.dataset.duration || el.dataset.revealDuration || "";
+      if (duration !== "") {
+        const durationValue = Number(duration);
+        if (!Number.isNaN(durationValue)) {
+          el.style.setProperty("--reveal-duration", `${durationValue}ms`);
+        }
+      }
+    };
+
+    document.querySelectorAll(explicitSelector).forEach((el) => candidates.add(el));
+
+    autoRoots.forEach((root) => {
+      root.querySelectorAll("*").forEach((el) => {
+        if (!shouldSkipElement(el)) {
+          candidates.add(el);
+        }
+      });
+    });
+
+    if (!candidates.size) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          const repeat = el.dataset.repeat === "true" || el.dataset.revealRepeat === "true";
+
+          if (entry.isIntersecting) {
+            el.classList.add("is-inview");
+            if (!repeat) observer.unobserve(el);
+          } else if (repeat) {
+            el.classList.remove("is-inview");
+          }
+        });
+      },
+      { threshold: 0.18, rootMargin: "0px 0px -12% 0px" }
+    );
+
+    candidates.forEach((el) => {
+      if (shouldSkipElement(el)) return;
+      applyRevealStyles(el);
+      observer.observe(el);
+    });
+  };
+
+  initScrollReveals();
 
   const pixCopyButtons = document.querySelectorAll(".pix-copy");
   if (pixCopyButtons.length) {

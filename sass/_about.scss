@@ -260,7 +260,22 @@ background: radial-gradient(
 #000000;
   color: c.$slate-200;
 }
-
+.timeline-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(c.$brand-secondary, 0), transparent 60%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.08),
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+  opacity: 0.35;
+  pointer-events: none;
+}
 .timeline-title {
   font-family: "Poppins", sans-serif;
   font-size: clamp(28px, 4vw, 52px);

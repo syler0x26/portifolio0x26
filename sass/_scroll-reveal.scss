@@ -1,0 +1,52 @@
+:root {
+  --reveal-duration: 720ms;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-distance: 24px;
+}
+
+.reveal {
+  --reveal-translate-x: 0px;
+  --reveal-translate-y: var(--reveal-distance);
+  --reveal-scale: 1;
+  --reveal-delay: 0ms;
+
+  opacity: 0;
+  transform: translate3d(var(--reveal-translate-x), var(--reveal-translate-y), 0)
+    scale(var(--reveal-scale));
+  transition:
+    opacity var(--reveal-duration) var(--reveal-ease) var(--reveal-delay),
+    transform var(--reveal-duration) var(--reveal-ease) var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+.reveal.is-inview {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.fade-up {
+  --reveal-translate-y: var(--reveal-distance);
+}
+
+.fade-in {
+  --reveal-translate-y: 0px;
+}
+
+.slide-left {
+  --reveal-translate-x: -32px;
+  --reveal-translate-y: 0px;
+}
+
+.zoom-in {
+  --reveal-scale: 0.94;
+  --reveal-translate-y: 0px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
