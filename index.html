@@ -27,10 +27,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end site-nav__collapse" id="mainNav">
                     <div class="navbar-nav align-items-md-center site-nav__menu">
-                        <a class="nav-link site-nav__link" href="#home" data-i18n="nav_home">In?cio</a>
-                        <a class="nav-link site-nav__link" href="#about" data-i18n="nav_about">Sobre</a>
-                        <a class="nav-link site-nav__link" href="#portfolio" data-i18n="nav_projects">Projetos</a>
-                        <a class="nav-link site-nav__link" href="#contact" data-i18n="nav_timeline">Trajet?ria</a>
+                        <a class="nav-link menu__link" href="#home" data-i18n="nav_home">In?cio</a>
+                        <a class="nav-link menu__link" href="#about" data-i18n="nav_about">Sobre</a>
+                        <a class="nav-link menu__link" href="#portfolio" data-i18n="nav_projects">Projetos</a>
+                        <a class="nav-link menu__link" href="#contact" data-i18n="nav_timeline">Trajet?ria</a>
                     </div>
                     <div class="site-nav__extra">
                         <div class="lang-select site-nav__lang">
@@ -50,57 +50,65 @@
 
     <main data-reveal-all="true">
         <section id="home" class="home-hero">
-    <canvas class="hero-particles" aria-hidden="true"></canvas>
-    <div class="container">
-        <div class="row text-center text-md-start align-items-center justify-content-center">
-            <div class="col-md-6 order-md-2 order1">
-                <div class="ai-brain" role="img" aria-label="Átomo tecnológico">
-                    <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <defs>
-                            <radialGradient id="atomCore" cx="50%" cy="45%" r="55%">
-                                <stop offset="0%" stop-color="#38BDF8" />
-                                <stop offset="55%" stop-color="#A78BFA" />
-                                <stop offset="100%" stop-color="#0F172A" />
-                            </radialGradient>
-                            <linearGradient id="atomStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#60A5FA" />
-                                <stop offset="100%" stop-color="#A78BFA" />
-                            </linearGradient>
-                        </defs>
-                        <circle class="atom-pulse" cx="210" cy="210" r="70" fill="url(#atomCore)" opacity="0.85" />
-                        <ellipse class="atom-orbit atom-orbit--one" cx="210" cy="210" rx="150" ry="70"
-                            fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.85" />
-                        <ellipse class="atom-orbit atom-orbit--two" cx="210" cy="210" rx="150" ry="70"
-                            fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.7"
-                            transform="rotate(60 210 210)" />
-                        <ellipse class="atom-orbit atom-orbit--three" cx="210" cy="210" rx="150" ry="70"
-                            fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.6"
-                            transform="rotate(-60 210 210)" />
-                        <circle cx="360" cy="210" r="7" fill="#38BDF8" />
-                        <circle cx="70" cy="210" r="6" fill="#A78BFA" />
-                        <circle cx="210" cy="60" r="6" fill="#60A5FA" />
-                    </svg>
-                </div>
-            </div>
-            <div class="col-md-6 order-md-1 order2">
-                <div class="hero-eyebrow" data-i18n="home_eyebrow">Estudante de Inteligência Artificial</div>
-                <h1 class="hero-title" data-i18n-html="home_title">
-                    Wesley Santos
-                    <span>Construindo minha base em IA e software.</span>
-                </h1>
-                <div class="hero-actions">
-                    <button class="btn-energia" data-i18n="home_btn_work">
+            <canvas class="hero-particles" aria-hidden="true"></canvas>
+            <div class="container">
+                <div class="row text-center text-md-start align-items-center justify-content-center">
+                    <div class="col-md-6 order-md-2 order1">
+                        <div class="ai-brain" role="img" aria-label="Átomo tecnológico">
+                            <div class="orb-highlight" aria-hidden="true"></div>
+                            <div class="orb-particles" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <defs>
+                                    <radialGradient id="atomCore" cx="50%" cy="45%" r="55%">
+                                        <stop offset="0%" stop-color="#38BDF8" />
+                                        <stop offset="55%" stop-color="#A78BFA" />
+                                        <stop offset="100%" stop-color="#0F172A" />
+                                    </radialGradient>
+                                    <linearGradient id="atomStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#60A5FA" />
+                                        <stop offset="100%" stop-color="#A78BFA" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="atom-pulse" cx="210" cy="210" r="70" fill="url(#atomCore)"
+                                    opacity="0.85" />
+                                <ellipse class="atom-orbit atom-orbit--one" cx="210" cy="210" rx="150" ry="70"
+                                    fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.85" />
+                                <ellipse class="atom-orbit atom-orbit--two" cx="210" cy="210" rx="150" ry="70"
+                                    fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.7"
+                                    transform="rotate(60 210 210)" />
+                                <ellipse class="atom-orbit atom-orbit--three" cx="210" cy="210" rx="150" ry="70"
+                                    fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.6"
+                                    transform="rotate(-60 210 210)" />
+                                <circle cx="360" cy="210" r="7" fill="#38BDF8" />
+                                <circle cx="70" cy="210" r="6" fill="#A78BFA" />
+                                <circle cx="210" cy="60" r="6" fill="#60A5FA" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-md-6 order-md-1 order2">
+                        <div class="hero-eyebrow" data-i18n="home_eyebrow">Estudante de Inteligência Artificial</div>
+                        <h1 class="hero-title" data-i18n-html="home_title">
+                            Wesley Santos
+                            <span>Construindo minha base em IA e software.</span>
+                        </h1>
+                        <div class="hero-actions">
+                    <button class="btn-home" data-i18n="home_btn_work">
                         <span>Ver projetos</span>
                     </button>
-                    <a class="btn-energia" href="https://www.instagram.com/syler0x26?igsh=bTU5azNkY3dnZ2J1"
+                    <a class="btn-home" href="https://www.instagram.com/syler0x26?igsh=bTU5azNkY3dnZ2J1"
                         data-i18n="home_btn_contact" target="_blank" rel="noopener noreferrer">
                         <span>Entrar em contato</span>
                     </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- Meu painel -->
         <figure>
@@ -195,7 +203,7 @@
                 </div>
             </div>
         </section>
-<!--         <section id="mensage" class="container-fluid">
+        <!--         <section id="mensage" class="container-fluid">
                 <div class="row">
                     <div class="col">
                         <h1 class="text-big">O FUTURO ESTA APENAS COMEÇANDO</h1>
@@ -224,20 +232,11 @@
                                 <pre><code><span class="purple">class</span> <span class="blue">LearningSystem</span>:
     <span class="purple">def</span> <span class="blue">__init__</span>(<span class="orange">self</span>):
         <span class="orange">self</span>.<span class="blue">professor</span> = <span class="green">"Wesley Syler"</span>
-        <span class="orange">self</span>.<span class="blue">cursos</span> = [<span class="green">"Inteligencia Artificial"</span>, <span class="green">"Python"</span>]
+        <span class="orange">self</span>.<span class="blue">cursos</span> = [<span class="green">"Inteligência Artificial"</span>, <span class="green">"Python"</span>]
 
     <span class="purple">def</span> <span class="blue">iniciar</span>(<span class="orange">self</span>):
         <span class="blue">print</span>(<span class="green">"Inicializando ambiente educacional..."</span>)
-        <span class="blue">print</span>(<span class="green">f"Professor responsavel: {self.professor}"</span>)
-
-        <span class="purple">for</span> <span class="blue">curso</span> <span class="purple">in</span> <span class="orange">self</span>.<span class="blue">cursos</span>:
-            <span class="blue">print</span>(<span class="green">f"Carregando curso: {curso}"</span>)
-
-        <span class="blue">print</span>(<span class="green">"Status: cursos em breve"</span>)
-
-
-<span class="blue">sistema</span> = <span class="blue">LearningSystem</span>()
-<span class="blue">sistema</span>.<span class="blue">iniciar</span>()</code></pre>
+        <span class="blue">print</span>(<span class="green">"Status: cursos em breve"</span>)</code></pre>
                             </div>
                         </div>
                     </div>
@@ -276,68 +275,52 @@
         </section>
         <div class="about-atom-zone">
             <canvas class="zone-particles" aria-hidden="true"></canvas>
-            <section id="about" class="section about">
+            <section id="about" class="section about about-section">
                 <div class="container">
                     <div class="section-head" data-aos="fade-up">
                         <p class="eyebrow">Sobre mim</p>
                         <h2>Jornada de um estudante</h2>
                     </div>
-                    <div class="about-grid">
-                        <article class="about-card" data-aos="fade" data-aos-delay="100">
-                            <h3>Quem sou</h3>
-                            <p>
-                               Olá! Sou Wesley Santos, estudante de Inteligência Artificial no Brasil. Atualmente, estou focado em desenvolver uma base sólida em tecnologia, estudando programação, lógica e fundamentos de IA, sempre buscando evoluir através da prática e do aprendizado contínuo.
-                            </p>
-                            <div class="about-tags">
-                                <span>Design systems</span>
-                                <span>IA aplicada</span>
-                                <span>UI/UX</span>
+                    <div class="row g-4 align-items-stretch">
+                        <div class="col-12 col-lg-6" data-aos="fade" data-aos-delay="100">
+                            <div class="about-content">
+                                <h3 class="about-title">Quem sou</h3>
+                                <p class="about-text">
+                                    Olá! Sou Wesley Santos, estudante de Inteligência Artificial no Brasil. Atualmente,
+                                    estou focado em desenvolver uma base sólida em tecnologia, estudando programação,
+                                    lógica
+                                    e fundamentos de IA, sempre buscando evoluir através da prática e do aprendizado
+                                    contínuo.
+                                </p>
+                                <div class="about-tags">
+                                    <span>Design systems</span>
+                                    <span>IA aplicada</span>
+                                    <span>UI/UX</span>
+                                </div>
                             </div>
-                        </article>
-                        <article class="about-card" data-aos="fade-up" data-aos-delay="180">
-                            <h3>Foco atual</h3>
-                            <ul class="about-list">
-
-                                <li>Estudo intensivo de programação e IA</li>
-                                <li>Desenvolvimento de projetos práticos</li>
-                                <li>Construção de base sólida em tecnologia</li>
-                                <li>Evolução contínua como desenvolvedor</li>
-
-                            </ul>
-                        </article>
+                        </div>
+                        <div class="col-12 col-lg-6" data-aos="fade-up" data-aos-delay="180">
+                            <article class="about-card">
+                                <h3 class="about-card-title">// Foco Atual</h3>
+                                <ul class="about-list">
+                                    <li>Estudo intensivo de programação e IA</li>
+                                    <li>Desenvolvimento de projetos práticos</li>
+                                    <li>Construção de base sólida em tecnologia</li>
+                                    <li>Evolução contínua como desenvolvedor</li>
+                                </ul>
+                            </article>
+                        </div>
                     </div>
                 </div>
             </section>
-<section id="Sytech" class="Sytech">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-
-      <!-- IMAGEM (ESQUERDA) -->
-      <div class="col-md-6 d-flex justify-content-center">
-        <img class="img-fluid" src="img/Ondas.png" alt="Ondas">
-      </div>
-
-      <!-- TEXTO (DIREITA) -->
-      <div class="col-md-6 d-flex align-items-center">
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-          Maiores error, asperiores eveniet alias labore totam iure. 
-          Eius, quae? Itaque, cupiditate distinctio? Itaque excepturi 
-          repellat eaque iste eum deserunt repudiandae beatae?
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
         </div>
         <div id="contact" style="min-height: 140vh">
             <section id="timeline" class="timeline-section">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center mb-5">
-                            <h1 class="timeline-title" data-i18n="timeline_title">Trajetoria</h1>
-                            <p class="text-muted" data-i18n="timeline_subtitle">Minha jornada profissional.</p>
+                            <h1 class="timeline-title">Minha Jornada</h1>
+                            <p class="text-muted">Os marcos mais importantes da minha evolução profissional.</p>
                         </div>
                     </div>
                     <div class="timeline">
@@ -446,132 +429,130 @@
                     <div class="row g-4">
                         <div class="col-12 col-md-6 col-lg-4">
                             <article class="project-card">
-                                <div class="project-media">
-                                    <img src="img/img-dominante.jpg" alt="Análise de Dados com Python"
-                                        data-i18n="alt_project_data" data-i18n-attr="alt">
-                                </div>
-                                <div class="project-body">
+                                <div class="project-card__header" aria-hidden="true"></div>
+                                <div class="project-card__body">
                                     <h3 data-i18n="project_data_title">Análise de Dados com Python</h3>
                                     <p data-i18n="project_data_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
                                         elit. Quaerat eveniet</p>
-                                    <div class="project-tags">
+                                    <div class="project-card__tags">
                                         <span>Python</span>
-                                        <span>Pandas</span>
-                                        <span>EDA</span>
                                     </div>
-                                    <a class="btn-energia" href="#" data-i18n="project_btn">
-                                        <span>Ver Projeto</span>
-                                    </a>
+                                        <button class="learn-more">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">Ver projeto</span>
+                                        </button>
                                 </div>
                             </article>
                         </div>
 
                         <div class="col-12 col-md-6 col-lg-4">
                             <article class="project-card">
-                                <div class="project-media">
-                                    <img src="img/img-dominante.jpg" alt="Modelo de Machine Learning"
-                                        data-i18n="alt_project_ml" data-i18n-attr="alt">
-                                </div>
-                                <div class="project-body">
+                                <div class="project-card__header" aria-hidden="true"></div>
+                                <div class="project-card__body">
                                     <h3 data-i18n="project_ml_title">Modelo de Machine Learning</h3>
                                     <p data-i18n="project_ml_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
                                         elit. Quaerat eveniet.</p>
-                                    <div class="project-tags">
+                                    <div class="project-card__tags">
                                         <span>Scikit-learn</span>
                                         <span>ML</span>
                                         <span>Metrics</span>
                                     </div>
-                                    <a class="btn-energia" href="#" data-i18n="project_btn">
-                                        <span>Ver Projeto</span>
-                                    </a>
+                                   <button class="learn-more">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">Ver projeto</span>
+                                        </button>
                                 </div>
                             </article>
                         </div>
 
                         <div class="col-12 col-md-6 col-lg-4">
                             <article class="project-card">
-                                <div class="project-media">
-                                    <img src="img/img-dominante.jpg" alt="Experimentos com Redes Neurais"
-                                        data-i18n="alt_project_nn" data-i18n-attr="alt">
-                                </div>
-                                <div class="project-body">
+                                <div class="project-card__header" aria-hidden="true"></div>
+                                <div class="project-card__body">
                                     <h3 data-i18n="project_nn_title">Experimentos com Redes Neurais</h3>
                                     <p data-i18n="project_nn_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
                                         elit. Quaerat eveniet</p>
-                                    <div class="project-tags">
+                                    <div class="project-card__tags">
                                         <span>TensorFlow</span>
                                         <span>DL</span>
                                         <span>GPU</span>
                                     </div>
-                                    <a class="btn-energia" href="#" data-i18n="project_btn">
-                                        <span>Ver Projeto</span>
-                                    </a>
+                                    <button class="learn-more">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">Ver projeto</span>
+                                        </button>
                                 </div>
                             </article>
                         </div>
 
                         <div class="col-12 col-md-6 col-lg-4">
                             <article class="project-card">
-                                <div class="project-media">
-                                    <img src="img/img-dominante.jpg" alt="Visualização de Dados"
-                                        data-i18n="alt_project_viz" data-i18n-attr="alt">
-                                </div>
-                                <div class="project-body">
+                                <div class="project-card__header" aria-hidden="true"></div>
+                                <div class="project-card__body">
                                     <h3 data-i18n="project_viz_title">Visualização de Dados</h3>
                                     <p data-i18n="project_viz_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
                                         elit. Quaerat eveniet </p>
-                                    <div class="project-tags">
+                                    <div class="project-card__tags">
                                         <span>Plotly</span>
                                         <span>Dash</span>
                                         <span>BI</span>
                                     </div>
-                                    <a class="btn-energia" href="#" data-i18n="project_btn">
-                                        <span>Ver Projeto</span>
-                                    </a>
+                                    <button class="learn-more">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">Ver projeto</span>
+                                        </button>
                                 </div>
                             </article>
                         </div>
 
                         <div class="col-12 col-md-6 col-lg-4">
                             <article class="project-card">
-                                <div class="project-media">
-                                    <img src="img/img-dominante.jpg" alt="Projeto de Automação"
-                                        data-i18n="alt_project_auto" data-i18n-attr="alt">
-                                </div>
-                                <div class="project-body">
+                                <div class="project-card__header" aria-hidden="true"></div>
+                                <div class="project-card__body">
                                     <h3 data-i18n="project_auto_title">Projeto de Automação</h3>
                                     <p data-i18n="project_auto_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
                                         elit. Quaerat eveniet</p>
-                                    <div class="project-tags">
+                                    <div class="project-card__tags">
                                         <span>Python</span>
                                         <span>APIs</span>
                                         <span>Automation</span>
                                     </div>
-                                    <a class="btn-energia" href="#" data-i18n="project_btn">
-                                        <span>Ver Projeto</span>
-                                    </a>
+                                   <button class="learn-more">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">Ver projeto</span>
+                                        </button>
                                 </div>
                             </article>
                         </div>
 
                         <div class="col-12 col-md-6 col-lg-4">
                             <article class="project-card">
-                                <div class="project-media">
-                                    <img src="img/img-dominante.jpg" alt="Estudo de Algoritmos"
-                                        data-i18n="alt_project_algo" data-i18n-attr="alt">
-                                </div>
-                                <div class="project-body">
+                                <div class="project-card__header" aria-hidden="true"></div>
+                                <div class="project-card__body">
                                     <h3 data-i18n="project_algo_title">Estudo de Algoritmos</h3>
                                     <p data-i18n="project_algo_desc">Lorem, ipsum dolor sit amet consectetur adipisicing
                                         elit. Quaerat eveniet</p>
-                                    <div class="project-tags">
+                                    <div class="project-card__tags">
                                         <span>Algoritmos</span>
                                         <span>Otimização</span>
                                         <span>C++</span>
                                     </div>
-                                    <a class="btn-energia" href="#" data-i18n="project_btn">
-                                        <span>Ver Projeto</span>
-                                    </a>
+                                    <button class="learn-more">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">Ver projeto</span>
+                                        </button>
                                 </div>
                             </article>
                         </div>
@@ -647,7 +628,7 @@
                 </div>
             </div>
         </section>
-                <footer class="site-footer" data-reveal-skip>
+        <footer class="site-footer" data-reveal-skip>
             <div class="container">
                 <div class="footer-top">
                     <div class="footer-brand">
@@ -694,4 +675,5 @@
     <script src="js/main.js"></script>
 
 </body>
+
 </html>

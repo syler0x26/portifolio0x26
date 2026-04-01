@@ -63,18 +63,48 @@
   gap: 18px;
 }
 
-.site-header .site-nav .site-nav__link {
+.site-header .site-nav .menu__link {
   color: rgba(c.$slate-90, 0.9);
-  font-weight: 600;
+  font-weight: 300;
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.site-header .site-nav .site-nav__link:hover,
-.site-header .site-nav .site-nav__link:focus {
+.site-header .site-nav .menu__link:hover,
+.site-header .site-nav .menu__link:focus {
   color: c.$brand-sky-200;
   transform: translateY(-1px);
+}
+
+
+//estilização do a(link)
+a {
+  text-decoration: none;
+}
+/* <main-style> ============================ */
+.menu__link {
+  display: inline-block;
+  color: c.$slate-90;
+  line-height: 2;
+  position: relative;
+}
+
+.menu__link::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: c.$slate-90;
+  position: absolute;
+  bottom: -.25rem;
+  right: 0;
+  transition: right .4s, width .4s, left .4s;
+}
+
+.menu__link:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 .site-header .site-nav__extra {

@@ -1,7 +1,46 @@
 @use "colors" as c;
-.home-hero{
+
+.home-hero {
   line-height: 1.6;
+
+  .btn-home{
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid c.$brand-primary;
+  border-radius: 2rem;
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: 300;
+  background: transparent;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
 }
+
+.btn-home:hover {
+  color: white;
+}
+
+.btn-home::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: c.$brand-primary;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn-home:hover::before {
+  width: 160%;
+}
+  }
+
 figure {
   height: 100%;
   width: 100%;
@@ -150,12 +189,112 @@ figure .green {
 }
 
 .ai-brain {
-  width: min(360px, 80vw);
+  width: min(280px, 62vw);
   aspect-ratio: 1;
   margin: 0 auto;
   display: grid;
   place-items: center;
   position: relative;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(c.$brand-secondary, 0.5), transparent 42%),
+    radial-gradient(circle at 72% 70%, rgba(c.$brand-green-400, 0.35), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(c.$brand-secondary, 0.16), rgba(c.$ink-900, 0.9) 62%),
+    radial-gradient(circle at 50% 50%, rgba(c.$ink-900, 0.92) 0%, c.$ink-980 72%);
+  border: 1px solid rgba(c.$brand-secondary, 0.18);
+  box-shadow:
+    0 14px 28px rgba(c.$ink-980, 0.45),
+    0 0 26px rgba(c.$brand-secondary, 0.18),
+    inset 0 0 22px rgba(c.$brand-green-400, 0.14);
+  overflow: hidden;
+  opacity: 0.92;
+  backdrop-filter: blur(2px);
+}
+
+.ai-brain::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(c.$brand-secondary, 0.22), rgba(c.$brand-green-400, 0.06) 55%, transparent 72%),
+    conic-gradient(from 210deg, rgba(c.$brand-secondary, 0.08), transparent 55%, rgba(c.$brand-green-400, 0.08), transparent 90%);
+  filter: blur(8px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.ai-brain::after {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 30deg, rgba(c.$brand-secondary, 0.18), transparent 45%, rgba(c.$brand-green-400, 0.16), transparent 78%),
+    radial-gradient(circle at 32% 32%, rgba(c.$brand-secondary, 0.22), transparent 58%),
+    radial-gradient(circle at 68% 68%, rgba(c.$brand-green-400, 0.18), transparent 62%),
+    radial-gradient(circle at 50% 50%, rgba(c.$brand-secondary, 0.08), transparent 64%);
+  filter: blur(1.5px);
+  opacity: 0.65;
+  animation: orb-rotate 36s linear infinite, orb-breathe 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.ai-brain .orb-highlight {
+  position: absolute;
+  top: 16%;
+  left: 18%;
+  width: 48%;
+  height: 22%;
+  border-radius: 999px;
+  background: linear-gradient(120deg, rgba(c.$brand-secondary, 0.26), rgba(c.$brand-secondary, 0.02) 70%);
+  transform: rotate(-18deg);
+  opacity: 0.55;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.ai-brain .orb-particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(c.$brand-secondary, 0.5);
+  opacity: 0.6;
+  filter: blur(0.2px);
+  animation: particle-float 9s ease-in-out infinite;
+}
+
+.ai-brain .orb-particles span:nth-child(1) {
+  top: 18%;
+  right: 14%;
+  animation-delay: 0.6s;
+}
+
+.ai-brain .orb-particles span:nth-child(2) {
+  top: 62%;
+  right: 8%;
+  width: 3px;
+  height: 3px;
+  animation-delay: 1.4s;
+}
+
+.ai-brain .orb-particles span:nth-child(3) {
+  bottom: 18%;
+  left: 12%;
+  width: 3px;
+  height: 3px;
+  animation-delay: 2.1s;
+  opacity: 0.4;
+}
+
+.ai-brain .orb-particles span:nth-child(4) {
+  top: 10%;
+  left: 22%;
+  width: 2px;
+  height: 2px;
+  animation-delay: 0.9s;
+  opacity: 0.35;
 }
 
 .hero-eyebrow {
@@ -234,7 +373,7 @@ figure .green {
 }
 
 .home-hero.is-loaded .ai-brain {
-  animation: hero-visual-in 0.9s ease-out 0.75s forwards, hero-float 6s ease-in-out 1.6s infinite;
+  animation: hero-visual-in 0.9s ease-out 0.75s forwards, hero-float 8s ease-in-out 1.6s infinite;
 }
 
 @media (max-width: 575.98px) {
@@ -252,7 +391,7 @@ figure .green {
 .ai-brain svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 18px 30px rgba(c.$brand-primary, 0.35));
+  display: none;
 }
 
 .ai-brain {
@@ -300,18 +439,82 @@ figure .green {
   text-shadow: 0 0 10px rgba(c.$brand-secondary, 0.6);
 }
 
-.binary-field span:nth-child(1) { top: 8%; left: 12%; animation-delay: 0.2s; font-size: 11px; }
-.binary-field span:nth-child(2) { top: 12%; right: 18%; animation-delay: 1.1s; font-size: 12px; }
-.binary-field span:nth-child(3) { top: 28%; left: 6%; animation-delay: 2.2s; }
-.binary-field span:nth-child(4) { top: 32%; right: 8%; animation-delay: 0.6s; }
-.binary-field span:nth-child(5) { top: 48%; left: 14%; animation-delay: 1.6s; font-size: 10px; }
-.binary-field span:nth-child(6) { top: 52%; right: 16%; animation-delay: 2.6s; }
-.binary-field span:nth-child(7) { bottom: 26%; left: 10%; animation-delay: 0.9s; }
-.binary-field span:nth-child(8) { bottom: 24%; right: 12%; animation-delay: 1.9s; }
-.binary-field span:nth-child(9) { bottom: 12%; left: 20%; animation-delay: 2.9s; font-size: 11px; }
-.binary-field span:nth-child(10) { bottom: 10%; right: 24%; animation-delay: 1.3s; font-size: 10px; }
-.binary-field span:nth-child(11) { top: 62%; left: 46%; animation-delay: 2.1s; }
-.binary-field span:nth-child(12) { top: 18%; left: 48%; animation-delay: 0.4s; }
+.binary-field span:nth-child(1) {
+  top: 8%;
+  left: 12%;
+  animation-delay: 0.2s;
+  font-size: 11px;
+}
+
+.binary-field span:nth-child(2) {
+  top: 12%;
+  right: 18%;
+  animation-delay: 1.1s;
+  font-size: 12px;
+}
+
+.binary-field span:nth-child(3) {
+  top: 28%;
+  left: 6%;
+  animation-delay: 2.2s;
+}
+
+.binary-field span:nth-child(4) {
+  top: 32%;
+  right: 8%;
+  animation-delay: 0.6s;
+}
+
+.binary-field span:nth-child(5) {
+  top: 48%;
+  left: 14%;
+  animation-delay: 1.6s;
+  font-size: 10px;
+}
+
+.binary-field span:nth-child(6) {
+  top: 52%;
+  right: 16%;
+  animation-delay: 2.6s;
+}
+
+.binary-field span:nth-child(7) {
+  bottom: 26%;
+  left: 10%;
+  animation-delay: 0.9s;
+}
+
+.binary-field span:nth-child(8) {
+  bottom: 24%;
+  right: 12%;
+  animation-delay: 1.9s;
+}
+
+.binary-field span:nth-child(9) {
+  bottom: 12%;
+  left: 20%;
+  animation-delay: 2.9s;
+  font-size: 11px;
+}
+
+.binary-field span:nth-child(10) {
+  bottom: 10%;
+  right: 24%;
+  animation-delay: 1.3s;
+  font-size: 10px;
+}
+
+.binary-field span:nth-child(11) {
+  top: 62%;
+  left: 46%;
+  animation-delay: 2.1s;
+}
+
+.binary-field span:nth-child(12) {
+  top: 18%;
+  left: 48%;
+  animation-delay: 0.4s;
+}
 
 
 .ai-brain,
@@ -327,6 +530,7 @@ figure .green {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -338,6 +542,7 @@ figure .green {
     opacity: 0;
     transform: translateY(20px) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -345,16 +550,80 @@ figure .green {
 }
 
 @keyframes hero-float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) scale(1);
   }
+
   50% {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-6px) scale(1.01);
+  }
+}
+
+@keyframes orb-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orb-breathe {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes particle-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .ai-brain {
+    width: min(240px, 68vw);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ai-brain {
+    width: min(210px, 66vw);
+    opacity: 0.82;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .ai-brain {
+    display: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .home-hero .ai-brain {
+    animation: none !important;
+  }
+
+  .ai-brain::after {
+    animation: none !important;
+  }
+
+  .ai-brain .orb-particles span {
     animation: none !important;
   }
 

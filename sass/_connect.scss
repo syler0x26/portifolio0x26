@@ -12,16 +12,16 @@ background:
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(120deg, rgba(c.$brand-secondary, 0), transparent 60%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(148, 163, 184, 0.08),
-      rgba(148, 163, 184, 0.08) 1px,
-      transparent 1px,
-      transparent 28px
-    );
-  opacity: 0.35;
+
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(148, 163, 184, 0.08) 0px,
+    rgba(148, 163, 184, 0.08) 1px,
+    transparent 1px,
+    transparent 40px
+  );
+
+  opacity: 0.4;
   pointer-events: none;
 }
 .connect-card {

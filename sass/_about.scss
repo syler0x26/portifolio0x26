@@ -1,6 +1,7 @@
 @use "colors" as c;
 
-.section.about {
+.section.about,
+.about-section {
   padding: 88px 0;
   position: relative;
   color: c.$slate-200;
@@ -12,6 +13,12 @@
 .section-head {
   max-width: 720px;
   margin-bottom: 32px;
+}
+
+.about-section .section-head {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-head h2 {
@@ -34,32 +41,23 @@
     monospace;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+.about-content {
+  padding: 6px 4px;
 }
 
-.about-card {
-  background: rgba(c.$ink-800, 0.72);
-  border: 1px solid rgba(c.$slate-400, 0.2);
-  border-radius: 20px;
-  padding: 22px 24px;
-  box-shadow: 0 10px 22px rgba(c.$ink-800, 0.28);
-}
-
-.about-card h3 {
+.about-title {
   margin-bottom: 12px;
-  color: c.$slate-90;
-  font-weight: 600;
+  color: c.$brand-secondary;
+  font-weight: 300;
   letter-spacing: -0.01em;
+  font-size: clamp(20px, 2.4vw, 28px);
 }
 
-.about-card p {
+.about-text {
   color: c.$slate-300;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .about-tags {
@@ -75,23 +73,75 @@
   border-radius: 999px;
   font-weight: 600;
   font-size: 12px;
-  background: rgba(c.$brand-secondary, 0.12);
+  background: rgba(c.$ink-800, 0.6);
+  color: c.$slate-200;
+  border: 1px solid rgba(c.$slate-400, 0.25);
+  transition: color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+.about-tags span:hover {
   color: c.$brand-sky-200;
-  border: 1px solid rgba(c.$brand-secondary, 0.3);
+  border-color: rgba(c.$brand-secondary, 0.45);
+  box-shadow: 0 0 14px rgba(c.$brand-secondary, 0.18);
+  background: rgba(c.$brand-secondary, 0.08);
+}
+
+.about-card {
+  background: rgba(c.$ink-800, 0.68);
+  border: 1px solid rgba(c.$slate-400, 0.2);
+  border-radius: 22px;
+  padding: 26px 26px;
+  box-shadow: 0 12px 24px rgba(c.$ink-900, 0.25);
+  backdrop-filter: blur(12px);
+  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+  height: 100%;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(c.$brand-secondary, 0.35);
+  box-shadow: 0 16px 30px rgba(c.$ink-900, 0.28);
+}
+
+.about-card-title {
+  margin-bottom: 16px;
+  color: c.$brand-secondary;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 13px;
   font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
     monospace;
 }
 
 .about-list {
   margin: 0;
-  padding-left: 20px;
+  padding: 0;
+  list-style: none;
   color: c.$slate-300;
   font-size: 15px;
   line-height: 1.6;
 }
 
 .about-list li {
-  margin-bottom: 10px;
+  position: relative;
+  padding: 10px 0 10px 18px;
+}
+
+.about-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: c.$brand-secondary;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.about-list li + li {
+  border-top: 1px solid rgba(c.$slate-400, 0.16);
 }
 
 .about-atom-zone {
@@ -260,26 +310,12 @@ background: radial-gradient(
 #000000;
   color: c.$slate-200;
 }
-.timeline-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(120deg, rgba(c.$brand-secondary, 0), transparent 60%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(148, 163, 184, 0.08),
-      rgba(148, 163, 184, 0.08) 1px,
-      transparent 1px,
-      transparent 28px
-    );
-  opacity: 0.35;
-  pointer-events: none;
-}
+
 .timeline-title {
   font-family: "Poppins", sans-serif;
-  font-size: clamp(28px, 4vw, 52px);
-  letter-spacing: 0.08em;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: c.$slate-90;
   margin-bottom: 12px;

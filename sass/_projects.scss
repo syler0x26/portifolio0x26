@@ -24,19 +24,18 @@ background:
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(120deg, rgba(c.$brand-secondary, 0), transparent 60%),
-    repeating-linear-gradient(
-      90deg,
-      rgba(148, 163, 184, 0.08),
-      rgba(148, 163, 184, 0.08) 1px,
-      transparent 1px,
-      transparent 28px
-    );
-  opacity: 0.35;
+
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(148, 163, 184, 0.08) 0px,
+    rgba(148, 163, 184, 0.08) 1px,
+    transparent 1px,
+    transparent 40px
+  );
+
+  opacity: 0.4;
   pointer-events: none;
 }
-
 .portfolio-title {
   font-family: "Poppins", serif;
   font-size: clamp(28px, 4vw, 52px);
@@ -53,17 +52,17 @@ background:
 }
 
 .project-card {
-  background: rgba(c.$ink-800, 0.72);
-  border: 1px solid rgba(c.$slate-400, 0.2);
-  border-radius: 20px;
+  background: rgba(c.$ink-900, 0.7);
+  border: 1px solid rgba(c.$slate-400, 0.18);
+  border-radius: 22px;
   overflow: hidden;
   height: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
-  box-shadow: 0 12px 26px rgba(c.$ink-800, 0.3);
+  box-shadow: 0 12px 24px rgba(c.$ink-900, 0.25);
   transform: translateY(40px);
   opacity: 0;
-  transition: transform 600ms ease, opacity 600ms ease, box-shadow 320ms ease;
+  transition: transform 600ms ease, opacity 600ms ease, box-shadow 260ms ease, border-color 260ms ease;
 }
 
 .project-card.is-visible {
@@ -72,57 +71,63 @@ background:
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 16px 36px rgba(c.$brand-secondary, 0.22);
-  border-color: rgba(c.$brand-secondary, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(c.$brand-secondary, 0.18);
+  border-color: rgba(c.$brand-secondary, 0.3);
 }
 
-.project-media {
+.project-card__header {
   position: relative;
   overflow: hidden;
+  height: 140px;
+  background:
+    linear-gradient(135deg, rgba(c.$brand-secondary, 0.28), rgba(c.$brand-lavender, 0.2), rgba(c.$brand-green-400, 0.18));
 }
 
-.project-media::after {
+.project-card__header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(c.$ink-800, 0), rgba(c.$ink-800, 0.55));
+  background:
+    radial-gradient(circle at 20% 30%, rgba(c.$brand-secondary, 0.2), transparent 55%),
+    radial-gradient(circle at 80% 60%, rgba(c.$brand-green-400, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(c.$ink-900, 0.15), rgba(c.$ink-900, 0.65));
+  opacity: 0.95;
 }
 
-.project-media img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  transition: transform 600ms ease;
+.project-card__header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(c.$ink-900, 0.05), rgba(c.$ink-900, 0.75));
 }
 
-.project-card:hover .project-media img {
-  transform: scale(1.05);
+.project-card__body {
+  padding: 24px 24px 28px;
+  background: rgba(c.$ink-800, 0.55);
 }
 
-.project-body {
-  padding: 22px 22px 26px;
-}
-
-.project-body h3 {
+.project-card__body h3 {
   font-size: 20px;
   margin-bottom: 10px;
-  color: c.$slate-100;
+  color: c.$slate-90;
 }
 
-.project-body p {
+.project-card__body p {
   color: c.$slate-300;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  font-size: 14.5px;
+  line-height: 1.6;
 }
 
-.project-tags {
+.project-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 18px;
 }
 
-.project-tags span {
+.project-card__tags span {
   display: inline-flex;
   align-items: center;
   padding: 6px 12px;
@@ -130,14 +135,39 @@ background:
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: c.$brand-indigo-300;
-  background: rgba(c.$brand-indigo-300, 0.18);
-  border: 1px solid rgba(c.$brand-indigo-300, 0.3);
+  color: c.$brand-sky-200;
+  background: rgba(c.$ink-800, 0.6);
+  border: 1px solid rgba(c.$brand-secondary, 0.2);
+  box-shadow: inset 0 0 10px rgba(c.$brand-secondary, 0.04);
+}
+
+.project-card__body .btn-energia {
+  padding: 0;
+  background: none;
+  border: none;
+  color: c.$slate-300;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 220ms ease;
+}
+
+.project-card__body .btn-energia::after {
+  content: "→";
+  font-size: 14px;
+  color: inherit;
+}
+
+.project-card__body .btn-energia:hover {
+  color: c.$brand-sky-200;
 }
 
 @media (max-width: 991.98px) {
-  .project-media img {
-    height: 200px;
+  .project-card__header {
+    height: 130px;
   }
 }
 
