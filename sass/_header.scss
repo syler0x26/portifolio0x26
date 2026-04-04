@@ -36,17 +36,23 @@
   position: relative;
 }
 
-.site-header .site-brand__text {
+.site-header .colorm1 {
   position: relative;
   display: inline-block;
-  padding-right: 8px;
-  background: linear-gradient(120deg, c.$brand-green-400, transparent);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 10px rgba(125, 211, 252, 0.25);
+  padding-right: 4px;
+  color: #006826; // Syler
 }
 
+.site-header .colorm2 {
+  position: relative;
+  display: inline-block;
+  color: #9ca3af; // cor mais neutra pro ".dev" (cinza moderno)
+}
+.site-header .colorm1,
+.site-header .colorm2 {
+  text-transform: none !important;   // tira o CAPS
+  letter-spacing: normal !important; // remove o espaçamento exagerado
+}
 .site-header .site-brand::after {
   content: "";
   position: absolute;

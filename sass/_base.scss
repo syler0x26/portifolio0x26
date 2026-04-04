@@ -9,33 +9,17 @@ background-color: #000000;
   line-height: 1.6;
   
 }
-
 body::before {
-  content: "";
-  position: fixed;
+  content: '';
+  position: absolute;
   inset: 0;
   background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(c.$ink-700, 0.12) 0px,
-      rgba(c.$ink-700, 0.12) 1px,
-      transparent 1px,
-      transparent 64px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(c.$ink-700, 0.12) 0px,
-      rgba(c.$ink-700, 0.12) 1px,
-      transparent 1px,
-      transparent 64px
-    );
-  background-attachment: fixed;
-  mask-image: radial-gradient(circle at 50% 45%, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 70%, transparent 92%);
-  opacity: 0.55;
+    linear-gradient(#18181f 1px, transparent 1px),
+    linear-gradient(90deg, #18181f 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.3;
   pointer-events: none;
-  z-index: 0;
 }
-
 body > * {
   position: relative;
   z-index: 1;

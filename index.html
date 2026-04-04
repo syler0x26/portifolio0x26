@@ -14,11 +14,14 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-smooth-scroll="true" tabindex="0">
+
+    <div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
     <header class="site-header">
         <nav class="navbar navbar-expand-lg site-nav">
             <div class="container">
                 <a class="navbar-brand site-brand" href="#home" aria-label="Syler">
-                    <span class="site-brand__text">Syler</span>
+                    <span class="colorm1">Syler.<span class="colorm2">dev</span></span>
                 </a>
                 <button class="navbar-toggler site-nav__toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
@@ -319,18 +322,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center mb-5">
-                            <h1 class="timeline-title">Minha Jornada</h1>
-                            <p class="text-muted">Os marcos mais importantes da minha evolução profissional.</p>
+                            <h1 class="timeline-title">Marcos da evolução.</h1>
+                            <p class="text-muted">Os principais pontos que moldaram minha trajetoria em tecnologia.</p>
                         </div>
                     </div>
                     <div class="timeline">
                         <div class="timeline-line"></div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
-                                    <div class="timeline-card">
+                                    <div class="timeline-card" data-year="2020">
                                         <h3 data-i18n="timeline_2020_title">Inicio na tecnologia - 2020</h3>
                                         <p data-i18n="timeline_2020_desc">Curiosidade por computacao e primeiros estudos
                                             em programacao.</p>
@@ -343,11 +346,11 @@
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
-                                    <div class="timeline-card">
+                                    <div class="timeline-card" data-year="2024">
                                         <h3 data-i18n="timeline_2024_title">Primeiro projeto web - 2024</h3>
                                         <p data-i18n="timeline_2024_desc">Construindo interfaces e aprendendo
                                             fundamentos de desenvolvimento web.</p>
@@ -360,11 +363,11 @@
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
-                                    <div class="timeline-card">
+                                    <div class="timeline-card" data-year="2026">
                                         <h3 data-i18n="timeline_2026_title">Ingresso na universidade - 2026</h3>
                                         <p data-i18n="timeline_2026_desc">Base teorica forte e disciplinas de
                                             Inteligencia artificial.</p>
@@ -376,11 +379,11 @@
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
-                                    <div class="timeline-card">
+                                    <div class="timeline-card" data-year="2026">
                                         <h3 data-i18n="timeline_ai_title">Estudos em inteligencia artificial</h3>
                                         <p data-i18n="timeline_ai_desc">Foco em aprendizado de maquina, redes neurais e
                                             dados.</p>
@@ -394,11 +397,11 @@
                             </div>
                         </div>
 
-                        <div class="timeline-item">
+                        <div class="timeline-item reveal">
                             <div class="timeline-dot"></div>
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
-                                    <div class="timeline-card">
+                                    <div class="timeline-card" data-year="2026">
                                         <h3 data-i18n="timeline_projects_title">Desenvolvimento de projetos academicos
                                         </h3>
                                         <p data-i18n="timeline_projects_desc">Aplicando IA para resolver problemas reais
@@ -674,6 +677,65 @@
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 
-</body>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        
+        const dot = document.getElementById("cursorDot");
+        const ring = document.getElementById("cursorRing");
+
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+
+        if (!dot || !ring || prefersReducedMotion || isCoarsePointer) {
+          return;
+        }
+
+        let mx = window.innerWidth / 2;
+        let my = window.innerHeight / 2;
+        let rx = mx;
+        let ry = my;
+        let isActive = false;
+
+        const onMouseMove = (event) => {
+          mx = event.clientX;
+          my = event.clientY;
+          if (!isActive) {
+            dot.style.opacity = "1";
+            ring.style.opacity = "1";
+            isActive = true;
+          }
+        };
+
+        document.addEventListener("mousemove", onMouseMove, { passive: true });
+
+        const animateCursor = () => {
+          dot.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%)`;
+          rx += (mx - rx) * 0.12;
+          ry += (my - ry) * 0.12;
+          ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
+          requestAnimationFrame(animateCursor);
+        };
+
+        animateCursor();
+
+        
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-inview");
+                }
+              });
+            },
+            { threshold: 0.12 }
+          );
+
+          document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+        }
+      });
+    </script>
+
+</body>
 </html>
