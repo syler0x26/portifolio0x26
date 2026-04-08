@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="shortcut icon" href="src/favicom.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <title>TheSyler</title>
@@ -57,53 +58,38 @@
             <div class="container">
                 <div class="row text-center text-md-start align-items-center justify-content-center">
                     <div class="col-md-6 order-md-2 order1">
-                        <div class="ai-brain" role="img" aria-label="Átomo tecnológico">
-                            <div class="orb-highlight" aria-hidden="true"></div>
-                            <div class="orb-particles" aria-hidden="true">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                        <div class="ai-brain hero-orbit" role="img" aria-label="Orbital tecnologico futurista">
+                            <div class="orbit-wrap">
+                                <div class="orbit-halo" aria-hidden="true"></div>
+                                <div class="orbit-core" aria-hidden="true"></div>
+                                <div class="orbit-ring orbit-ring--one" aria-hidden="true"></div>
+                                <div class="orbit-ring orbit-ring--two" aria-hidden="true"></div>
+                                <div class="orbit-ring orbit-ring--three" aria-hidden="true"></div>
+                                <div class="orbit-node orbit-node--a" aria-hidden="true"></div>
+                                <div class="orbit-node orbit-node--b" aria-hidden="true"></div>
+                                <div class="orbit-node orbit-node--c" aria-hidden="true"></div>
+                                <div class="orbit-node orbit-node--d" aria-hidden="true"></div>
+                                <div class="orbit-particles" aria-hidden="true">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
                             </div>
-                            <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <defs>
-                                    <radialGradient id="atomCore" cx="50%" cy="45%" r="55%">
-                                        <stop offset="0%" stop-color="#38BDF8" />
-                                        <stop offset="55%" stop-color="#A78BFA" />
-                                        <stop offset="100%" stop-color="#0F172A" />
-                                    </radialGradient>
-                                    <linearGradient id="atomStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#60A5FA" />
-                                        <stop offset="100%" stop-color="#A78BFA" />
-                                    </linearGradient>
-                                </defs>
-                                <circle class="atom-pulse" cx="210" cy="210" r="70" fill="url(#atomCore)"
-                                    opacity="0.85" />
-                                <ellipse class="atom-orbit atom-orbit--one" cx="210" cy="210" rx="150" ry="70"
-                                    fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.85" />
-                                <ellipse class="atom-orbit atom-orbit--two" cx="210" cy="210" rx="150" ry="70"
-                                    fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.7"
-                                    transform="rotate(60 210 210)" />
-                                <ellipse class="atom-orbit atom-orbit--three" cx="210" cy="210" rx="150" ry="70"
-                                    fill="none" stroke="url(#atomStroke)" stroke-width="3" opacity="0.6"
-                                    transform="rotate(-60 210 210)" />
-                                <circle cx="360" cy="210" r="7" fill="#38BDF8" />
-                                <circle cx="70" cy="210" r="6" fill="#A78BFA" />
-                                <circle cx="210" cy="60" r="6" fill="#60A5FA" />
-                            </svg>
                         </div>
                     </div>
                     <div class="col-md-6 order-md-1 order2">
-                        <div class="hero-eyebrow" data-i18n="home_eyebrow">Estudante de Inteligência Artificial</div>
+                        <div class="hero-eyebrow"> -Estudante de Inteligência Artificial-</div>
                         <h1 class="hero-title" data-i18n-html="home_title">
                             Wesley Santos
                             <span>Construindo minha base em IA e software.</span>
                         </h1>
                         <div class="hero-actions">
-                    <button class="btn-home" data-i18n="home_btn_work">
+                    <button class="btn-home btn-home--primary" data-i18n="home_btn_work">
                         <span>Ver projetos</span>
                     </button>
-                    <a class="btn-home" href="https://www.instagram.com/syler0x26?igsh=bTU5azNkY3dnZ2J1"
+                    <a class="btn-home btn-home--outline" href="https://www.instagram.com/syler0x26?igsh=bTU5azNkY3dnZ2J1"
                         data-i18n="home_btn_contact" target="_blank" rel="noopener noreferrer">
                         <span>Entrar em contato</span>
                     </a>
@@ -334,14 +320,13 @@
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
                                     <div class="timeline-card" data-year="2020">
+                                        <div class="timeline-icon" aria-hidden="true">
+                                            <i class="bi bi-cpu"></i>
+                                        </div>
                                         <h3 data-i18n="timeline_2020_title">Inicio na tecnologia - 2020</h3>
                                         <p data-i18n="timeline_2020_desc">Curiosidade por computacao e primeiros estudos
                                             em programacao.</p>
                                     </div>
-                                </div>
-                                <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
-                                    <img class="timeline-image img-fluid" src="img/gustavo-guanabara.jpg"
-                                        alt="Inicio na tecnologia" data-i18n="alt_timeline_2020" data-i18n-attr="alt">
                                 </div>
                             </div>
                         </div>
@@ -351,15 +336,14 @@
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
                                     <div class="timeline-card" data-year="2024">
+                                        <div class="timeline-icon" aria-hidden="true">
+                                            <i class="bi bi-window-stack"></i>
+                                        </div>
                                         <h3 data-i18n="timeline_2024_title">Primeiro projeto web - 2024</h3>
                                         <p data-i18n="timeline_2024_desc">Construindo interfaces e aprendendo
                                             fundamentos de desenvolvimento web.</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
-                                    <img class="timeline-image img-fluid" src="img/img-dominante.jpg"
-                                        alt="Primeiro projeto web" data-i18n="alt_timeline_2024" data-i18n-attr="alt">
-                                </div>
                             </div>
                         </div>
 
@@ -368,31 +352,30 @@
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
                                     <div class="timeline-card" data-year="2026">
+                                        <div class="timeline-icon" aria-hidden="true">
+                                            <i class="bi bi-mortarboard"></i>
+                                        </div>
                                         <h3 data-i18n="timeline_2026_title">Ingresso na universidade - 2026</h3>
                                         <p data-i18n="timeline_2026_desc">Base teorica forte e disciplinas de
                                             Inteligencia artificial.</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
-                                    <img class="timeline-image img-fluid" src="img/Unifei.png">
-                                </div>
                             </div>
                         </div>
 
-                        <div class="timeline-item reveal">
+                        <div class="timeline-item reveal timeline-item--current">
                             <div class="timeline-dot"></div>
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-2 timeline-content timeline-content--right">
                                     <div class="timeline-card" data-year="2026">
+                                        <span class="timeline-badge">Atualmente</span>
+                                        <div class="timeline-icon" aria-hidden="true">
+                                            <i class="bi bi-robot"></i>
+                                        </div>
                                         <h3 data-i18n="timeline_ai_title">Estudos em inteligencia artificial</h3>
                                         <p data-i18n="timeline_ai_desc">Foco em aprendizado de maquina, redes neurais e
                                             dados.</p>
                                     </div>
-                                </div>
-                                <div class="col-lg-5 order-1 order-lg-1 timeline-media timeline-media--left">
-                                    <img class="timeline-image img-fluid" src="img/img-ia.jpg"
-                                        alt="Estudos em inteligencia artificial" data-i18n="alt_timeline_ai"
-                                        data-i18n-attr="alt">
                                 </div>
                             </div>
                         </div>
@@ -402,16 +385,14 @@
                             <div class="row align-items-center g-4">
                                 <div class="col-lg-5 order-2 order-lg-1 timeline-content timeline-content--left">
                                     <div class="timeline-card" data-year="2026">
+                                        <div class="timeline-icon" aria-hidden="true">
+                                            <i class="bi bi-lightning-charge"></i>
+                                        </div>
                                         <h3 data-i18n="timeline_projects_title">Desenvolvimento de projetos academicos
                                         </h3>
                                         <p data-i18n="timeline_projects_desc">Aplicando IA para resolver problemas reais
                                             e validar ideias.</p>
                                     </div>
-                                </div>
-                                <div class="col-lg-5 order-1 order-lg-2 timeline-media timeline-media--right">
-                                    <img class="timeline-image img-fluid" src="img/img-dominante.jpg"
-                                        alt="Desenvolvimento de projetos academicos" data-i18n="alt_timeline_projects"
-                                        data-i18n-attr="alt">
                                 </div>
                             </div>
                         </div>

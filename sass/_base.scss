@@ -9,6 +9,34 @@ background-color: #000000;
   line-height: 1.6;
   
 }
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate3d(-9999px, -9999px, 0);
+  will-change: transform, opacity;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00ff9c;
+  box-shadow: 0 0 12px rgba(0, 255, 156, 0.8);
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 156, 0.6);
+  box-shadow: 0 0 18px rgba(0, 255, 156, 0.35);
+}
 body::before {
   content: '';
   position: absolute;
@@ -43,6 +71,11 @@ span {
   }
 
   .zone-particles {
+    display: none;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
     display: none;
   }
 }
@@ -227,5 +260,10 @@ span {
 
   .ai-brain .atom-pulse {
     animation: none;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
   }
 }

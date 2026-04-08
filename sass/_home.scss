@@ -3,42 +3,92 @@
 .home-hero {
   line-height: 1.6;
 
-  .btn-home{
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 2px solid c.$brand-primary;
-  border-radius: 2rem;
-  padding: 10px 20px;
-  font-size: 17px;
-  cursor: pointer;
-  font-weight: 300;
-  background: transparent;
-  position: relative;
-  transition: all 1s;
-  overflow: hidden;
-}
+  .btn-home {
+    --neon: #00ff9c;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 26px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 156, 0.65);
+    background: rgba(0, 255, 156, 0.06);
+    color: c.$slate-90;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+    box-shadow: 0 0 18px rgba(0, 255, 156, 0.28), 0 0 34px rgba(0, 255, 156, 0.16);
+    backdrop-filter: blur(2px);
+  }
 
-.btn-home:hover {
-  color: white;
-}
+  .btn-home span {
+    position: relative;
+    z-index: 2;
+  }
 
-.btn-home::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 0%;
-  top: 0;
-  left: -40px;
-  transform: skewX(45deg);
-  background-color: c.$brand-primary;
-  z-index: -1;
-  transition: all 1s;
-}
+  .btn-home::before {
+    content: "";
+    position: absolute;
+    inset: -20% 0;
+    background: linear-gradient(120deg, transparent 0%, rgba(0, 255, 156, 0.65) 45%, transparent 70%);
+    transform: translateX(-120%);
+    opacity: 0;
+  }
 
-.btn-home:hover::before {
-  width: 160%;
-}
+  .btn-home::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: 11px;
+    border: 1px solid rgba(0, 255, 156, 0.35);
+    opacity: 0.7;
+    pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(0, 255, 156, 0.2);
+  }
+
+  .btn-home:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(0, 255, 156, 0.24), rgba(0, 255, 156, 0.04));
+    box-shadow: 0 0 24px rgba(0, 255, 156, 0.55), 0 0 54px rgba(0, 255, 156, 0.25);
+  }
+
+  .btn-home:hover::before {
+    opacity: 1;
+    animation: hero-btn-shine 0.8s ease;
+  }
+
+  .btn-home:focus-visible {
+    outline: 2px solid rgba(0, 255, 156, 0.7);
+    outline-offset: 2px;
+  }
+
+  .btn-home--primary {
+    background: linear-gradient(135deg, rgba(0, 255, 156, 0.55), rgba(0, 255, 156, 0.14));
+    border-color: rgba(0, 255, 156, 0.95);
+    color: #02140c;
+    box-shadow: 0 0 24px rgba(0, 255, 156, 0.55), 0 0 48px rgba(0, 255, 156, 0.24);
+  }
+
+  .btn-home--primary:hover {
+    animation: hero-btn-energy 1.8s ease-in-out infinite;
+  }
+
+  .btn-home--outline {
+    background: transparent;
+    border-color: rgba(0, 255, 156, 0.55);
+    color: rgba(226, 248, 236, 0.9);
+    box-shadow: 0 0 14px rgba(0, 255, 156, 0.22);
+  }
+
+  .btn-home--outline:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 156, 0.14), rgba(0, 255, 156, 0.02));
+  }
   }
 
 figure {
@@ -188,6 +238,171 @@ figure .green {
   pointer-events: none;
 }
 
+.ai-brain.hero-orbit {
+  position: relative;
+  width: min(300px, 62vw);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(0, 255, 156, 0.35), transparent 45%),
+    radial-gradient(circle at 72% 70%, rgba(56, 189, 248, 0.32), transparent 42%),
+    radial-gradient(circle at 50% 50%, rgba(0, 255, 156, 0.12), rgba(c.$ink-900, 0.9) 60%),
+    radial-gradient(circle at 50% 50%, rgba(c.$ink-900, 0.95) 0%, c.$ink-980 72%);
+  border: 1px solid rgba(0, 255, 156, 0.25);
+  box-shadow:
+    0 18px 36px rgba(c.$ink-980, 0.45),
+    0 0 28px rgba(0, 255, 156, 0.25),
+    inset 0 0 26px rgba(56, 189, 248, 0.18);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: translate3d(var(--orbit-x, 0px), var(--orbit-y, 0px), 0);
+  transition: transform 0.4s ease;
+}
+
+.ai-brain.hero-orbit .orbit-wrap {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.ai-brain.hero-orbit .orbit-halo {
+  position: absolute;
+  inset: -18%;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 120deg, rgba(0, 255, 156, 0.12), transparent 40%, rgba(56, 189, 248, 0.12), transparent 70%),
+    radial-gradient(circle, rgba(0, 255, 156, 0.2), transparent 65%);
+  filter: blur(10px);
+  opacity: 0.7;
+  animation: orbit-drift 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.ai-brain.hero-orbit .orbit-core {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 156, 0.9), rgba(0, 255, 156, 0.3) 55%, rgba(0, 0, 0, 0) 70%);
+  box-shadow: 0 0 18px rgba(0, 255, 156, 0.7), 0 0 36px rgba(0, 255, 156, 0.35);
+  animation: orbit-pulse 3.6s ease-in-out infinite;
+}
+
+.ai-brain.hero-orbit .orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 156, 0.35);
+  box-shadow: 0 0 12px rgba(0, 255, 156, 0.22);
+  opacity: 0.8;
+}
+
+.ai-brain.hero-orbit .orbit-ring--one {
+  width: 78%;
+  height: 54%;
+  transform: rotate(12deg);
+  animation: orbit-spin 28s linear infinite;
+}
+
+.ai-brain.hero-orbit .orbit-ring--two {
+  width: 86%;
+  height: 60%;
+  transform: rotate(-22deg);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.22);
+  animation: orbit-spin-reverse 34s linear infinite;
+}
+
+.ai-brain.hero-orbit .orbit-ring--three {
+  width: 70%;
+  height: 70%;
+  border-style: dashed;
+  border-color: rgba(0, 255, 156, 0.2);
+  animation: orbit-spin 40s linear infinite;
+}
+
+.ai-brain.hero-orbit .orbit-node {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00ff9c;
+  box-shadow: 0 0 12px rgba(0, 255, 156, 0.8);
+}
+
+.ai-brain.hero-orbit .orbit-node--a {
+  top: 14%;
+  left: 60%;
+  animation: orbit-node-float 6s ease-in-out infinite;
+}
+
+.ai-brain.hero-orbit .orbit-node--b {
+  top: 68%;
+  left: 72%;
+  background: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+  animation: orbit-node-float 7s ease-in-out infinite;
+}
+
+.ai-brain.hero-orbit .orbit-node--c {
+  top: 64%;
+  left: 24%;
+  animation: orbit-node-float 8s ease-in-out infinite;
+}
+
+.ai-brain.hero-orbit .orbit-node--d {
+  top: 26%;
+  left: 22%;
+  background: #38bdf8;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+  animation: orbit-node-float 6.5s ease-in-out infinite;
+}
+
+.ai-brain.hero-orbit .orbit-particles span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(0, 255, 156, 0.7);
+  opacity: 0.6;
+  animation: orbit-particle 10s ease-in-out infinite;
+}
+
+.ai-brain.hero-orbit .orbit-particles span:nth-child(1) {
+  top: 18%;
+  right: 14%;
+  animation-delay: 0.6s;
+}
+
+.ai-brain.hero-orbit .orbit-particles span:nth-child(2) {
+  top: 62%;
+  right: 8%;
+  animation-delay: 1.4s;
+}
+
+.ai-brain.hero-orbit .orbit-particles span:nth-child(3) {
+  bottom: 18%;
+  left: 12%;
+  animation-delay: 2.1s;
+  opacity: 0.4;
+}
+
+.ai-brain.hero-orbit .orbit-particles span:nth-child(4) {
+  top: 10%;
+  left: 22%;
+  animation-delay: 0.9s;
+  opacity: 0.35;
+}
+
+.ai-brain.hero-orbit .orbit-particles span:nth-child(5) {
+  bottom: 22%;
+  right: 28%;
+  animation-delay: 1.8s;
+}
+
 .ai-brain {
   width: min(280px, 62vw);
   aspect-ratio: 1;
@@ -303,7 +518,7 @@ figure .green {
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 12px;
-  color: c.$brand-green-400;
+  color: #00ff9c;
   margin-bottom: 12px;
 }
 
@@ -342,13 +557,17 @@ figure .green {
 .home-hero .hero-title,
 .home-hero .hero-title span,
 .home-hero .hero-subtitle,
-.home-hero .hero-actions,
-.home-hero .ai-brain {
+.home-hero .hero-actions {
   opacity: 0;
   transform: translateY(20px);
 }
 
 .home-hero .ai-brain {
+  opacity: 0;
+}
+
+.home-hero .ai-brain .orbit-wrap {
+  opacity: 0;
   transform: translateY(20px) scale(0.96);
 }
 
@@ -373,6 +592,10 @@ figure .green {
 }
 
 .home-hero.is-loaded .ai-brain {
+  opacity: 1;
+}
+
+.home-hero.is-loaded .ai-brain .orbit-wrap {
   animation: hero-visual-in 0.9s ease-out 0.75s forwards, hero-float 8s ease-in-out 1.6s infinite;
 }
 
@@ -561,6 +784,30 @@ figure .green {
   }
 }
 
+@keyframes hero-btn-shine {
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes hero-btn-energy {
+  0% {
+    box-shadow: 0 0 18px rgba(0, 255, 156, 0.35), 0 0 40px rgba(0, 255, 156, 0.18);
+  }
+
+  50% {
+    box-shadow: 0 0 26px rgba(0, 255, 156, 0.6), 0 0 56px rgba(0, 255, 156, 0.28);
+  }
+
+  100% {
+    box-shadow: 0 0 18px rgba(0, 255, 156, 0.35), 0 0 40px rgba(0, 255, 156, 0.18);
+  }
+}
+
 @keyframes orb-rotate {
   from {
     transform: rotate(0deg);
@@ -595,6 +842,56 @@ figure .green {
   }
 }
 
+@keyframes orbit-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translate3d(4px, -6px, 0) rotate(8deg);
+    opacity: 0.85;
+  }
+}
+
+@keyframes orbit-pulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes orbit-node-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes orbit-particle {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translateY(-8px);
+    opacity: 0.8;
+  }
+}
+
 @media (max-width: 991.98px) {
   .ai-brain {
     width: min(240px, 68vw);
@@ -619,11 +916,12 @@ figure .green {
     animation: none !important;
   }
 
-  .ai-brain::after {
-    animation: none !important;
-  }
-
-  .ai-brain .orb-particles span {
+  .ai-brain::after,
+  .ai-brain.hero-orbit .orbit-halo,
+  .ai-brain.hero-orbit .orbit-core,
+  .ai-brain.hero-orbit .orbit-ring,
+  .ai-brain.hero-orbit .orbit-node,
+  .ai-brain.hero-orbit .orbit-particles span {
     animation: none !important;
   }
 
@@ -636,4 +934,9 @@ figure .green {
     opacity: 1;
     transform: none;
   }
+
+  .ai-brain.hero-orbit {
+    transition: none !important;
+  }
 }
+

@@ -444,6 +444,78 @@
   }
   const homeCanvas = homeSection?.querySelector(".hero-particles");
 
+  const heroOrbit = homeSection?.querySelector(".hero-orbit");
+  if (homeSection && heroOrbit) {
+    const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const coarseQuery = window.matchMedia("(pointer: coarse)");
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let rafId = null;
+
+    const update = () => {
+      currentX += (targetX - currentX) * 0.1;
+      currentY += (targetY - currentY) * 0.1;
+      heroOrbit.style.setProperty("--orbit-x", `${currentX}px`);
+      heroOrbit.style.setProperty("--orbit-y", `${currentY}px`);
+      rafId = requestAnimationFrame(update);
+    };
+
+    const onMove = (event) => {
+      const rect = heroOrbit.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      targetX = x * 12;
+      targetY = y * 12;
+    };
+
+    const onLeave = () => {
+      targetX = 0;
+      targetY = 0;
+    };
+
+    const attach = () => {
+      if (rafId) return;
+      homeSection.addEventListener("mousemove", onMove);
+      homeSection.addEventListener("mouseleave", onLeave);
+      rafId = requestAnimationFrame(update);
+    };
+
+    const detach = () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+      homeSection.removeEventListener("mousemove", onMove);
+      homeSection.removeEventListener("mouseleave", onLeave);
+      heroOrbit.style.removeProperty("--orbit-x");
+      heroOrbit.style.removeProperty("--orbit-y");
+    };
+
+    const syncBehavior = () => {
+      if (reduceMotionQuery.matches || coarseQuery.matches) {
+        detach();
+      } else {
+        attach();
+      }
+    };
+
+    if (reduceMotionQuery.addEventListener) {
+      reduceMotionQuery.addEventListener("change", syncBehavior);
+    } else if (reduceMotionQuery.addListener) {
+      reduceMotionQuery.addListener(syncBehavior);
+    }
+
+    if (coarseQuery.addEventListener) {
+      coarseQuery.addEventListener("change", syncBehavior);
+    } else if (coarseQuery.addListener) {
+      coarseQuery.addListener(syncBehavior);
+    }
+
+    syncBehavior();
+  }
+
   if (homeSection && homeCanvas) {
     const ctx = homeCanvas.getContext("2d");
     const coarseQuery = window.matchMedia("(pointer: coarse)");
@@ -549,9 +621,9 @@
           if (dist2 < linkDist2) {
             const dist = Math.sqrt(dist2);
             const alpha = 1 - dist / linkDist;
-            ctx.strokeStyle = `rgba(56, 189, 248, ${alpha * 0.8})`;
+            ctx.strokeStyle = `rgba(0, 255, 156, ${alpha * 0.6})`;
             ctx.lineWidth = 1;
-            ctx.shadowColor = "rgba(56, 189, 248, 0.15)";
+            ctx.shadowColor = "rgba(0, 255, 156, 0.18)";
             ctx.shadowBlur = 4;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -564,9 +636,9 @@
       }
 
       for (const node of nodes) {
-        ctx.fillStyle = "rgba(59, 130, 246, 0.95)";
-        ctx.shadowColor = "rgba(56, 189, 248, 0.95)";
-        ctx.shadowBlur = 16;
+        ctx.fillStyle = "rgba(0, 255, 156, 0.9)";
+        ctx.shadowColor = "rgba(0, 255, 156, 0.85)";
+        ctx.shadowBlur = 18;
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
         ctx.fill();
