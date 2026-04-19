@@ -303,7 +303,7 @@ span {
   width: 10em;
   position: relative;
   height: 3.5em;
-  border: 3px ridge #006826;
+  border: 3px ridge #FF006E;
   outline: none;
   background-color: transparent;
   color: #fff;
@@ -348,7 +348,7 @@ span {
 }
 
 .btn-energia--hero:hover {
-  box-shadow: inset 0 0 25px #006826;
+  box-shadow: inset 0 0 25px #FF006E;
 }
 
 .btn-energia--hero span {
@@ -992,7 +992,7 @@ figure .bola {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #006826;
+  background-color: #FF006E;
   box-shadow: 0 0 8px rgba(15, 23, 42, 0.25);
 }
 
