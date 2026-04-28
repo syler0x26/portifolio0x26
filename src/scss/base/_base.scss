@@ -1,0 +1,46 @@
+﻿@use "../abstracts/variables" as v;
+
+body {
+  position: relative;
+  background: v.$color-bg;
+  color: v.$color-text;
+  overflow-x: hidden;
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+      circle at 50% 20%,
+      rgba(198, 247, 0, 0.06),
+      transparent 60%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background-image:
+    linear-gradient(v.$color-grid 1px, transparent 1px),
+    linear-gradient(90deg, v.$color-grid 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  opacity: 0.12;
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+span{
+  color: v.$color-primary;
+}

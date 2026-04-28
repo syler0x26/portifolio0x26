@@ -1,0 +1,13 @@
+﻿@use "variables" as v;
+
+@mixin glass($bg: v.$color-surface, $blur: 10px, $border: v.$color-border) {
+  background: $bg;
+  border: 1px solid $border;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
+@mixin smooth {
+  transition: all v.$transition-base;
+}
+

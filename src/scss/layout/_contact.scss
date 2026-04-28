@@ -1,0 +1,164 @@
+@use "../abstracts/variables" as v;
+
+.contact {
+  min-height: 100vh;
+  padding: 120px 2rem;
+
+  background: v.$color-bg;
+  color: v.$color-text;
+
+  display: flex;
+  align-items: center;
+}
+
+.contact__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contact__header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    color: v.$color-primary;
+  }
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    background: v.$color-card;
+    border: 1px solid v.$color-border;
+    border-radius: 12px;
+    color: v.$color-text;
+    outline: none;
+
+    transition: 0.3s;
+  }
+
+  label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: v.$color-text-muted;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+
+  textarea + label {
+    top: 1.2rem;
+    transform: none;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: #C6F700;
+    box-shadow: 0 0 12px rgba(198, 247, 0, 0.3);
+  }
+
+  input:focus + label,
+  input:valid + label,
+  textarea:focus + label,
+  textarea:valid + label {
+    top: -8px;
+    left: 10px;
+    background: v.$color-bg;
+    padding: 0 6px;
+    font-size: 0.7rem;
+    color: #C6F700;
+  }
+}
+
+.btn-send {
+  margin-top: 1rem;
+  padding: 0.9rem;
+  border-radius: 999px;
+  border: none;
+
+  background: #C6F700;
+  color: #000;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn-send:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(198, 247, 0, 0.4);
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact__info h4 {
+  margin-bottom: 1rem;
+  color: v.$color-text-muted;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.social__item {
+  text-decoration: none;
+  color: v.$color-text;
+
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+
+  background: v.$color-card;
+  border: 1px solid v.$color-border;
+
+  transition: 0.3s;
+}
+
+.social__item:hover {
+  transform: translateX(8px);
+  border-color: #C6F700;
+  box-shadow: 0 0 12px rgba(198, 247, 0, 0.3);
+}
+
+.contact__quote {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: v.$color-text-muted;
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}

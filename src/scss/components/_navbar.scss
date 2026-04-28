@@ -1,0 +1,141 @@
+﻿@use "../abstracts/variables" as v;
+
+/* LOGO */
+.header__logo {
+  font-weight: 700;
+  font-size: 1.16rem;
+  letter-spacing: -0.02em;
+  color: v.$color-text;
+
+  transition: 
+    transform 0.35s v.$ease-smooth,
+    letter-spacing 0.35s v.$ease-smooth,
+    opacity 0.35s v.$ease-smooth;
+
+  transform-origin: left center;
+}
+
+.header__logo span {
+  color: v.$color-primary;
+
+  text-shadow:
+    0 0 10px v.$color-primary,
+    0 0 30px rgba(198, 247, 0, 0.35);
+}
+
+/* MENU */
+.header__menu {
+  list-style: none;
+}
+
+/* LINKS */
+.header__link {
+  position: relative;
+  z-index: 0;
+
+  padding: 0.6rem 0.9rem !important;
+
+  color: v.$color-text-soft !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition:
+    color 0.3s v.$ease-soft,
+    transform 0.3s v.$ease-soft,
+    opacity 0.3s v.$ease-soft,
+    padding 0.35s v.$ease-smooth;
+}
+
+/* FUNDO HOVER (glass leve) */
+.header__link::before {
+  content: "";
+  position: absolute;
+  inset: 0.22rem 0.38rem;
+  border-radius: 999px;
+
+  background: rgba(198, 247, 0, 0.08);
+
+  opacity: 0;
+  transform: scale(0.92);
+
+  transition: 
+    opacity 0.3s v.$ease-soft,
+    transform 0.3s v.$ease-soft;
+
+  z-index: -1;
+}
+
+/* UNDERLINE ANIMADO (AGORA LIMPO) */
+.header__link::after {
+  content: "";
+  position: absolute;
+
+  left: 0.88rem;
+  right: 0.88rem;
+  bottom: 0.28rem;
+
+  height: 2px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    v.$color-primary,
+    transparent
+  );
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.3s v.$ease-soft;
+}
+
+/* HOVER / ACTIVE */
+.header__link:hover,
+.header__link:focus-visible,
+.header__link.active {
+  color: v.$color-text !important;
+  transform: translateY(-1px);
+}
+
+.header__link:hover::before,
+.header__link:focus-visible::before,
+.header__link.active::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.header__link:hover::after,
+.header__link:focus-visible::after,
+.header__link.active::after {
+  transform: scaleX(1);
+}
+
+/* TOGGLER */
+.header__toggler {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.header__toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(198, 247, 0, 0.25);
+}
+
+/* SCROLLED */
+.header.scrolled .header__link {
+  padding: 0.48rem 0.74rem !important;
+}
+
+/* MOBILE */
+@media (max-width: 991.98px) {
+  .header__menu {
+    margin-top: 0.35rem;
+  }
+
+  .header__link {
+    padding-inline: 0.5rem !important;
+  }
+
+  .header__actions {
+    width: 100%;
+  }
+}

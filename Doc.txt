@@ -1,0 +1,8 @@
+site : turismo
+Nome : Ovvy
+cores :
+#F8F3EC
+#FFFFFF
+#D85957
+Objetivo do site:
+Quero um site moderno e leve que inspire as pessoas a viajar e reservar pacotes diretamente online. O foco é mostrar destinos, promover experiências únicas e facilitar a compra de pacotes turísticos, passagens e hospedagens.

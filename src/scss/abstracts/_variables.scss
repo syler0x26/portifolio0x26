@@ -1,0 +1,51 @@
+﻿// COLORS (base)
+$color-bg: #0D0B14;
+$color-bg-secondary: #13101F;
+$color-surface: rgba(16, 18, 28, 0.56);
+$color-surface-strong: rgba(20, 20, 30, 0.7);
+$color-card: #1C1829;
+$color-border: rgba(255, 255, 255, 0.14);
+
+// PRIMARY
+$color-primary: #C6F700;
+$color-primary-hover: #d9ff33;
+$color-primary-soft: rgba(198, 247, 0, 0.15);
+
+// ACCENT
+$color-accent: #7B5EA7;
+$color-accent-soft: rgba(123, 94, 167, 0.2);
+
+// TEXT
+$color-text: #f5f7ff;
+$color-text-soft: rgba(245, 247, 255, 0.78);
+$color-text-muted: rgba(245, 247, 255, 0.6);
+
+// GRID / DETALHES
+$color-grid: #18181f;
+
+// FONTS
+$font-primary: "Sora", "Segoe UI", sans-serif;
+$font-code: "Fira Code", monospace;
+
+// BORDER RADIUS
+$radius-pill: 999px;
+$radius-md: 12px;
+$radius-lg: 18px;
+
+// LAYOUT
+$container-max-width: 1200px;
+$z-header: 1000;
+
+// SHADOWS
+$shadow-primary: 
+  0 12px 30px rgba(198, 247, 0, 0.25),
+  0 0 25px rgba(198, 247, 0, 0.15);
+
+$shadow-float: 0 18px 40px rgba(4, 8, 20, 0.45);
+$shadow-soft: 0 10px 22px rgba(4, 8, 20, 0.25);
+
+// TRANSITIONS
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+$ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+$ease-soft: cubic-bezier(0.4, 0, 0.2, 1);

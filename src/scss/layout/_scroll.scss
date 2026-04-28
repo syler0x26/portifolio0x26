@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as v;
+
+.scroll-text {
+  height: 200vh; // espaço pra animar
+  position: relative;
+}
+
+.scroll-text__sticky {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-text__title {
+  position: relative;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+}
+
+.scroll-text__base {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.scroll-text__fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: v.$color-primary;
+
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0%;
+
+  border-right: 2px solid v.$color-primary;
+}

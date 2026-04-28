@@ -1,0 +1,24 @@
+﻿@use "abstracts/variables";
+@use "abstracts/colors";
+@use "abstracts/mixins";
+
+@use "base/reset";
+@use "base/base";
+@use "base/typography";
+
+/* @use "components/buttons";
+@use "components/cards"; */
+@use "components/navbar";
+
+@use "layout/header";
+@use "layout/hero";
+@use "layout/footer";
+@use "layout/cursors";
+@use "layout/about";
+@use "layout/scroll";
+@use "layout/projects";
+@use "layout/cube";
+@use "layout/contact"; 
+
+@use "pages/home";
+

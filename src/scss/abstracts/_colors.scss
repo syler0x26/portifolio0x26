@@ -1,0 +1,24 @@
+﻿@use "variables" as v;
+
+$font-principal: v.$font-primary;
+$font-secundaria: v.$font-code;
+
+$cor-principal: v.$color-primary;
+$cor-principal-hover: v.$color-primary-hover;
+$cor-principal-alpha: v.$color-primary-soft;
+
+$cor-destaque: v.$color-accent;
+$cor-destaque-alpha: v.$color-accent-soft;
+
+$cor-gradiente-01: rgba(198, 247, 0, 0.15);
+$cor-gradiente-02: rgba(123, 94, 167, 0.2);
+
+$cor01: v.$color-text;
+$cor02: v.$color-text-soft;
+$cor03: v.$color-text-muted;
+
+$cor04: v.$color-card;
+$cor05: v.$color-surface;
+
+$shadow: v.$shadow-soft;
+

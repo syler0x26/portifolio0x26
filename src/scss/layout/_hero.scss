@@ -1,0 +1,86 @@
+@use "../abstracts/variables" as v;
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  perspective: 1000px;
+}
+
+/* FUNDO */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 50% 30%, rgba(198,247,0,0.08), transparent 60%),
+    v.$color-bg;
+
+  z-index: 1;
+}
+
+/* CONTEÚDO */
+.hero__content {
+  position: relative;
+  z-index: 2;
+
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+/* TÍTULO */
+.hero__title {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -2px;
+
+  span {
+    color: v.$color-primary;
+
+    text-shadow:
+      0 0 10px v.$color-primary,
+      0 0 40px rgba(198,247,0,0.4);
+  }
+}
+
+.hero__subtitle {
+  margin-top: 1rem;
+  color: v.$color-text-soft;
+}
+
+.hero__meta {
+  margin-top: 0.5rem;
+  color: v.$color-text-muted;
+}
+
+/* BOTÕES */
+.hero__actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero__btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.hero__btn--primary {
+  background: v.$color-primary;
+  color: #000;
+}
+
+.hero__btn--ghost {
+  border: 1px solid v.$color-border;
+  color: v.$color-text;
+}

@@ -1,0 +1,52 @@
+.cube {
+  height: 250vh;
+}
+
+.cube__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.cube__square {
+  width: 120px;
+  height: 120px;
+
+  background: #C6F700;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+
+  will-change: transform;
+
+  z-index: 2; 
+}
+
+
+.cube__text {
+  position: absolute;
+  color: #888;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  z-index: 1; 
+}
+
+.cube__text.left {
+  left: 10%;
+}
+
+.cube__text.right {
+  right: 10%;
+}
