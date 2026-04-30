@@ -930,6 +930,51 @@ p {
     grid-template-columns: 1fr;
   }
 }
+.bottle {
+  height: 300vh;
+  background: #000;
+}
+
+.bottle__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* IMAGEM */
+.bottle__img {
+  position: absolute;
+  width: 220px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150vw, -50%); /* COMEÇA FORA */
+}
+
+/* TEXTOS */
+.bottle__texts {
+  position: absolute;
+  right: 10%;
+  max-width: 400px;
+}
+
+.bottle__text {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(20px);
+  color: #C6F700;
+  font-size: 1.4rem;
+  transition: 0.4s ease;
+}
+
+.bottle__text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero__eyebrow {
   display: inline-flex;
   align-items: center;
