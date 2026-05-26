@@ -24,3 +24,13 @@ hero.addEventListener("mouseleave", () => {
     translateZ(0)
   `;
 });
+
+window.addEventListener("load", () => {
+
+  const video = document.querySelector(".hero__video");
+
+  video.addEventListener("canplaythrough", () => {
+    video.style.opacity = "1";
+  });
+
+});
